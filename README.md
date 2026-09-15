@@ -22,7 +22,7 @@
 
 ## 发布到 GitHub Pages
 
-本项目使用 `HaoYoungJi/article` 仓库。推送到 `main` 分支后，进入 `Settings → Pages`，选择 `Deploy from a branch`，再选 `main` 与 `/(root)` 并保存。部署完成后，网页地址为 `https://haoyoungji.github.io/article/`。
+本项目使用 `HaoYoungJi/faculty-homepage` 仓库。推送到 `main` 分支后，进入 `Settings → Pages`，选择 `Deploy from a branch`，再选 `main` 与 `/(root)` 并保存。部署完成后，网页地址为 `https://haoyoungji.github.io/faculty-homepage/`。
 
 ## 课程详情页
 
