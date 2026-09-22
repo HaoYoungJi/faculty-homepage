@@ -136,6 +136,8 @@ address { font-style: normal; line-height: 1.5; }
 .publication-subhead { margin: 10px 0 4px; color: var(--muted); font: 600 .96rem/1.5 var(--sans); }
 .publication-row { display: grid; grid-template-columns: 72px minmax(0, 1fr); column-gap: 8px; }
 .publication-list .year { min-width: 0; margin-right: 0; }
+.employment-row { display: grid; grid-template-columns: 150px minmax(0, 1fr); column-gap: 8px; }
+.employment-row .year { min-width: 0; margin-right: 0; }
 ul { margin: 0; padding-left: 39px; }
 li { margin: 3px 0; }
 .year { display: inline-block; min-width: 72px; margin-right: 8px; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
@@ -245,6 +247,7 @@ td span { color: var(--muted); }
   .page-nav { gap: 6px 16px; }
   .home-section h2, .course-section h2 { font-size: 1.35rem; }
   .year { display: block; min-width: 0; margin-right: 0; font-size: .9rem; }
+  .employment-row { grid-template-columns: 1fr; column-gap: 0; }
   ul { padding-left: 23px; }
   .inline-links { display: block; }
   .course-header h1 { font-size: 1.68rem; }
