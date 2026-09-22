@@ -2,7 +2,7 @@
 
 公开网址：<https://haoyoungji.github.io/faculty-homepage/>
 
-主页内容在 `index.html` 中维护；样式在 `style.css` 中维护。`course-01.html` 是当前课程的待填写页面，`course-02.html` 是数学分析习题课，`course-03.html` 是微积分(A)，`course-04.html` 是 2024–2025 学年春季学期数学分析（二）代课页面。课程讲义位于 `files/`，个人照片为 `portrait.jpg`。
+主页内容在 `index.html` 中维护；样式在 `style.css` 中维护。`course-01.html` 是当前课程的待填写页面，`course-02.html` 是数学分析习题课，`course-03.html` 是微积分(A)，`course-04.html` 是 2024–2025 学年春季学期数学分析（二）代主讲课页面。课程讲义位于 `files/`，个人照片为 `portrait.jpg`。
 
 数学分析习题课使用一份跨 2023–2024、2024–2025、2025–2026 学年的通用讲义。`files/math-analysis/` 中保留原始完整 PDF，同时按原文件目录拆为 13 个章节 PDF；第一章文件也包含封面和目录。课程页只列出一组共用链接，避免按学年重复。
 
