@@ -1,0 +1,3655 @@
+%!TEX program = xelatex
+% 使用 ctexart 文类，UTF-8 编码
+\documentclass[UTF8,11pt, a4paper, oneside, fontset=none]{ctexbook}
+\usepackage{ctex}
+\setCJKmainfont{Songti SC}
+\setCJKsansfont{Hiragino Sans GB}
+\usepackage{caption}
+\usepackage{subfigure}
+\usepackage{setspace}
+\usepackage{tipa}
+\usepackage{longtable}
+\usepackage{amsmath, amsthm, amssymb, bm, graphicx, hyperref, mathrsfs, geometry}
+\usepackage[skins]{tcolorbox}
+\tcbuselibrary{skins, breakable}
+
+
+
+\title{数学分析习题课作业\\2024--2025学年按周整理}
+\author{吉浩洋}
+\date{}
+\linespread{1.1}% 行间距
+\newtheorem{theorem}{定理}[chapter]
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{corollary}[theorem]{推论}
+\newtheorem{example}[theorem]{例}
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{formula}[theorem]{公式}
+\newtheorem{remark}[theorem]{注记}
+\newtheorem{question}[theorem]{问题}
+
+
+\geometry{left=2cm, right= 2cm, bottom=3cm} %页面宽度
+
+\allowdisplaybreaks
+
+
+
+\begin{document}
+
+\maketitle
+
+\noindent\textbf{编排说明：}本册按郑州大学教学周整理，每周先列作业，再列答案。日期表示整周，并非具体上课日。原稿答案保留并单列；新增答案标注“GPT 补充参考答案”，须由任课教师进一步审阅。原稿中的期末试题、春季期中测验及单独的“数学分析300题”未收入本册。已修正发现的明确符号笔误，并在相关答案处说明原题条件不足之处。
+
+\tableofcontents
+
+\clearpage
+
+\chapter{秋季学期}
+
+\clearpage
+
+\section{9月9--15日 · Week 1}
+
+\subsection*{作业}
+
+\begin{enumerate}
+\item  第4页: 1(2) 2(3) 3; 第8页: 2, 3, 4(2, 3, 4), 5.
+\item 用数学符号和逻辑语言叙述(解释)以下命题: 设$A$和$B$为集合, 
+\[
+(1) A \subseteq B; \ \ (2) A \subsetneqq B; \ \ (3) A \nsubseteq B.
+\]
+描述以下集合:
+\[
+(1) A \cup B; \ \ (2) A \cap B; \ \ (3) A \setminus B; \ \ (4) A \Delta B.
+\]
+其中$A \setminus B$表示差集, $A \Delta B := (A \setminus B) \cup (B \setminus A)$表示对称差. 
+
+\begin{tcolorbox}[title=注记, colback=white]
+给定两个集合$A$和$B$, 如何来说明$A = B$: 只需验证$A \subseteq B$且$B \subseteq A$即可. 为了说明$A \subseteq B$, 需说明$\forall x \in A$, 成立$x \in B$; $B \subseteq A$类似.
+\end{tcolorbox}
+
+
+\item 证明以下命题:
+\begin{itemize}
+\item[(a)] 设$A$是$\Omega$的子集, 则$(A^c)^c = A$.
+\item[(b)] 设$A$和$B$是集合$\Omega$的子集. 则
+
+1. $(A \cup B)^c = A^c \cap B^c$;
+
+2. $(A \cap B)^c = A^c \cup B^c$.
+\end{itemize}
+
+\item 设集合$A$为有限集, $|A| = n$(其中$|A|$表示集合$A$中元素的个数). 定义集合$2^A$为$A$的{\bf 幂集}, 即以$A$的所有子集(包括$\emptyset$和$A$自己)为成员的集合. 问: 集合$2^A$中有多少个元素? 
+
+\item 设$A$和$B$为有限集, $|A| =m, |B| =n, m, n \in \mathbb N^*$. (即$A$中有$m$个元素, $B$中有$n$个元素.) 问: 
+
+(1) 若$m>n$, 是否存在从$A$到$B$的单射?
+
+(2) 若$m < n$, 是否存在从$A$到$B$的满射?
+
+给出结论并证明. 
+
+\item 利用确界原理证明实数的基本性质: 
+\begin{itemize}
+\item[(a)] (阿基米德性质)对于任意的实数$b>a>0$, 存在$n \in \mathbb N^*$, 使得$na>b>0$.
+\item[(b)] (推论)正自然数集$\mathbb N^*$无上界.
+\item[(c)] (推论) 对于任意的$\epsilon>0$, 存在$n \in \mathbb N^*$使得$0 < \frac{1}{n} < \epsilon$.
+\end{itemize}
+
+
+\item 利用二项式定理证明算术-几何均值不等式: 设$a_1, a_2, \ldots, a_n$为非负实数, 则
+\[ \frac{a_1 + a_2 + \cdots + a_n}{n} \geq \sqrt[n]{a_1a_2 \cdots a_n}. \eqno(1)
+\]
+其中等号成立的充分必要条件是$a_1 = a_2 = \cdots = a_n$. (不得照抄使用Bernoulli不等式的证明).
+
+\item 利用Cauchy-Schwarz不等式证明$Q_n \geq A_n$: 设$a_1, a_2, \ldots, a_n$为非负实数, 则
+\[ \sqrt{\frac{a_1^2 + a_2^2 + \cdots + a_n^2}{n}} \geq \frac{a_1 + a_2 + \cdots + a_n}{n}.
+\]
+
+
+
+
+ \end{enumerate}
+\paragraph{选做题}
+\begin{enumerate}
+\item 证明当$a, b, c$为非负实数时, 成立不等式
+\[
+\sqrt[3]{abc} \leq \sqrt{\frac{ab + bc + ca}{3}} \leq \frac{a+b+c}{3}.
+\]
+
+\item 设$A$是由$n$个元素组成的集合. 若映射$f : A \to A$是单射, 则称$f$是$A$的一个排列.
+
+(1) 证明: $f(A) = A$;
+
+(2) 证明: $f^{-1}$存在;
+
+(3) 问: $A$共有多少种排列?
+
+
+\item 按照提示证明Cauchy-Schwarz不等式:
+\[ \left( \sum_{k=1}^{n}a_k b_k\right)^2 \leq \left( \sum_{k=1}^{n}a_k^2\right) \left( \sum_{k=1}^{n}b_k^2\right).
+\]
+其中等号成立的条件: $\text{存在}\lambda \in \mathbb R$使得$a_i=\lambda b_i$($i=1,\ldots,n$)，或$b_1=\cdots=b_n=0$.
+
+\begin{itemize}
+\item[(a)] 利用不等式或$AB \leq \frac{A^2+B^2}{2}$. tip: 证明
+\[
+\frac{ \sum\limits_{k=1}^n a_k b_k }{ \left( \sum\limits_{k=1}^n a_k^2 \right)^{\frac{1}{2}}  \left( \sum\limits_{k=1}^n b_k^2 \right)^{\frac{1}{2}} }  \leq 1.
+\]
+
+\item[(b)] 证明Lagrange恒等式
+
+\begin{align*}
+\left(\sum\limits_{k=1}^n a_k^2 \right) \left( \sum\limits_{k=1}^n b_k^2\right) - \left( \sum\limits_{k=1}^n a_k b_k \right)^2 &= \frac{1}{2} \sum\limits_{k=1}^n \sum\limits_{i=1}^n (a_kb_i - a_ib_k)^2 \\
+&=  \sum\limits_{k=1}^{n-1} \sum\limits_{i=k+1}^n (a_kb_i - a_ib_k)^2;
+\end{align*}
+tip: 先交换指标证明后两项相等.
+
+\end{itemize}
+
+
+\begin{tcolorbox}[title=注记, colback=white]
+设$X$为集合, 定义从$X$到$X$的单位映射, 记为$id_X$为:
+\[
+id_X: x \to x, \ \ \forall x \in X.
+\]
+即单位映射将自身元素映到自身.
+
+
+\begin{definition}
+设$f : A \to B$和$g : B \to A$为映射. 若$g \circ f = id_A$, 则称$g$是映射$f$的左逆映射, $f$是$g$的右逆映射. 
+
+\end{definition}
+\end{tcolorbox}
+
+\item 设$f: A \to B$为映射, 证明:
+
+(1) 若$f$具有左逆映射$g: B \to A$, 同时有右逆映射$h : B \to A$, 则$g = h$.
+
+(2) 映射$f$具有左逆映射当且仅当$f$为单射.
+
+(3) 映射$f$具有右逆映射当且仅当$f$为满射. 
+
+\end{enumerate}
+
+\subsection*{原稿参考答案}
+
+\begin{enumerate}
+
+
+\item 用数学符号和逻辑语言叙述(解释)以下命题: 设$A$和$B$为集合, 
+\[
+(1) A \subseteq B; \ \ (2) A \subsetneqq B; \ \ (3) A \nsubseteq B.
+\]
+描述以下集合:
+\[
+(1) A \cup B; \ \ (2) A \cap B; \ \ (3) A \setminus B; \ \ (4) A \Delta B.
+\]
+其中$A \setminus B$表示差集, $A \Delta B := (A \setminus B) \cup (B \setminus A)$表示对称差. 
+
+
+\begin{proof}
+
+
+(1) $ A \subseteq B $即: $\forall a \in A, a \in B$;
+
+$A \subsetneqq B$即: $\forall a \in A, a \in B$, 且$\exists b \in B$使得$b \notin A$;
+
+$A \nsubseteq B$即: $\exists a \in A, a \notin B$.
+
+
+(2) $A \cup B = \{x : x \in A \mbox{或} x \in B \}$;
+
+$A \cap B = \{x : x \in A \mbox{且} x \in B \}$;
+
+$A \setminus B = \{ x : x \in A \mbox{且} x \notin B \}$;
+
+$A \Delta B = \{ x : x \in A \mbox{且} x \notin B \mbox{或} x \in B \mbox{且} x \notin A \}$.
+
+
+
+\end{proof}
+
+
+\item 证明以下命题:
+\begin{itemize}
+\item[(a)] 设$A$是$\Omega$的子集, 则$(A^c)^c = A$.
+\item[(b)] 设$A$和$B$是集合$\Omega$的子集. 则
+
+1. $(A \cup B)^c = A^c \cap B^c$;
+
+2. $(A \cap B)^c = A^c \cup B^c$.
+\end{itemize}
+
+
+\begin{proof}
+
+(a) 首先我们证明$A \subseteq (A^c)^c$. 设$a \in A$, 那么根据定义$a \notin A^c$, 因此根据定义$a \in (A^c)^c$.
+
+再设$x \in (A^c)^c$. 那么$x \notin A^c$, 因此$x \in A$. 这说明$(A^c)^c \subseteq A$. 即证. 
+
+
+(b) 1. 先证明$(A \cup B)^c \subseteq A^c \cap B^c$. 设$x \in (A \cup B)^c$. 则$x \notin A \cup B$, 故$x \notin A$且$x \notin B$. 则$x \in A^c$ 且$ x \in B^c$, 故$x \in A^c \cap B^c$. 
+
+
+再证明$A^c \cap B^c \subseteq (A \cup B)^c$. 设$x \in A^c \cap B^c$. 则$x \in A^c$且$x \in B^c$, 故$x \notin A$且$x \notin B$. 故$x \notin A \cup B$, 从而$x \in (A \cup B)^c$. 
+
+结论2类似可证.
+
+
+
+\end{proof}
+
+
+\item 设集合$A$为有限集, $|A| = n$(其中$|A|$表示集合$A$中元素的个数). 定义集合$2^A$为$A$的{\bf 幂集}, 即以$A$的所有子集(包括$\emptyset$和$A$自己)为成员的集合. 问: 集合$2^A$中有多少个元素? 
+
+
+\begin{proof}
+
+不妨设$A = \{a_1, a_2, \cdots, a_n \}$. 
+
+
+令$C_i$表示$A$的所有子集中元素个数恰为$i$个的集合组成的集合, $0 \leq i \leq n$.
+
+
+那么$C_0$中只有一个元素$\emptyset$, $C_n$中也只有一个元素$A$. 
+
+此外, 当$1 \leq i \leq n-1$时, $C_i$中的元素个数(也即是子集个数)为组合数$C_n^i$.
+
+因此根据二项式定理, 
+\[
+\Big| 2^A \Big| = \sum_{i=0}^n C_n^i = (1 + 1)^n = 2^n.
+\]
+
+\end{proof}
+
+
+\item 设$A$和$B$为有限集, $|A| =m, |B| =n, m, n \in \mathbb N^*$. (即$A$中有$m$个元素, $B$中有$n$个元素.) 问: 
+
+(1) 若$m>n$, 是否存在从$A$到$B$的单射?
+
+(2) 若$m < n$, 是否存在从$A$到$B$的满射?
+
+给出结论并证明. 
+
+
+\begin{proof}
+
+均不存在. 不妨设$A = \{a_1, a_2, \cdots, a_m \}, B = \{ b_1, b_2, \cdots, b_n \}$.
+
+
+(1) 假设存在从$A$到$B$的单射$f$, 那么$\{ f(a_1), \cdots, f(a_m) \} \subset \{ b_1, b_2, \cdots, b_n \}$, 且其中均没有重复的元素. 因此$m \leq n$, 矛盾.
+
+(2) 假设存在从$A$到$B$的满射$f$, 那么$\{ b_1, b_2, \cdots, b_n \} \subset \{ f(a_1), \cdots, f(a_m) \}$. 注意$\{ b_1, b_2, \cdots, b_n \}$中没有重复元素, 而集合$\{ f(a_1), \cdots, f(a_m) \}$中可能有. 因此$m \geq n$, 矛盾.
+
+
+\end{proof}
+
+
+
+\item 利用确界原理证明实数的基本性质: 
+\begin{itemize}
+\item[(a)] (阿基米德性质)对于任意的实数$b>a>0$, 存在$n \in \mathbb N^*$, 使得$na>b>0$.
+\item[(b)] (推论)正自然数集$\mathbb N^*$无上界.
+\item[(c)] (推论) 对于任意的$\epsilon>0$, 存在$n \in \mathbb N^*$使得$0 < \frac{1}{n} < \epsilon$.
+\end{itemize}
+
+
+\begin{proof}
+
+
+(a) 用反证法. 任取$a>0$为实数, 考虑数集$A = \{ na | n \in \mathbb N^*\}$. (注意集合$A$非空, 因为$a \in A$.) 假设定理不成立, 那么存在实数$b$使得$na \leq b$对所有的$n \in \mathbb N^*$成立. 这说明$b$是集合$A$的上界, 根据确界原理, $A$具有上确界. 令$\alpha = \sup A$. 那么任意比$\alpha$小的数都不是$A$的上界. 考虑数$\alpha -a < \alpha$, 由于$\alpha -a$不是$A$的上界, 则一定存在$m \in \mathbb N^*$使得$\alpha - a< ma$, 即$\alpha < (m+1) a$, 这说明$\alpha$不是上界, 矛盾. 
+
+
+(b) 在(a)中令$a=1, b=x$即可.
+
+
+(c) 由于$\epsilon>0$, 则$\frac{1}{\epsilon} >0$. 根据(b), 存在$n \in \mathbb N^*$使得$0 < \frac{1}{\epsilon} <n$. 取倒数, 即证
+
+
+\end{proof}
+
+
+\item 利用二项式定理证明算术-几何均值不等式: 设$a_1, a_2, \ldots, a_n$为非负实数, 则
+\[ \frac{a_1 + a_2 + \cdots + a_n}{n} \geq \sqrt[n]{a_1a_2 \cdots a_n}. \eqno(1)
+\]
+其中等号成立的充分必要条件是$a_1 = a_2 = \cdots = a_n$. (不得照抄使用Bernoulli不等式的证明).
+
+
+\begin{proof}
+
+以下利用数学归纳法和二项式定理. 不妨设$a_1, a_2, \ldots a_n$为$n$个正数. 当$n=1$时, 不等式显然成立. 当$n=2$时, 中学数学中也已证明.
+
+
+假设$n=k$时不等式成立, 以下证明当$n=k+1$时不等式仍成立.
+
+
+首先将$k+1$个正数$a_1, a_2, \ldots, a_{k+1}$的算术平均值分解如下:
+\[
+\frac{a_1 + a_2 + \cdots + a_{k+1}}{k+1} = \frac{a_1 + a_2 + \cdots + a_{k}}{k} + \frac{ka_{k+1} - (a_1 + a_2 + \cdots + a_{k})}{k(k+1)} = A + B. \eqno{(2)}
+\]
+
+
+现在将$a_1, a_2, \ldots, a_{k+1}$根据重新排序并编号, 使得$a_{k+1}$是其中的最大数(之一). 进而再分解式(2). 这个分解中的$B$项一定是非负数, 从而满足条件$A>0, B \geq 0$. 从二项式展开定理就有$(A+B)^{k+1} \geq A^{k+1} + (k+1)A^kB$. 因此根据二项式定理, 
+\begin{align*}
+\left( \frac{a_1 + a_2 + \cdots + a_{k+1}}{k+1} \right)^{k+1} & = (A+B)^{k+1} \geq A^{k+1} + (k+1) A^k B\\
+& = A^k [ A + (k+1)B]\\
+& = \left( \frac{a_1 + a_2 + \cdots + a_{k}}{k} \right)^{k} \cdot a_{k+1} \\
+& \geq a_1a_2 \cdots a_k a_{k+1}.
+\end{align*}
+不等式中等号成立的条件也可用数学归纳法得到, 不赘述.
+
+
+\end{proof}
+
+
+\item 利用Cauchy-Schwarz不等式证明$Q_n \geq A_n$: 设$a_1, a_2, \ldots, a_n$为非负实数, 则
+\[ \sqrt{\frac{a_1^2 + a_2^2 + \cdots + a_n^2}{n}} \geq \frac{a_1 + a_2 + \cdots + a_n}{n}.
+\]
+
+
+\begin{proof}
+\begin{align*}
+\left( \frac{1}{n} \sum\limits_{i=1}^n a_i\right)^2 & = \left( \frac{a_1 + a_2 + \cdots + a_n}{n} \right)^2 = \left(\frac{a_1}{n} \cdot 1 + \frac{a_2}{n} \cdot 1 + \cdots +\frac{a_n}{n} \cdot 1 \right) \\
+& \leq \left( \frac{a_1^2 + a_2^2 + \cdots + a_n^2}{n^2} \right) \cdot (1^2 + 1^2 + \cdots + 1^2) = \frac{a_1^2 + a_2^2 + \cdots + a_n^2}{n}.
+\end{align*}
+\end{proof}
+\end{enumerate}
+
+\subsection*{GPT 补充参考答案}
+
+\noindent\textbf{选做题补充。}以下解答由 GPT 给出，原稿已有的必做题解答见上节。
+\par\noindent 原稿只列教材第 4、8 页题号的题目：参见教材。
+\begin{enumerate}
+\item 由 $3(abc)^{2/3}\le ab+bc+ca$ 及 $3(ab+bc+ca)\le(a+b+c)^2$ 即得两式；零因子可直接验证。
+\item 有限集到自身的单射必为满射，故逆映射存在。依次指定 $n$ 个不同像，排列数为 $n!$。
+\item 若两向量都非零，将其单位化后用 $2uv\le u^2+v^2$ 求和，所得点积不超过 $1$；对 $-a$ 同用一次。也可展开 Lagrange 恒等式，右端为平方和。等号的准确条件是存在 $\lambda\in\mathbb R$ 使 $a_i=\lambda b_i$（或 $b$ 向量全零）；原题用 $a_i/b_i$ 表示的条件在 $b_i=0$ 时无定义。
+\item 左逆与右逆若都存在，则 $g=g(fh)=(gf)h=h$。左逆推出单射；反向在 $A\ne\varnothing$ 时，先在 $f(A)$ 上定义逆，再把 $B\setminus f(A)$ 映到 $A$ 中固定元素。右逆推出满射；满射反向对每个 $b$ 选一个原像（本题有限集无需额外选择公理）。\textbf{条件说明：}当 $A=\varnothing\ne B$ 时，$f$ 是单射却不存在 $B\to A$ 的左逆，原题应排除该情形。
+\end{enumerate}
+
+\clearpage
+
+\section{9月16--22日 · Week 2}
+
+\subsection*{作业}
+
+\begin{enumerate}
+
+
+\item 设$A = \{ a, b, c, d\}$. 证明存在唯一的映射$f : A \to A$, 满足下列两个条件:
+
+(1) $f(a) = b, f(c) = d$;
+
+(2) $f \circ f(x) = x$对一切$x \in A$成立.
+
+\item 证明以下命题:
+\begin{itemize}
+\item[(1)] 若函数$y = f(x) $在$(- \infty, + \infty)$上的图形关于直线$x =a, x=b$对称, 则$f(x)$为周期函数.
+\item[(2)] 若函数$y = f(x) $在$(- \infty, + \infty)$上的图形关于点$P(x_0, y_0)$以及直线$x =b, b \neq x_0$对称, 则$f(x)$为周期函数.
+\end{itemize}
+
+
+\item. 函数
+\[
+\cosh x = \frac{e^x + e^{-x}}{2}, \ \sinh x = \frac{e^x - e^{-x}}{2},
+\]
+分别称为双曲余弦和双曲正弦. 分别求反函数.
+
+
+\item. 给定函数$f : \mathbb R \to \mathbb R$, 如果$x \in \mathbb R$使得$f(x) =x$, 称$x$为$f(x)$的一个不动点. 若$f \circ f$有唯一的不动点, 证明$f$也有唯一的不动点.
+
+
+\item. 设$f : \mathbb R \to \mathbb R$. 若函数$f\circ f$有且仅有2不动点$a, b (a \neq b)$, 证明只有以下两种情况:
+\begin{itemize}
+\item[(1)] $a, b$都是$f$的不动点;
+\item[(2)] $f(a)=b, f(b) =a$.
+\end{itemize}
+
+
+\item (总练16)设$S$为一非空有界数集. 证明:
+\[
+\sup_{x,y\in S}|x - y| = \sup S - \inf S.
+\]
+
+\item 下列陈述是否可以作为$\lim\limits_{n \to \infty} a_n = a$的定义? 若回答是肯定的, 请证明; 若回答是否定的, 请举出反例.
+
+\begin{itemize}
+\item[(1)] 对无限多个正数$\epsilon>0$, 存在$N \in \mathbb N^*$, 当$n >N$时, 有$|a_n - a|< \epsilon$;
+\item[(2)] 对任意给定的$\epsilon >1$, 存在$N \in \mathbb N^*$, 当$n >N$时, 有$|a_n - a|< \epsilon$;
+\item[(3)] 对任意给定的$\epsilon <1$, 存在$N \in \mathbb N^*$, 当$n >N$时, 有$|a_n - a|< \epsilon$;
+\item[(4)] 对每一个正整数$k$, 存在$N_k \in \mathbb N^*$, 当$n >N_k$时, 有$|a_n - a|< 1/k$;
+\item[(5)] 对任意给定的两个正数$\epsilon$和$\delta$, 在区间$(a-\epsilon, a+\delta)$之外至多只有数列$\{ a_n \}$中的有限多项.
+\end{itemize}
+
+
+\end{enumerate}
+\paragraph{选做题}
+\begin{enumerate}
+
+
+\item 证明: $\sqrt[3]{2}$和$\sqrt 2 + \sqrt 3$是无理数.
+ 
+\item 证明: 
+
+(1) 若$r + s \sqrt 2 =0$, 其中$r, s$是有理数, 则$r = s = 0$;
+
+(2) 若$r + s \sqrt 2 + t \sqrt 3=0$, 其中$r, s, t$是有理数, 则$r = s= t=0$.
+
+\item 证明: 任何有理数都可以表示为有尽小数或无尽循环小数; 无尽循环小数一定是有理数.
+ 
+\item 逐步地写下所有的正整数以得到下面的无尽小数:
+\[
+0.1234567891011121314\cdots.
+\]
+问它是有理数吗? (建议查阅资料完成.)
+
+\item 设$\alpha$是给定的无理数, 则对任意实数$Q>1$, 存在$p, q \in \mathbb Z$, $(p, q)=1$, 使得$|\alpha-\frac{p}{q}| < \frac{1}{qQ}$且满足$q \leq Q$. (Dirichlet逼近定理) Tip: 将$[0, 1]$区间$Q$等分. 考虑$0, \{ \alpha\}, \{ 2\alpha\}, \{ 3\alpha\}, \ldots, \{ Q\alpha\}$这$Q+1$个互不相同的数, 并应用抽屉原理.
+
+
+\item 设$\alpha$为无理数, 则存在无穷多个有理数$\frac{p}{q}, q>0$, 使得$|\alpha - \frac{p}{q}| < \frac{1}{q^2}$. 
+
+
+\item 如果复数$x$满足多项式方程
+\[
+a_0 x^n + a_1 x^{n-1} + \cdots + a_{n-1} x + a_n =0,
+\]
+其中$a_0 \neq 0, a_1, \cdots, a_n$都是整数, 那么$x$称为代数数. 试证明: 代数数的全体是可数集. (建议查阅资料完成)
+
+\item 设$A$是数轴上长度不为零的, 且互不相交的区间所组成的集合(注意: 集合$A$的元素是区间). 证明: $A$是至多可数的.
+
+
+注: 有关可数不可数概念请见下文.
+
+
+\end{enumerate}
+
+\subsection{集合的势}
+
+
+设$A$与$B$是两个集合, 如果存在一个从$A$到$B$上的一一映射, 我们就称集合$A$与$B$有相同的`势'或有相同的`基数', 这时我们称$A$与$B$等价, 用$A \sim B$表示. 这就在某些集合之间建立了一种关系. 显然, 刚才定义的关系具有下列性质:
+\begin{itemize}
+\item{自反性:} $A \sim A$;
+\item{对称性:} 若$A \sim B$, 则$B \sim A$;
+\item{传递性:} 若$A \sim B$且$B \sim C$, 则$A \sim C$.
+\end{itemize}
+
+
+\begin{definition}
+令$\mathbb N^*$是所有正整数的全体, 并令
+\[
+\mathbb N_n = \{ 1, 2, \ldots, n\}.
+\]
+\begin{itemize}
+\item[(1)] 如果存在正整数$n$, 使得集合$A \sim \mathbb N_n$, 那么$A$称为有限集, 空集也被认为是有限集.
+\item[(2)] 如果集合$A$不是有限集, 则称$A$为无限集.
+\item[(3)] 若$A \sim \mathbb N^*$, 则称$A$为可数集.
+\item[(4)] 若$A$既不是有限集, 也不是可数集, 则称$A$为不可数集.
+\item[(5)] 若$A$是有限集或者可数集, 则称$A$为至多可数的.
+\end{itemize}
+\end{definition}
+
+
+对两个有限集$A$与$B$, 显然, $A$与$B$有相等的势的充分必要条件是它们的元素个数相等. 但是, 对无限集而言, `元素个数相等'这样的话就变得十分含混, 而一对一的概念是明确的、毫不含糊的. 集合的势是有限集中`元素个数'概念的推广, 并且`势'是一切相互等价的集合唯一共有的属性.
+
+
+\begin{example}
+证明$\mathbb Z$是可数集. 只需将$\mathbb Z$排列为
+\[
+0, 1, -1, 2, -2, 3, -3, \ldots.
+\]
+直觉告诉我们, 这样的排列方法可以把全部整数无遗漏又无重复地排出来. 实际上考虑从$\mathbb N^*$到$\mathbb Z$的一一映射:
+\[
+f(n) = \begin{cases}
+\frac{n}{2}, &\mbox{ 当$n$为偶数},\\
+-\frac{n-1}{2}, &\mbox{ 当$n$为奇数}.
+\end{cases}
+\]
+\end{example}
+
+
+\begin{example}
+证明$(0, 1)$和$[0, 1]$有相同的势.
+\end{example}
+
+
+
+
+
+\begin{proposition}
+可数集$A$的每一个无限子集是可数集.
+\end{proposition} 
+
+
+
+
+
+上述命题表明, 可数集代表着`最小的'无限势, 因为没有任何一个不可数集能作为一个可数集的子集.
+
+
+\begin{proposition}
+设$\{ E_n \} (n =1, 2, 3, \ldots)$是一列至多可数集. 令$S = \bigcup_{n=1}^{\infty} E_n$, 则$S$是至多可数集.
+\end{proposition}
+
+
+
+
+
+\begin{proposition}
+$\mathbb R$中的全体有理数是可数的.
+\end{proposition}
+
+
+
+
+
+\begin{proposition}
+$[0, 1]$中的全体实数是不可数的.
+\end{proposition}
+
+
+该命题的证明需要用到闭区间套定理, 也可考虑下述较初等证明.
+
+
+
+
+\subsection*{原稿参考答案}
+
+\begin{enumerate}
+\item 设$A = \{ a, b, c, d\}$. 证明存在唯一的映射$f : A \to A$, 满足下列两个条件:
+
+(1) $f(a) = b, f(c) = d$;
+
+(2) $f \circ f(x) = x$对一切$x \in A$成立.
+
+
+\begin{proof}
+
+先说明存在性: 构造映射$f$:
+\[
+f : a \to b, \ f : b \to a, \ f : c \to d, \ f : d \to c.
+\]
+则满足条件. 
+
+再说明唯一性: 由于$f \circ f = id_A$, 根据定义$f$是可逆映射, 且$f^{-1} = f$. 根据选做题4, 可逆映射是双射, 因此$f$是双射. 
+
+
+再用反证法说明$f$是唯一的. 假设另有$g$满足条件(1)(2)且$g \neq f$, 那么$g (b) \neq a$, 且$g (d) \neq c$. 由于$g$满足条件(2), $g$也是双射. 那么
+\[
+g(g(b)) \neq g(a) = b. 
+\]
+矛盾.
+
+
+\end{proof}
+
+
+\item 证明以下命题:
+\begin{itemize}
+\item[(1)] 若函数$y = f(x) $在$(- \infty, + \infty)$上的图形关于直线$x =a, x=b$对称, 则$f(x)$为周期函数.
+\item[(2)] 若函数$y = f(x) $在$(- \infty, + \infty)$上的图形关于点$P(x_0, y_0)$以及直线$x =b, b \neq x_0$对称, 则$f(x)$为周期函数.
+\end{itemize}
+
+
+\begin{proof}
+
+
+(1) 由提设知
+\[
+f(a+x) = f(a-x),
+\]
+因此$f(x) = f(2a-x) = f(2b-x), \forall x \in \mathbb R$成立. 令$t = 2b-t$, 则
+\[
+f(t + 2(a-b)) = f(t).
+\]
+这说明$f$的周期为$2 |a-b|$.
+
+
+(2) 由提设, 
+\[
+f(x_0 + x) - y_0 = y_0 - f(x_0 -x), \ \ f(b + x ) = f(b-x).
+\]
+因此
+\[
+f(b+x) = 2y_0 - f(2x_0 -b-x) = f(b-x),
+\]
+\[
+f(x) = 2y_0 - f(2x_0 -2b+x), 
+\]
+\[
+f(2b - 2x_0 +x) = 2y_0 - f(x),
+\]
+因此$f(2x_0 - 2b+ x) = f(2b - 2x_0 +x)$. 从而有$f(x) = f(4(b-x_0) +x)$. 这说明周期为$4|b - x_0|$.
+
+\end{proof}
+
+
+\item. 函数
+\[
+\cosh x = \frac{e^x + e^{-x}}{2}, \ \sinh x = \frac{e^x - e^{-x}}{2},
+\]
+分别称为双曲余弦和双曲正弦. 分别求反函数.
+
+
+\begin{proof}
+
+在$y = \sinh x = \frac{e^x - e^{-x}}{2}$中作代换, 令$u = e^x$, 注意$u >0$. 于是得到
+\[
+u^2 - 2uy -1 =0.
+\]
+解得
+\[
+u = y \pm \sqrt{y^2 +1}.
+\]
+取正解, 得
+\[
+u = y + \sqrt{y^2 +1} = e^x \Rightarrow x = \ln (y + \sqrt{y^2 +1}).
+\]
+因此
+\[
+y = arcsinh x = \ln (x + \sqrt{x^2 +1}).
+\]
+同理得
+\[
+y = arccosh x = \ln (x + \sqrt{x^2 -1}).
+\]
+
+\end{proof}
+
+
+\item. 给定函数$f : \mathbb R \to \mathbb R$, 如果$x \in \mathbb R$使得$f(x) =x$, 称$x$为$f(x)$的一个不动点. 若$f \circ f$有唯一的不动点, 证明$f$也有唯一的不动点.
+
+
+\begin{proof}
+
+先证明存在性. 设$x$是$f \circ f$唯一的不动点. 根据定义:
+\[
+f(f(x)) = x. 
+\]
+在上式两边同时作用$f$, 得到
+\[
+f\circ f(f(x)) = f(x).
+\]
+这说明$f(x)$也是$f \circ f$的不动点, 根据唯一性, $f(x) = x$.
+
+
+再证明唯一性. 只需注意$f$的不动点一定是$f \circ f$的不动点. 因此若$f$有两个不动点$y \neq x$, 则$f \circ f$也有两个不动点$y, x$, 矛盾.
+
+\end{proof}
+
+
+\item. 设$f : \mathbb R \to \mathbb R$. 若函数$f\circ f$有且仅有2不动点$a, b (a \neq b)$, 证明只有以下两种情况:
+\begin{itemize}
+\item[(1)] $a, b$都是$f$的不动点;
+\item[(2)] $f(a)=b, f(b) =a$.
+\end{itemize}
+
+
+\begin{proof}
+
+设函数$f\circ f$有且仅有2不动点$a, b(a \neq b)$, 且不满足条件(1), 我们来证明只能是条件(2)的情况. 
+
+
+由于(1)不满足, 因此$f(a) \neq a, f(b) \neq b$. 在$f\circ f(a) = a$两边同时作用$f$, 可得
+\[
+f\circ f (f(a)) = f(a). 
+\]
+这说明$f(a)$也是$f \circ f$的不动点. 根据提设, 只能有$f(a) = b$. 同理得$f(b) = a$.
+
+\end{proof}
+
+
+\item (总练16)设$S$为一非空有界数集. 证明:
+\[
+\sup_{x,y\in S}|x - y| = \sup S - \inf S.
+\]
+
+
+\begin{proof}
+
+根据确界原理, 设$\xi = \inf S, \eta = \sup S$. 若$\xi = \eta$, 则$S$为单元素集, 结论显然成立. 设$\xi < \eta$.(为什么下确界一定小于上确界?) 考虑集合$E = \{|x-y| \ |x, y \in S \}$, 则要证的是
+\[
+\sup E = \eta - \xi.
+\]
+首先, $\forall x, y \in S$, 有
+\[
+x \leq \eta, y \geq \xi \Rightarrow |x - y| \leq \eta - \xi,
+\]
+这说明$\eta - \xi$是一个上界. 又因为$\forall \epsilon>0$, $\eta-\frac{\epsilon}{2}$不再是$S$的上界, $\xi + \frac{\epsilon}{2}$不再是$S$的下界. 因此$\exists x_0, y_0 \in S$, 使得
+\[
+x_0 > \eta-\frac{\epsilon}{2}, y_0 < \xi + \frac{\epsilon}{2} \Rightarrow |x_0 - y_0| \geq (\eta - \xi) -\epsilon.
+\]
+即证.
+\end{proof}
+
+
+\item 下列陈述是否可以作为$\lim\limits_{n \to \infty} a_n = a$的定义? 若回答是肯定的, 请证明; 若回答是否定的, 请举出反例.
+
+\begin{itemize}
+\item[(1)] 对无限多个正数$\epsilon>0$, 存在$N \in \mathbb N^*$, 当$n >N$时, 有$|a_n - a|< \epsilon$;
+\item[(2)] 对任意给定的$\epsilon >1$, 存在$N \in \mathbb N^*$, 当$n >N$时, 有$|a_n - a|< \epsilon$;
+\item[(3)] 对任意给定的$\epsilon <1$, 存在$N \in \mathbb N^*$, 当$n >N$时, 有$|a_n - a|< \epsilon$;
+\item[(4)] 对每一个正整数$k$, 存在$N_k \in \mathbb N^*$, 当$n >N_k$时, 有$|a_n - a|< 1/k$;
+\item[(5)] 对任意给定的两个正数$\epsilon$和$\delta$, 在区间$(a-\epsilon, a+\delta)$之外至多只有数列$\{ a_n \}$中的有限多项.
+\end{itemize}
+
+
+\begin{proof}
+
+
+(1) 否 (2) 否 (3) 成立 (4) 成立 (5) 成立
+
+
+\end{proof}
+
+
+\end{enumerate}
+
+\begin{enumerate}
+
+
+\item 设$A = \{ a, b, c, d\}$. 证明存在唯一的映射$f : A \to A$, 满足下列两个条件:
+
+(1) $f(a) = b, f(c) = d$;
+
+(2) $f \circ f(x) = x$对一切$x \in A$成立.
+
+\item 证明以下命题:
+\begin{itemize}
+\item[(1)] 若函数$y = f(x) $在$(- \infty, + \infty)$上的图形关于直线$x =a, x=b$对称, 则$f(x)$为周期函数.
+\item[(2)] 若函数$y = f(x) $在$(- \infty, + \infty)$上的图形关于点$P(x_0, y_0)$以及直线$x =b, b \neq x_0$对称, 则$f(x)$为周期函数.
+\end{itemize}
+
+
+\item. 函数
+\[
+\cosh x = \frac{e^x + e^{-x}}{2}, \ \sinh x = \frac{e^x - e^{-x}}{2},
+\]
+分别称为双曲余弦和双曲正弦. 分别求反函数.
+
+
+\item. 给定函数$f : \mathbb R \to \mathbb R$, 如果$x \in \mathbb R$使得$f(x) =x$, 称$x$为$f(x)$的一个不动点. 若$f \circ f$有唯一的不动点, 证明$f$也有唯一的不动点.
+
+
+\item. 设$f : \mathbb R \to \mathbb R$. 若函数$f\circ f$有且仅有2不动点$a, b (a \neq b)$, 证明只有以下两种情况:
+\begin{itemize}
+\item[(1)] $a, b$都是$f$的不动点;
+\item[(2)] $f(a)=b, f(b) =a$.
+\end{itemize}
+
+
+\item (总练16)设$S$为一非空有界数集. 证明:
+\[
+\sup_{x,y\in S}|x - y| = \sup S - \inf S.
+\]
+
+\item 下列陈述是否可以作为$\lim\limits_{n \to \infty} a_n = a$的定义? 若回答是肯定的, 请证明; 若回答是否定的, 请举出反例.
+
+\begin{itemize}
+\item[(1)] 对无限多个正数$\epsilon>0$, 存在$N \in \mathbb N^*$, 当$n >N$时, 有$|a_n - a|< \epsilon$;
+\item[(2)] 对任意给定的$\epsilon >1$, 存在$N \in \mathbb N^*$, 当$n >N$时, 有$|a_n - a|< \epsilon$;
+\item[(3)] 对任意给定的$\epsilon <1$, 存在$N \in \mathbb N^*$, 当$n >N$时, 有$|a_n - a|< \epsilon$;
+\item[(4)] 对每一个正整数$k$, 存在$N_k \in \mathbb N^*$, 当$n >N_k$时, 有$|a_n - a|< 1/k$;
+\item[(5)] 对任意给定的两个正数$\epsilon$和$\delta$, 在区间$(a-\epsilon, a+\delta)$之外至多只有数列$\{ a_n \}$中的有限多项.
+\end{itemize}
+
+
+\end{enumerate}
+\paragraph{选做题}
+\begin{enumerate}
+
+
+\item 证明: $\sqrt[3]{2}$和$\sqrt 2 + \sqrt 3$是无理数.
+ 
+\item 证明: 
+
+(1) 若$r + s \sqrt 2 =0$, 其中$r, s$是有理数, 则$r = s = 0$;
+
+(2) 若$r + s \sqrt 2 + t \sqrt 3=0$, 其中$r, s, t$是有理数, 则$r = s= t=0$.
+
+\item 证明: 任何有理数都可以表示为有尽小数或无尽循环小数; 无尽循环小数一定是有理数.
+ 
+\item 逐步地写下所有的正整数以得到下面的无尽小数:
+\[
+0.1234567891011121314\cdots.
+\]
+问它是有理数吗? (建议查阅资料完成.)
+
+\item 设$\alpha$是给定的无理数, 则对任意实数$Q>1$, 存在$p, q \in \mathbb Z$, $(p, q)=1$, 使得$|\alpha-\frac{p}{q}| < \frac{1}{qQ}$且满足$q \leq Q$. (Dirichlet逼近定理) Tip: 将$[0, 1]$区间$Q$等分. 考虑$0, \{ \alpha\}, \{ 2\alpha\}, \{ 3\alpha\}, \ldots, \{ Q\alpha\}$这$Q+1$个互不相同的数, 并应用抽屉原理.
+
+
+\item 设$\alpha$为无理数, 则存在无穷多个有理数$\frac{p}{q}, q>0$, 使得$|\alpha - \frac{p}{q}| < \frac{1}{q^2}$. 
+
+
+\item 如果复数$x$满足多项式方程
+\[
+a_0 x^n + a_1 x^{n-1} + \cdots + a_{n-1} x + a_n =0,
+\]
+其中$a_0 \neq 0, a_1, \cdots, a_n$都是整数, 那么$x$称为代数数. 试证明: 代数数的全体是可数集. (建议查阅资料完成)
+
+\item 设$A$是数轴上长度不为零的, 且互不相交的区间所组成的集合(注意: 集合$A$的元素是区间). 证明: $A$是至多可数的.
+
+
+注: 有关可数不可数概念请见下文.
+
+
+\end{enumerate}
+
+\subsection{集合的势}
+
+
+设$A$与$B$是两个集合, 如果存在一个从$A$到$B$上的一一映射, 我们就称集合$A$与$B$有相同的`势'或有相同的`基数', 这时我们称$A$与$B$等价, 用$A \sim B$表示. 这就在某些集合之间建立了一种关系. 显然, 刚才定义的关系具有下列性质:
+\begin{itemize}
+\item{自反性:} $A \sim A$;
+\item{对称性:} 若$A \sim B$, 则$B \sim A$;
+\item{传递性:} 若$A \sim B$且$B \sim C$, 则$A \sim C$.
+\end{itemize}
+
+
+\begin{definition}
+令$\mathbb N^*$是所有正整数的全体, 并令
+\[
+\mathbb N_n = \{ 1, 2, \ldots, n\}.
+\]
+\begin{itemize}
+\item[(1)] 如果存在正整数$n$, 使得集合$A \sim \mathbb N_n$, 那么$A$称为有限集, 空集也被认为是有限集.
+\item[(2)] 如果集合$A$不是有限集, 则称$A$为无限集.
+\item[(3)] 若$A \sim \mathbb N^*$, 则称$A$为可数集.
+\item[(4)] 若$A$既不是有限集, 也不是可数集, 则称$A$为不可数集.
+\item[(5)] 若$A$是有限集或者可数集, 则称$A$为至多可数的.
+\end{itemize}
+\end{definition}
+
+
+对两个有限集$A$与$B$, 显然, $A$与$B$有相等的势的充分必要条件是它们的元素个数相等. 但是, 对无限集而言, `元素个数相等'这样的话就变得十分含混, 而一对一的概念是明确的、毫不含糊的. 集合的势是有限集中`元素个数'概念的推广, 并且`势'是一切相互等价的集合唯一共有的属性.
+
+
+\begin{example}
+证明$\mathbb Z$是可数集. 只需将$\mathbb Z$排列为
+\[
+0, 1, -1, 2, -2, 3, -3, \ldots.
+\]
+直觉告诉我们, 这样的排列方法可以把全部整数无遗漏又无重复地排出来. 实际上考虑从$\mathbb N^*$到$\mathbb Z$的一一映射:
+\[
+f(n) = \begin{cases}
+\frac{n}{2}, &\mbox{ 当$n$为偶数},\\
+-\frac{n-1}{2}, &\mbox{ 当$n$为奇数}.
+\end{cases}
+\]
+\end{example}
+
+
+\begin{example}
+证明$(0, 1)$和$[0, 1]$有相同的势.
+\end{example}
+
+
+\begin{proof}
+考虑以下从$[0, 1]$到$(0, 1)$上的映射:
+\[
+f(x) = \begin{cases}
+\frac{1}{2}, &\mbox{当$x=0$时},\\
+\frac{1}{n+2}, &\mbox{当$x = \frac{1}{n}(n \in \mathbb N^*)$时},\\
+x, &\mbox{当$x \neq 0$且$x$不是正整数的倒数时}.
+\end{cases}
+\]
+不难验证$f$是一对一的.
+\end{proof}
+
+
+\begin{proposition}
+可数集$A$的每一个无限子集是可数集.
+\end{proposition} 
+
+
+\begin{proof}
+设$E \subset A$为无限集. 集合$A$是可数的, 因此可将$A$排列成
+\[
+a_1, a_2, \ldots, a_n, \ldots.
+\]
+按照以下方式构造数列$\{ k_n \}$: 令$k_1$是最小的正整数, 使得$a_{k_1} \in E$. 当$k_1, \ldots, k_{s-1}(s \geq 2)$选定之后, 令$k_s$是大于$k_{s-1}$的最小正整数, 且使得$a_{k_s} \in E$. 这样, 便得到一个映射$f : E \to \mathbb N^*$. 具体地说:
+\[
+f(a_{k_n}) \to n \ (n \in \mathbb N^*).
+\]
+\end{proof}
+
+
+上述命题表明, 可数集代表着`最小的'无限势, 因为没有任何一个不可数集能作为一个可数集的子集.
+
+
+\begin{proposition}
+设$\{ E_n \} (n =1, 2, 3, \ldots)$是一列至多可数集. 令$S = \bigcup_{n=1}^{\infty} E_n$, 则$S$是至多可数集.
+\end{proposition}
+
+
+\begin{proof}
+略.
+\end{proof}
+
+
+\begin{proposition}
+$\mathbb R$中的全体有理数是可数的.
+\end{proposition}
+
+
+\begin{proof}
+
+首先证明$[0, 1)$中全体有理数是可数的. 显然, 排列
+\begin{align*}
+&0;\\
+&\frac{1}{2};\\
+&\frac{1}{3}, \frac{2}{3};\\
+&\frac{1}{4}, \frac{2}{4}, \frac{3}{4};\\
+&\frac{1}{5}, \frac{2}{5}, \frac{3}{5}, \frac{4}{5};\\
+&\frac{1}{6}, \frac{2}{6}, \frac{3}{6}, \frac{4}{6}, \frac{5}{6};\\
+&\ldots
+\end{align*}
+穷尽了$[0, 1)$中的所有有理数. 将这些数重新排列, 从第一行开始, 接着第二行, 然后第三行$\cdots$在同一行中, 将数从左到右排列成
+\[
+0, \frac{1}{2}, \frac{1}{3}, \frac{2}{3}, \frac{1}{4}, \frac{2}{4}, \frac{3}{4}, \frac{1}{5}, \frac{2}{5}, \cdots, 
+\]
+然后剔除重复的数, 得到的可数集就是$[0, 1)$中有理数的全体.
+
+
+很明显, 当有理数$r \in [0, 1)$时, 对任何整数$n$, 映射$r \to r +n$是$[0, 1)$中的所有有理数和$[n, n+1)$中有理数的一一对应, 因此$[n, n+1)$中全体有理数也是可数的. 这样, $\mathbb R$中的全体有理数可以表示为
+\[
+\bigcup_{n=-\infty}^{+\infty} \{x: x \in[n, n+1), x \in \mathbb Q\}.
+\]
+上式是可数个互不相交的可数集的并集. 根据上一命题, 即证.
+\end{proof}
+
+
+\begin{proposition}
+$[0, 1]$中的全体实数是不可数的.
+\end{proposition}
+
+
+该命题的证明需要用到闭区间套定理, 也可考虑下述较初等证明.
+
+
+\begin{proof}
+
+用反证法. 假设$[0, 1]$区间中的全体实数是可数的. 将$[0, 1]$排列成$a_1, a_2, \ldots, a_n, \ldots$, 并把每个实数$a_i, i \in \mathbb N^*$表示成无限小数的形式. 注意对于有限小数(除了0以外)$0.x_1 x_2 \cdots x_n$, $x_n \neq 0$, 则表示为$0.x_1 x_2 \cdots (x_n-1)9999\cdots$的形式.
+\[
+a_1 = 0. a_{11} a_{12} \cdots a_{1n} \cdots
+\]
+\[
+a_2 = 0. a_{21} a_{22} \cdots a_{2n} \cdots
+\]
+\[
+\cdots \cdots
+\]
+\[
+a_n = 0. a_{n1} a_{n2} \cdots a_{nn} \cdots
+\]
+\[
+\cdots \cdots
+\]
+令
+\[
+b_k = \begin{cases}
+1, \mbox{ 若 $a_{kk} \neq 1$}\\
+2, \mbox{ 若 $a_{kk} = 1$}.
+\end{cases}
+\]
+考察实数$b = 0.b_1 b_2 \cdots b_n \cdots$. 则$b \neq a_n, \forall n \geq 1$. 这说明小数$b$没有在排列之中. 矛盾.
+
+\end{proof}
+
+\subsection*{GPT 补充参考答案}
+
+\noindent\textbf{选做题参考答案（由 GPT 给出）。}按原稿题序：
+\begin{enumerate}
+\item 若 $\sqrt[3]2=p/q$ 为既约分数，则 $p^3=2q^3$ 迫使 $p,q$ 同为偶数。若 $r=\sqrt2+\sqrt3$ 为有理数，则 $\sqrt6=(r^2-5)/2$ 也有理，矛盾。
+\item (1) 若 $s\ne0$，则 $\sqrt2=-r/s$ 有理，矛盾。(2) 若 $r+s\sqrt2=-t\sqrt3$，平方后 $2rs\sqrt2=3t^2-r^2-2s^2$；当 $rs\ne0$ 即矛盾。当 $r=0$ 或 $s=0$，分别利用 $\sqrt{3/2}$、$\sqrt3$ 无理，得到各系数为零。
+\item 长除法每一步的余数只可能为 $0,1,\ldots,q-1$，故余数归零或重复；后者给循环小数。循环节为整数 $m$、长度 $k$ 时，其尾数是 $m/(10^k-1)$ 的十进制位移，故有理。
+\item 该 Champernowne 小数无理：整数 $10^k$ 在其小数展开中给出任意长的连续零串，同时也有无限多个非零位；最终周期的小数若有任意长零串，则只能最终全零，矛盾。
+\item Dirichlet 逼近：令 $N=\lfloor Q\rfloor$，把 $0,\{\alpha\},\ldots,\{N\alpha\}$ 连同端点 $1$ 排序。$N+1$ 个间隙总长为 $1$，故有长度至多 $1/(N+1)<1/Q$ 的间隙。相邻点差给 $1\le q\le N\le Q$ 且 $|q\alpha-p|<1/Q$；约分后仍满足结论。
+\item 对每个整数 $Q$ 用上一题找到 $q\le Q$、$|\alpha-p/q|<1/(qQ)\le1/q^2$。若只有有限个既约分数，它们到 $\alpha$ 的距离有正下界，与 $Q\to\infty$ 矛盾。
+\item 每个整系数多项式由一个有限整数元组确定，故多项式集合是可数并集 $\bigcup_{n\ge0}\mathbb Z^{n+1}$，为可数集；每个非零多项式只有有限个复根，代数数集仍可数。
+\item 每个非退化区间都含有有理数；两两不交区间对应不同有理数，故区间族至多可数。
+\end{enumerate}
+
+\clearpage
+
+\section{9月23--29日 · Week 3}
+
+\subsection*{作业}
+
+\begin{enumerate}
+
+\item 设$a_n>0 (n = 1, 2, 3, \ldots)$, 且$\lim_{n \to \infty} a_n =a$. 证明:
+\[
+\lim_{n \to \infty} \sqrt[n]{a_1 a_2 \cdots a_n} = a.
+\]
+\item 利用第一问的结论, 证明:
+\begin{itemize}
+\item[(1)] 若$a_n>0 (n = 1, 2, 3, \ldots)$, 且$\lim_{n \to \infty}\frac{a_{n+1}}{a_n} =a$, 则$\lim_{n \to \infty} \sqrt[n]{a_n} =a$;
+\item[(2)] $\lim_{n \to \infty} \sqrt[n]{n} =1$; (请给出与课堂上不同的新的证明)
+\item[(3)] $\lim_{n \to \infty} (n!)^{-\frac{1}{n}} =0$.
+\end{itemize} 
+
+\item
+\begin{itemize}
+\item[(1)] 设$a_n \leq b \leq c_n, n \in \mathbb N^*$, 且$\lim_{n \to \infty} (a_n - c_n) =0$. 证明:
+\[
+\lim_{n \to \infty} a_n = \lim_{n \to \infty} c_n = b.
+\]
+\item[(2)] 设$a_n \leq b_n \leq c_n, n \in \mathbb N^*$, 若已知$\lim_{n \to \infty}(c_n -a_n) =0$, 问: 数列$\{b_n\}$是否收敛?
+\item[(3)] 设已知$\{a_n\}$收敛到$a$, 又有$b \leq a \leq c$, 问: 是否存在$N$, 使得当$n >N$时成立$b \leq a_n \leq c$?
+\end{itemize}
+
+
+\item
+如果$a_0 + a_1 + \cdots + a_p =0$, 求证
+\[
+\lim_{n \to \infty} (a_0 \sqrt n + a_1 \sqrt{n+1} + \cdots + a_p \sqrt{n+p})=0.
+\]
+
+
+\item
+设数列$\{a_n\}$满足
+\[
+\lim_{n \to \infty} a_{2n-1} =a, \lim_{n \to \infty} a_{2n} =b.
+\]
+证明:
+\[
+\lim_{n \to \infty} \frac{a_1 + a_2 + \cdots + a_n}{n} = \frac{a+b}{2}.
+\]
+
+
+\item
+证明:
+\[
+\lim_{n \to \infty} \sum_{k=1}^n \left( \sqrt{1 + \frac{k}{n^2} } -1\right) = \frac{1}{4}.
+\]
+
+
+\item 设$x_1 = \frac{c}{2}, x_{n+1} = \frac{c}{2} + \frac{x_n^2}{2}, n \in \mathbb N^*$, 证明: 若$c>1$, 则数列$\{x_n \}$发散.
+
+
+\item 证明: 若$\lim\limits_{n \to \infty} a_n = +\infty$, 则数列$\{a_n\}$存在最小项.
+
+
+\end{enumerate}
+\paragraph{选做题}
+\begin{enumerate}
+
+\item 设$\{ F_n\}$是Fibonacci数列, 即$F_0 = F_1 =1, F_{n+1} = F_n + F_{n-1}, n \geq 1$. 证明: 
+\[
+\lim_{n \to \infty} \frac{F_n}{F_{n+1}} = \frac{\sqrt 5 -1}{2}.
+\]
+
+
+\item 设数列$\{x_n\}$满足条件
+\[
+\lim_{n \to \infty} (x_n - x_{n-2})=0.
+\]
+求证: $\lim\limits_{n \to \infty} \frac{x_n - x_{n-1}}{n}=0$. 
+
+\item 设实数列$\{a_n\}$和实数$A$满足
+\[
+\lim_{n \to \infty} a_n^2 = A^2, \ \lim_{n \to \infty}(a_{n+1} - a_n) =0.
+\]
+证明: 
+
+(1) 若$A \neq 0$, 则$\exists N \in \mathbb N^*$, 使得当$n >N$时, $a_n$保持同正负号;
+
+(2) $\lim_{n \to \infty} a_n = A$ 或$\lim_{n \to \infty} a_n = -A$.
+
+\item 设$\lim_{n \to \infty} a_n =a$, 证明:
+\[
+\lim_{n \to \infty} \frac{\sum_{k=0}^n C_n^k a_k}{2^n} =a.
+\]
+
+
+给定一个由非负实数排成的无穷三角阵
+
+
+\[
+\left( \begin{array}{ccccccc}
+t_{11}      &  & & & &    \\
+t_{21}      &t_{22} &  &  &   \\
+\vdots      & \vdots     & &  &  &   \\
+t_{n1}     & t_{n2}      & \hdots        &    & t_{nn} &    \\
+\vdots & \vdots & \hdots       & \vdots       & \vdots   & \ddots  \\
+\end{array} \right). 
+\]
+如果这个矩阵满足
+\begin{itemize}
+\item[(1)] $\sum_{k=1}^n t_{nk} =1, \forall n \in \mathbb N^*$,
+\item[(2)] 对任意给定的$k$, 成立$\lim_{n \to \infty} t_{nk} =0$.
+\end{itemize}
+那么称为Toeplitz矩阵. 即表示这个矩阵每一行和为1, 而每一列极限为0.
+
+
+
+\item (Toeplitz定理) 设$n, k \in \mathbb N^*$, $t_{nk} \geq 0$且$\sum_{k=1}^n t_{nk} =1$, $\lim\limits_{n \to \infty} t_{nk} =0$. 如果$\lim\limits_{n \to \infty} a_n =a$, 令
+\[
+x_n = \sum_{k=1}^n t_{nk} a_k.
+\]
+证明: $\lim\limits_{n \to \infty} x_n =a$.
+
+
+\item ($\frac{\infty}{\infty}$型Stolz定理) 
+利用Toeplitz定理证明以下命题. 设$\{b_n\}$是严格递增趋于正无穷的数列, 如果$\lim\limits_{n \to \infty} \frac{a_n - a_{n-1}}{b_n - b_{n-1}} =A$,
+则$\lim\limits_{n \to \infty}\frac{a_n}{b_n} = A$. ($A$可以是有限数也可以是$\pm\infty$)
+
+
+
+\end{enumerate}
+
+\subsection*{原稿参考答案}
+
+\begin{enumerate}
+
+\item 设$a_n>0 (n = 1, 2, 3, \ldots)$, 且$\lim_{n \to \infty} a_n =a$. 证明:
+\[
+\lim_{n \to \infty} \sqrt[n]{a_1 a_2 \cdots a_n} = a.
+\]
+
+\begin{proof}
+分情况讨论. 当$a=0$时, 使用迫敛性以及不等式
+\[
+0 \leq \sqrt[n]{a_1 \cdots a_n} \leq \frac{a_1 + \cdots + a_n}{n}.
+\]
+当$a\neq 0$时, 使用迫敛性, 极限的运算法则以及不等式
+\[
+\frac{1}{\frac{\frac{1}{a_1} + \cdots + \frac{1}{a_n}}{n}}\leq \sqrt[n]{a_1 \cdots a_n} \leq \frac{a_1 + \cdots + a_n}{n}.
+\]
+\end{proof}
+
+
+\item 利用第一问的结论, 证明:
+\begin{itemize}
+\item[(1)] 若$a_n>0 (n = 1, 2, 3, \ldots)$, 且$\lim_{n \to \infty}\frac{a_{n+1}}{a_n} =a$, 则$\lim_{n \to \infty} \sqrt[n]{a_n} =a$;
+\item[(2)] $\lim_{n \to \infty} \sqrt[n]{n} =1$; (请给出与课堂上不同的新的证明)
+\item[(3)] $\lim_{n \to \infty} (n!)^{-\frac{1}{n}} =0$.
+\end{itemize} 
+
+\begin{proof} 做以下变形:
+
+(1) $\sqrt[n]{a_n} = \sqrt[n]{a_1 \frac{a_2}{a_1} \frac{a_3}{a_2}\cdots \frac{a_n}{a_{n-1}}}$.
+
+(2) $\sqrt[n]{a} = \sqrt[n]{a \cdot 1 \cdot 1 \cdots 1}$.
+
+(3) $\sqrt[n]{n} = \sqrt[n]{\frac{1}{1} \cdot \frac{2}{1} \cdot \frac{3}{2} \cdots \frac{n}{n-1}}$.
+
+(4) $\sqrt[n]{\frac{1}{n!}} = \sqrt[n]{\frac{1}{1} \frac{1}{2} \cdots \frac{1}{n}}$.
+
+
+\end{proof}
+
+\item
+\begin{itemize}
+\item[(1)] 设$a_n \leq b \leq c_n, n \in \mathbb N^*$, 且$\lim_{n \to \infty} (a_n - c_n) =0$. 证明:
+\[
+\lim_{n \to \infty} a_n = \lim_{n \to \infty} c_n = b.
+\]
+\item[(2)] 设$a_n \leq b_n \leq c_n, n \in \mathbb N^*$, 若已知$\lim_{n \to \infty}(c_n -a_n) =0$, 问: 数列$\{b_n\}$是否收敛?
+\item[(3)] 设已知$\{a_n\}$收敛到$a$, 又有$b \leq a \leq c$, 问: 是否存在$N$, 使得当$n >N$时成立$b \leq a_n \leq c$?
+\end{itemize}
+
+
+\begin{proof}
+
+
+(1) 利用迫敛性, $a_n - c_n \leq a_n - b  \leq 0$, 令$n \to \infty$即可.
+
+(2) 否. 反例令$a_n = n - \frac{1}{n}, b_n = n, c_n = n + \frac{1}{n}$即可.
+
+(3) 否. 当$b=a$或$a=c$构造单调数列反例.
+
+\end{proof}
+
+
+\item
+如果$a_0 + a_1 + \cdots + a_p =0$, 求证
+\[
+\lim_{n \to \infty} (a_0 \sqrt n + a_1 \sqrt{n+1} + \cdots + a_p \sqrt{n+p})=0.
+\]
+
+
+\begin{proof}
+
+\[
+a_0 \sqrt n + a_1 \sqrt{n+1} + \cdots + a_p \sqrt{n+p} = a_0 \sqrt n + a_1 \sqrt{n+1} + \cdots + a_p \sqrt{n+p}  - (a_0 + a_1 + \cdots + a_p) \sqrt{n} 
+\]
+\[
+= a_1 (\sqrt{n+1}-\sqrt{n}) + \cdots + a_p (\sqrt{n+p} - \sqrt{n}) \leq \frac{a_1}{\sqrt{n+1} + \sqrt{n}} + \cdots + \frac{p a_p}{\sqrt{n+p} + \sqrt{n}} \to 0 (n \to \infty).
+\]
+
+
+\end{proof}
+
+\item
+设数列$\{a_n\}$满足
+\[
+\lim_{n \to \infty} a_{2n-1} =a, \lim_{n \to \infty} a_{2n} =b.
+\]
+证明:
+\[
+\lim_{n \to \infty} \frac{a_1 + a_2 + \cdots + a_n}{n} = \frac{a+b}{2}.
+\]
+
+
+\begin{proof}
+
+利用Cauchy命题容易证明. 不妨设$n$为偶数. ($n$为奇数同理可证.) 那么
+\[
+\lim_{n \to \infty} \frac{a_1 + a_2 + \cdots + a_n}{n} = \lim_{n \to \infty} \frac{a_1 + a_3 + \cdots + a_{n-1}}{\frac{n}{2}} + \lim_{n \to \infty} \frac{a_2 + a_4 + \cdots + a_n}{\frac{n}{2}} = \frac{a+b}{2}.
+\]
+
+\end{proof}
+
+
+\item
+证明:
+\[
+\lim_{n \to \infty} \sum_{k=1}^n \left( \sqrt{1 + \frac{k}{n^2} } -1\right) = \frac{1}{4}.
+\]
+
+
+\begin{proof}
+
+分子有理化:
+\[
+\sqrt{1 + \frac{k}{n^2} } -1 = \frac{k}{n^2} \cdot \frac{1}{\sqrt{1 + \frac{k}{n^2} } +1} \leq \frac{k}{2n^2},
+\]
+此外, 
+\[
+\sqrt{1 + \frac{k}{n^2} } -1 = \frac{k}{n^2} \cdot \frac{1}{\sqrt{1 + \frac{k}{n^2} } +1} \geq \frac{k}{n^2} \cdot \frac{1}{\sqrt{1 + \frac{n}{n^2} } +1} = \frac{k}{n^2} \cdot \frac{1}{\sqrt{1 + \frac{1}{n} } +1} \]
+\[
+\geq \frac{k}{n} \cdot \frac{1}{n + \sqrt{n(n+1)}} \geq \frac{k}{n(2n+1)}.
+\]
+
+
+也可以使用均值不等式:
+\[
+1 + \frac{x}{2+x}= \frac{2}{\frac{1}{1+x}+1} \leq \sqrt{(1+x) \cdot 1} \leq \frac{1+x +1}{2} = 1 + \frac{x}{2} (x >-1)
+\]
+因此
+\[
+\frac{k}{2n^2 +n}\leq \frac{k}{2n^2 +k}= \frac{\frac{k}{n^2}}{2 + \frac{k}{n^2}} \leq \sqrt{1 + \frac{k}{n^2} } -1 \leq \frac{k}{2n^2}.
+\]
+
+
+\end{proof}
+
+
+\item 设$x_1 = \frac{c}{2}, x_{n+1} = \frac{c}{2} + \frac{x_n^2}{2}, n \in \mathbb N^*$, 证明: 若$c>1$, 则数列$\{x_n \}$发散.
+
+\begin{proof}
+
+反证. 假设$\lim_{n \to \infty}x_n = \xi$. 在$x_{n+1} = \frac{c}{2} + \frac{x_n^2}{2}$两边令$n \to \infty$, 利用极限的运算法则, 得到$\xi = \frac{c}{2} + \frac{\xi^2}{2}$. 注意方程$x^2-2x+c$的判别式$\Delta = 4-4c<0$恒成立, 因此没有实根, 说明极限不存在. 
+
+
+也可以配方说明$x_{n+1} - x_n = \frac{x_n^2}{2} - x_n + \frac{c}{2}  = \frac{1}{2} (x_n -1)^2 + \frac{c-1}{2} \geq \frac{c-1}{2} >0$. 归纳说明$x_{n+1} \geq \frac{c-1}{2}n + \frac{c}{2} $趋于无穷.
+
+\end{proof}
+
+
+\item 证明: 若$\lim\limits_{n \to \infty} a_n = +\infty$, 则数列$\{a_n\}$存在最小项.
+
+\begin{proof}
+
+反证. 假设数列不存在最小项, 即$\forall n \in \mathbb N^*$, $a_n$都不是最小项. 这表示任意项$a_n$后面总存在某一项比它小. 即: $\forall n \in \mathbb N^*, \exists m>n$, 使得$a_m < a_n$.
+
+取$n=1, \exists n_1 >1$, 使得$a_{n_1} < a_1$;
+
+取$n=n_1, \exists n_2 >n_1$, 使得$a_{n_2} < a_{n_1}$;
+
+取$n=n_2, \exists n_3 >n_2$, 使得$a_{n_3} < a_{n_2}$;
+
+$\cdots \cdots$
+
+于是得到子列$\{ a_{n_k}\}$, 且
+\[
+a_{n_1} > a_{n_2} > \cdots > a_{n_k} > \cdots, n_k \to \infty.
+\]
+这与$\lim\limits_{n \to \infty} a_n = +\infty$矛盾.
+\end{proof}
+\end{enumerate}
+
+\subsection*{GPT 补充参考答案}
+
+\noindent\textbf{选做题参考答案（由 GPT 给出）。}
+\begin{enumerate}
+\item Fibonacci 数列的通项可由特征方程 $r^2=r+1$ 求得：$F_n=(\varphi^{n+1}-\psi^{n+1})/\sqrt5$，其中 $\varphi=(1+\sqrt5)/2$、$\psi=(1-\sqrt5)/2$。因 $|\psi|<\varphi$，比值趋 $1/\varphi=(\sqrt5-1)/2$。
+\item 令 $y_n=x_n-x_{n-1}$，则 $y_n+y_{n-1}=x_n-x_{n-2}\to0$。递推得 $(-1)^ny_n=C+\sum_{k=2}^n(-1)^k(y_k+y_{k-1})$；右端是收敛到零的项的部分和，除以 $n$ 趋零（Ces\`aro），故 $y_n/n\to0$。
+\item 若 $|A|>0$，最终 $|a_n|>|A|/2$；若符号无限变化，相邻两项某次异号而差至少 $|A|$，与 $a_{n+1}-a_n\to0$ 矛盾。因此符号最终固定，再由 $a_n^2\to A^2$ 得 $a_n\to\pm|A|$。若 $A=0$，直接 $a_n\to0$。
+\item 令 $t_{nk}=2^{-n}\binom nk$，则 $t_{nk}\ge0$、$\sum_{k=0}^nt_{nk}=1$，且固定 $k$ 时 $t_{nk}\to0$。Toeplitz 定理给结论；亦可在固定 $K$ 处分开求和，前 $K$ 项权重趋零，尾项由 $|a_k-a|<\varepsilon$ 控制。
+\item Toeplitz 定理：$\sum t_{nk}(a_k-a)$ 在固定 $K$ 前的有限项逐项趋零，$k>K$ 的尾项绝对值不超过 $\varepsilon\sum_{k>K}t_{nk}\le\varepsilon$。
+\item Stolz 定理：写 $a_n=a_0+\sum_{k=1}^n(b_k-b_{k-1})r_k$，$r_k=(a_k-a_{k-1})/(b_k-b_{k-1})$。除以 $b_n$ 后，首项趋零，余项是 $r_k$ 的加权均值；Toeplitz 定理给有限极限。极限为 $\pm\infty$ 时用同样的尾项下界或上界。
+\end{enumerate}
+
+\clearpage
+
+\section{9月30日--10月6日 · Week 4}
+
+\subsection*{作业}
+
+\begin{enumerate}
+\item 若在$[a, b]$中有两个数列$\{ x_n \}$与$\{ y_n \}$满足$x_n - y_n \to 0$, 则两个数列中能找到具有相同下标$n_k$的子列, 使得
+\[
+x_{n_k} \to \alpha, \ y_{n_k} \to \alpha.
+\]
+
+\item 证明: 如果单调数列有一子列收敛, 那么原数列必定收敛.
+
+\item 数列有收敛子列的充分必要条件是该数列不是无穷大量.
+
+\item 求极限$\lim_{n \to \infty} \frac{2^n n!}{n^n}$.
+
+\item 设$\{a_n\}$是有界数列, 并满足
+\[
+a_{n+1} \geq a_n - \frac{1}{2^n}, \ n \geq 1.
+\]
+证明: $\{a_n\}$收敛.
+
+\item 用基本列证明数列$\{ \sin n \}$发散.
+
+
+\item
+\begin{itemize}
+\item[(1)] 利用均值不等式证明数列$a_n = \left( 1 + \frac{1}{n}\right)^n$严格递增, 而$b_n = \left( 1 + \frac{1}{n}\right)^{n+1}$严格递减.
+\item[(2)] 证明不等式
+\[
+\left( 1 + \frac{1}{n}\right)^n < e < \left( 1 + \frac{1}{n}\right)^{n+1}, n \in \mathbb N^*.
+\]
+\item[(3)] 利用对数函数$\ln x$的严格递增性质证明
+\[
+\frac{1}{n+1} < \ln(1 + \frac{1}{n}) < \frac{1}{n}, n \in \mathbb N^*.
+\]
+\item[(4)] 对$n \in \mathbb N^*$, 求证
+\[
+\frac{1}{2} + \frac{1}{3} + \cdots + \frac{1}{n+1} < \ln(n+1) < 1 + \frac{1}{2} + \cdots + \frac{1}{n}.
+\]
+\item[(5)] 令
+\[
+x_n = 1 + \frac{1}{2} + \cdots +\frac{1}{n} - \ln n, n \in \mathbb N^*.
+\]
+证明: $\lim_{n \to \infty} x_n$存在. 这个极限常记为$\gamma$, 称为Euler常数.
+\item[(6)] 求极限
+\[
+\lim_{n \to \infty} \left( \frac{1}{n+1} + \frac{1}{n+2} + \cdots + \frac{1}{n+n}\right).
+\]
+\item[(7)] 证明不等式
+\[
+\left( \frac{n+1}{e} \right)^n < n! < e \left( \frac{n+1}{e} \right)^{n+1}.
+\]
+\end{itemize}
+
+\end{enumerate}
+
+\subsection*{原稿参考答案}
+
+\begin{enumerate}
+\item 若在$[a, b]$中有两个数列$\{ x_n \}$与$\{ y_n \}$满足$x_n - y_n \to 0$, 则两个数列中能找到具有相同下标$n_k$的子列, 使得
+\[
+x_{n_k} \to \alpha, \ y_{n_k} \to \alpha.
+\]
+
+\begin{proof}
+由致密性定理, 存在子列$\{x_{n_k} \}$满足
+\[
+x_{n_k} \to \alpha \in [a, b].
+\]
+根据三角不等式,
+\[
+|y_{n_k} - \alpha| \leq |y_{n_k} - x_{n_k}| + |x_{n_k} - a|.
+\]
+令$k \to \infty$, 由迫敛性即证.
+
+\end{proof}
+
+\item 证明: 如果单调数列有一子列收敛, 那么原数列必定收敛.
+
+\begin{proof}
+不妨设数列单调递增. 设其收敛子列为$\{a_{n_k} \}$, 且
+\[
+\lim_{k \to \infty} a_{n_k} = a.
+\]
+这说明数列$\{ a_n\}$以$a$为上界. 否则, 存在某个$a_m >a$, 则根据单调性, 存在$\{ a_{n_k}\}$中的$a_{n_m} \geq a_m >a$. 从而有
+\[
+\lim_{k \to \infty} a_{n_k} \geq a_{n_m} >a,
+\]
+矛盾.
+\end{proof}
+
+\item 数列有收敛子列的充分必要条件是该数列不是无穷大量.
+
+
+\begin{proof}
+必要性显然成立. 下证充分性. 设$\{a_n\}$是一个数列, 且非无穷大量. 即:
+\[
+\exists M_0>0, \forall N \in \mathbb N^*, \exists n >N, \mbox{ 成立 } |a_n| \leq M_0.
+\]
+现在对$N=1$, 存在$n_1 > 1$, 使$| a_{n_1} |\leq M_0 $. 再对$N= n_1$, 取$n_2 > n_1$, 使得$|a_{n_2}| \leq M_0 $. 这样可以归纳地得到数列$\{a_n\}$的一个有界子列$\{ a_{n_k}\}$. 利用Bolzano-Weierstrass定理, 可以得到$\{ a_{n_k}\}$的收敛子列. 即证. 
+\end{proof}
+
+\item 求极限$\lim_{n \to \infty} \frac{2^n n!}{n^n}$.
+
+\begin{proof}
+令$a_n = \frac{2^n n!}{n^n}$, 则$\frac{a_{n+1}}{a_n} = \frac{2}{(1+\frac{1}{n})^n} <1$当$n \geq 2$时成立. 因此$\{a_n\}$单调递减有下界0. 在等式
+\[
+a_{n+1} = a_n \frac{2}{(1+\frac{1}{n})^n}
+\]
+两边令$n \to \infty$, 得到极限为0.
+\end{proof}
+
+\item 设$\{a_n\}$是有界数列, 并满足
+\[
+a_{n+1} \geq a_n - \frac{1}{2^n}, \ n \geq 1.
+\]
+证明: $\{a_n\}$收敛.
+
+
+\begin{proof}
+
+构造辅助数列$b_{n+1} = a_{n+1} - \frac{1}{2^n}$, 则$b_{n+1} \geq b_n$. 由于$\{a_n\}$有界, $\{b_n\}$一定有界. 因此$\{ b_n\}$收敛, 再得到数列$\{a_n\}$收敛.
+
+
+\end{proof}
+
+\item 用基本列证明数列$\{ \sin n \}$发散.
+
+
+\begin{proof}
+
+对于每个正整数$n$, 区间$(n \pi + \frac{\pi}{3}, n \pi + \frac{2\pi}{3})$的长度为$\pi/3 >1$, 因此区间内至少有一个正整数, 记为$k_n$ (阿基米德原理). 以下证明$\{ \sin k_n \}$为发散数列. 事实上当$n=2m$为偶数时, $\sin k_{2m} \geq \sin \frac{\pi}{3} = \frac{\sqrt 3}{2}$; 当$n=2m+1$为奇数时, $\sin k_{2m+1} \leq -\sin \frac{\pi}{3} = -\frac{\sqrt 3}{2}$. 转换语言即证.
+
+\end{proof}
+
+
+\item
+\begin{itemize}
+\item[(1)] 利用均值不等式证明数列$a_n = \left( 1 + \frac{1}{n}\right)^n$严格递增, 而$b_n = \left( 1 + \frac{1}{n}\right)^{n+1}$严格递减.
+\item[(2)] 证明不等式
+\[
+\left( 1 + \frac{1}{n}\right)^n < e < \left( 1 + \frac{1}{n}\right)^{n+1}, n \in \mathbb N^*.
+\]
+\item[(3)] 利用对数函数$\ln x$的严格递增性质证明
+\[
+\frac{1}{n+1} < \ln(1 + \frac{1}{n}) < \frac{1}{n}, n \in \mathbb N^*.
+\]
+\item[(4)] 对$n \in \mathbb N^*$, 求证
+\[
+\frac{1}{2} + \frac{1}{3} + \cdots + \frac{1}{n+1} < \ln(n+1) < 1 + \frac{1}{2} + \cdots + \frac{1}{n}.
+\]
+\item[(5)] 令
+\[
+x_n = 1 + \frac{1}{2} + \cdots +\frac{1}{n} - \ln n, n \in \mathbb N^*.
+\]
+证明: $\lim_{n \to \infty} x_n$存在. 这个极限常记为$\gamma$, 称为Euler常数.
+\item[(6)] 求极限
+\[
+\lim_{n \to \infty} \left( \frac{1}{n+1} + \frac{1}{n+2} + \cdots + \frac{1}{n+n}\right).
+\]
+\item[(7)] 证明不等式
+\[
+\left( \frac{n+1}{e} \right)^n < n! < e \left( \frac{n+1}{e} \right)^{n+1}.
+\]
+\end{itemize}
+
+
+\begin{proof}
+
+(1) 注意数列$\{ a_n \}$的通项为一个数自乘$n$次, 为了利用均值不等式, 再乘上1可得
+\[
+a_n = 1 \cdot  \left( 1 + \frac{1}{n} \right)^n < \Big[ \frac{n \left( 1 + \frac{1}{n} \right) + 1 }{n+1} \Big]^{n+1} =  \left( \frac{ n+ 2}{n+1} \right)^{n+1} = a_{n+1}.
+\]
+利用同样的方法, 可以证明数列$b_n =  \left( 1 + \frac{1}{n} \right)^{n+1}$严格单调递减:
+\[
+\frac{1}{b_n} = 1 \cdot  \left( \frac{n}{n+1} \right)^{n+1} < \Big[ \frac{(n+1)\left( \frac{n}{n+1}\right)+1}{n+2}\Big]^{n+2} =  \left( \frac{n+1}{n+2} \right)^{n+2}  = \frac{1}{b_{n+1}}.
+\] 
+又由于对每个$n$成立不等式$a_n < b_n$, 可见$\{a_n \}$严格单调增加, 且以每一个$b_n$为上界; 同时$\{b_n \}$严格单调减少, 且以每一个$a_n$为下界. 因此两个数列都收敛, 利用$a_n (1 + \frac{1}{n}) =b_n$, 令$n \to \infty$可得极限相同.
+
+(2) 利用(1)易得.
+
+(3) 对(2)取对数易得.
+
+(4) 注意利用对数函数的性质:
+\[
+\ln(n+1) = \ln 2 + \ln (1 + \frac{1}{2}) + \ln (1 + \frac{1}{3}) + \cdots + \ln (1 + \frac{1}{n}).
+\]
+在利用结论(3)易得.
+
+(5)利用不等式
+\[
+\frac{1}{n+1} < \ln(1 + \frac{1}{n}) < \frac{1}{n}.
+\]
+考虑数列前后两项之差, 则
+\[
+x_{n+1} - x_n  = \frac{1}{n+1} - \ln(n+1) + \ln n = \frac{1}{n+1} - \ln \left( 1 + \frac{1}{n} \right) < 0.
+\]
+因此$\{x_n\}$严格单调递减. 以下只需证明数列有下界即可. 实际上
+\[
+1 + \frac{1}{2} + \cdots + \frac{1}{n} > \ln(n+1) = \ln n + \ln  \left( 1 + \frac{1}{n} \right) > \ln n + \frac{1}{n+1}.
+\]
+因此
+\[
+x_n > \frac{1}{n+1} >0.
+\]
+即证.
+
+
+在确立了数列$\{ x_n \}$单调递减之后, 可以用和自然底数$e$时同样的方式引入第二个数列$\{d_n\}$, 其中$d_n = 1 + \frac{1}{2} + \cdots + \frac{1}{n} - \ln(n+1)$. 此时$d_n < x_n$, 且$x_n - d_n \to 0 (n \to \infty)$. 同样可以得到
+\[
+d_{n+1} - d_n = \frac{1}{n+1} - \ln(n+2) + \ln(n+1) = \frac{1}{n+1} - \ln \left( 1 + \frac{1}{n+1} \right) >0.
+\]
+因此$\{d_n\}$严格递增, 且$d_1 < d_2 < \cdots < d_n < x_n < \cdots < x_2 < x_1$. 因此$\{d_n\}$和$\{x_n\}$收敛到同一极限.
+
+(6) 设$a_n = \frac{1}{n+1} + \frac{1}{n+2} + \cdots + \frac{1}{2n}$. 利用单调有界原理证明收敛. 比较相邻两项之差
+\[
+a_{n+1} - a_n =\frac{1}{2n+1} + \frac{1}{2n+2} - \frac{1}{n+1} >  2 \cdot \frac{1}{2n+2} - \frac{1}{n+1} =0.
+\]
+可见数列严格单增. 由于$a_n < \frac{n}{n+1} <1$, 因此有上界1, 则数列收敛.
+
+
+又注意利用(5)
+\[
+x_{2n} - x_n =  \frac{1}{n+1} + \frac{1}{n+2} + \cdots + \frac{1}{2n} - \ln 2,
+\]
+因此
+\[
+\lim_{n \to \infty} \left(  \frac{1}{n+1} + \frac{1}{n+2} + \cdots + \frac{1}{2n} \right) = \lim_{n \to \infty}(x_{2n} - x_n) + \ln 2 = \ln 2.
+\]
+
+
+(7) 首先$\left( \frac{n+1}{e} \right)^n < n!  \Leftrightarrow \frac{(n+1)^n}{n!} < e^n$. 由于$\left(1+ \frac{1}{n} \right)^n <e$, 连乘可得
+\[
+\left(1+ \frac{1}{1} \right)^1 \cdot \left(1+ \frac{1}{2} \right)^2 \cdots \left(1+ \frac{1}{n} \right)^n < e^n,
+\]
+注意上式左边可写为
+\[
+2 \cdot (\frac{3}{2})^2 \cdot (\frac{4}{3})^3 \cdots (\frac{n+1}{n})^n =  \frac{(n+1)^n}{n!}.
+\]
+即证.
+
+
+类似可证$e^n < \frac{(n+1)^{n+1}}{n!}$. 由$e < (\frac{n+1}{n})^{n+1}$连乘可得
+\[
+e^n < 2^2 \cdot (\frac{3}{2})^3 \cdot (\frac{4}{3})^4 \cdots (\frac{n+1}{n})^{n+1} = \frac{(n+1)^{n+1}}{n!}.
+\]
+
+
+
+\end{proof}
+\end{enumerate}
+
+\subsection*{GPT 补充参考答案}
+
+\noindent 原稿参考答案已覆盖本周题目。若发现原稿的证明与题面不符，应以修订版为准；本周没有另加未经核对的 GPT 解答。
+
+\clearpage
+
+\section{10月7--13日 · Week 5}
+
+\subsection*{作业}
+
+\begin{enumerate}
+\item 设$\lim_{x \to x_0}f(x) > a $. 证明: 当$x$足够靠近$x_0$, 但$x \neq x_0$时, 有$f(x) >a$.
+
+\item 设$f$在$(-\infty, a)$上递增, 且有一数列$\{x_n\}$满足$x_n < a, \forall n \geq 1$, $x _n \to a$且使得
+\[
+\lim_{n \to \infty}f(x_n) =A.
+\]
+证明: $f(a-)=A$.
+
+\item 设$f(x_0^-) < f(x_0^+)$. 证明: 存在$\delta$, 使得当
+\[
+x \in (x_0 - \delta, x_0), \ \ y \in (x_0, x_0 + \delta)
+\]
+时, 有$f(x) < f(y)$.
+
+\item 证明: $\lim_{x \to \infty}(\sin \sqrt{x+1} - \sin \sqrt{x-1}) =0$.
+
+\item 求极限: $\lim_{n \to \infty} \sin(\pi \sqrt{n^2+1})$.
+
+\item 设$f(x), g(x)$是$\mathbb R$上的周期函数, 若$\lim_{x \to +\infty}[f(x) -g(x)] =0$, 则$f(x) = g(x)$恒成立.
+
+\item 3.1节第8题.
+
+\item 3.2节第9题.
+
+\item 3.3节第5题.
+
+\item 第三章总练, 12题.
+
+
+\end{enumerate}
+\paragraph{选做题}
+\begin{enumerate}
+
+
+\item 设数列$\{ s_n \}$, 其中$s_n = 1 + \frac{1}{1!} + \frac{1}{2!} + \cdots + \frac{1}{n!}$, 证明: $\lim_{n \to \infty} s_n =e$.
+
+\item 证明: $e$是无理数.
+
+\begin{tcolorbox}[colback=white, breakable]
+
+
+连分数是一种记号. 例如, 设$a_0 \in \mathbb N, a_1, \cdots, a_k \in \mathbb N^*$, 则具有如下形式的分式称为一个{\it 有限连分数}:
+\[
+[a_0; a_1, a_2, \cdots, a_k] = a_0 + \cfrac{1}{ a_1 + \cfrac{1}{ a_2 + \cfrac{1}{ a_3 + \cdots + \cfrac{1}{a_{k-1} + \cfrac{1}{a_k}}}}}.
+\]
+形式上, 也可以定义无限连分数(简称连分数). 设$\{ a_n \}_{n \geq 0}$为整数列, 满足$a_0 \geq 0, a_n \geq 1, \forall n \geq 1$. 记
+\[
+[a_0; a_1, a_2, \cdots, a_n, \cdots] = a_0 + \cfrac{1}{ a_1 + \cfrac{1}{ a_2 + \cfrac{1}{ a_3 + \cdots + \cfrac{1}{a_{n-1} + \cfrac{1}{a_n + \cdots}}}}}.
+\]
+其中整数$a_n, n \geq 0$称为连分数的不完全商. 
+
+
+对于任意的$n \geq 1$, 定义不可约有理数
+\[
+\frac{p_n}{q_n} = [a_0; a_1, a_2, \cdots, a_n],
+\]
+称为连分数的渐进分数. 
+
+\end{tcolorbox}
+
+\item 通过以下过程证明无限连分数的形式定义是良定的.
+
+\begin{enumerate}
+\item 证明: 任何有理数$\frac{p}{q} \neq 0, p, q \in \mathbb N$, 都可以精确地表示为两种形式的有限连分数.
+
+\item 证明: 如上定义的不可约正整数$p_n, q_n$满足:
+\[
+\left(
+\begin{array}{cc}
+p_n & p_{n-1}\\
+q_n & q_{n-1}
+\end{array}
+\right)=
+\left(
+\begin{array}{cc}
+a_0 & 1\\
+1 & 0
+\end{array}
+\right)
+\left(
+\begin{array}{cc}
+a_1 & 1\\
+1 & 0
+\end{array}
+\right)\cdots
+\left(
+\begin{array}{cc}
+a_n & 1\\
+1 & 0
+\end{array}
+\right), \ \ \forall n \geq 0.
+\]
+其中令$p_{-1}=1, q_{-1}=0, p_0 = a_0, q_0 =1$.
+
+\item 证明: 相邻渐进分数之差满足:
+\[
+\frac{p_n}{q_n} - \frac{p_{n-1}}{q_{n-1}} = \frac{(-1)^{n+1}}{q_{n-1}q_n}, \forall n \geq 1.
+\]
+
+\item 证明: $\lim_{n \to \infty} \frac{p_n}{q_n}$极限存在, 定义为无限连分数的值, 记为$\alpha$.
+
+\item 证明: $\alpha$是无理数.
+
+\item 证明: 
+\[
+\frac{p_0}{q_0} < \frac{p_2}{q_2} < \cdots \frac{p_{2n}}{q_{2n}} < \cdots < \alpha < \cdots < \frac{p_{2n+1}}{q_{2n+1}} < \cdots < \frac{p_3}{q_3} < \frac{p_1}{q_1}.
+\]
+
+\item 将$\frac{1 + \sqrt 5}{2}$展开为无限连分数. 这个无理数的渐进分数分母恰为Fibonacci数列. 尝试推到该数列的通项公式.
+
+\item 证明: 当$n \geq 0$时,
+\[
+\frac{1}{q_n(q_n + q_{n+1})} < \Big| \alpha - \frac{p_n}{q_n} \Big| < \frac{1}{q_n q_{n+1}}.
+\]
+
+\item 证明:
+\[
+|q_0 \alpha - p_0| > |q_1 \alpha - p_1| > \cdots > |q_n \alpha - p_n| > \cdots.
+\]
+
+\item 证明: 若$p, q$为正整数使得
+\[
+|q \alpha -p| < |q_n \alpha -p_n|,
+\]
+则$q \geq q_{n+1}$对某个$n \geq 0$成立.
+
+\end{enumerate}
+
+
+\item (2-进制展开) 考虑数列集合$\mathcal S = \{ \{s_n \}_{n \geq 0} \Big| s_n \in \{-1, 1 \} \}$. 定义数列
+\[
+c_n = \sum_{k=0}^n \frac{s_0 s_1 \cdots s_k}{2^k}.
+\]
+
+\begin{enumerate}
+
+\item 证明: $c_n$极限存在, 记为$h(s)$, 且$h(s) \in [-2, 2]$.
+
+\item 证明: $h : \mathcal S \to [-2, 2]$是满射. 请问是否是单射?
+
+\item 对于$s = \{ s_n\}_{n \geq 0} \in \mathcal S$, 证明
+\[
+2 \sin\left( \frac{\pi}{4} c_n \right)= s_0 \sqrt{2 + s_1 \sqrt{2 + s_2 \sqrt{2 + \cdots + s_{n-1} \sqrt{2 + s_n \sqrt2}}}}.
+\]
+
+\item 计算极限
+\[
+\lim_{n \to \infty} \underbrace{\sqrt{2 + \sqrt{2 + \sqrt{2 + \cdots + \sqrt 2}}}}_{\text{$n$个2}}.
+\]
+
+\end{enumerate}
+
+\item 查找文献了解概念: Banach-Mazur游戏(结合有限覆盖定理).
+
+
+\end{enumerate}
+
+\subsection*{原稿参考答案}
+
+\begin{enumerate}
+\item 设$\lim_{x \to x_0}f(x) > a $. 证明: 当$x$足够靠近$x_0$, 但$x \neq x_0$时, 有$f(x) >a$.
+
+\begin{proof}
+设$\lim_{x \to x_0}f(x) = A$, 利用极限的保号性, 取$\epsilon = \frac{A - a}{2}$, 那么当$x$充分接近$x_0$且$x \neq x_0$时成立$f(x) \geq A- \epsilon > a$.
+
+\end{proof}
+
+\item 设$f$在$(-\infty, a)$上递增, 且有一数列$\{x_n\}$满足$x_n < a, \forall n \geq 1$, $x _n \to a$且使得
+\[
+\lim_{n \to \infty}f(x_n) =A.
+\]
+证明: $f(a-)=A$.
+
+\begin{proof}
+根据单调有界原理, $f(a-)$为有限数或是$+\infty$. 只需证明$f(a-)$不能发散到$+\infty$. 不妨设$\{x_n\}$单调递增收敛到$a$. 取$\delta = a-x_0$, 那么$\forall y \in (a-\delta, a)$, 存在$k$使得$y \leq x_k$. 由于$f(x)$单调, 那么$f(y) \leq f(x_k)$. 令$k \to \infty$, 则$f(y) \leq A$. 这说明$f$在$(a-\delta, a)$上有界, 因此$f(a-)$也是有限数, 故只能是$A$.
+
+\end{proof}
+
+
+\item 设$f(x_0^-) < f(x_0^+)$. 证明: 存在$\delta$, 使得当
+\[
+x \in (x_0 - \delta, x_0), \ \ y \in (x_0, x_0 + \delta)
+\]
+时, 有$f(x) < f(y)$.
+
+
+\begin{proof}
+
+反证. 那么$\forall \delta>0$, 存在$x_{\delta} \in (x_0 - \delta, x_0)$和$y_{\delta} \in (x_0, x_0 + \delta)$使得
+\[
+f(x) \geq f(y).
+\]
+
+取$\delta = \frac{1}{n}, n \geq 1$. 在不等式$f(x_{\frac{1}{n}}) \geq f(y_{\frac{1}{n}})$ 两边令$n \to \infty$, 得到
+\[
+f(x_0^-) \geq f(x_0^+),
+\]
+矛盾.
+
+\end{proof}
+
+
+\item 证明: $\lim_{x \to \infty}(\sin \sqrt{x+1} - \sin \sqrt{x-1}) =0$.
+
+\begin{proof}
+和差化积即可,
+\[
+\sin \sqrt{x+1} - \sin \sqrt{x-1} = 2 \sin \frac{\sqrt{x+1} - \sqrt{x-1}}{2} \cdot \cos  \frac{\sqrt{x+1} + \sqrt{x-1}}{2}
+\]
+\[
+= 2 \sin \frac{1}{\sqrt{x+1} + \sqrt{x-1}} \cdot \cos  \frac{\sqrt{x+1} + \sqrt{x-1}}{2}.
+\]
+
+\end{proof}
+
+
+\item 求极限: $\lim_{n \to \infty} \sin(\pi \sqrt{n^2+1})$.
+
+\begin{proof}
+做变形
+\[
+\sin((\sqrt{n^2+1} -n)\pi + n \pi )= (-1)^n \sin (\sqrt{n^2+1} -n)\pi = (-1)^n \sin \frac{\pi}{\sqrt{n^2+1} +n}.
+\]
+
+\end{proof}
+
+\item 设$f(x), g(x)$是$\mathbb R$上的周期函数, 若$\lim_{x \to +\infty}[f(x) -g(x)] =0$, 则$f(x) = g(x)$恒成立.
+
+\begin{proof}
+设$f(x)$的周期为$T$. 根据题设$\lim_{x \to +\infty}[f(x+T) -g(x+T)] =0$, 从而由不等式
+\[
+|g(x+T) - g(x) | \leq |g(x+T) - f(x+T)| + |f(x+T) - f(x)| + |f(x) - g(x)|
+\]
+可得$g(x+T) - g(x) \to 0 ( x \to +\infty)$. 因为$g(x+T) - g(x)$为周期函数, 则$g(x+T) - g(x) \equiv 0$. 即$g(x+T) = g(x)$对所有$x \in \mathbb R$成立. 这说明$g(x)$也是周期为$T$的函数, 即$f(x) - g(x)$周期为$T$. 由条件$\lim_{x \to +\infty}[f(x) -g(x)] =0$即证.
+
+\end{proof}
+
+
+\item 3.1节第8题.
+
+
+\begin{proof}
+
+即4.1节例3.
+
+\end{proof}
+
+\item 3.2节第9题.
+
+
+\begin{proof}
+
+(1) 利用复合函数求极限法则的证明即可.
+
+(2) 否. 反例, 取
+\[
+f(x) = \text{sgn} x = \begin{cases}
+1, & x>0\\
+0, & x=0\\
+-1, & x<0
+\end{cases}.
+\]
+那么$f(x) = \text{sgn}(x^2) = \begin{cases}
+1, & x \neq 0\\
+0, & x =0
+\end{cases}$.
+
+
+\end{proof}
+
+\item 3.3节第5题.
+
+
+\begin{proof}
+
+和定理3.10的证明完全类似.
+
+\end{proof}
+
+\item 第三章总练, 12题.
+
+
+\begin{proof}
+
+
+对于任意的$x \in (0, +\infty)$, 考虑数列$\{2^nx \}_{n \geq 0}$, 则$nx \to \infty (2^n \to \infty)$. 根据题设,
+\[
+f(x) = f(2x) = f(2^2x) =  \cdots = f(2^n x) = \cdots.
+\]
+令$n \to \infty$, 根据归结原理上式收敛到$A$, 且为常值数列. 即证.
+
+\end{proof}
+
+
+\end{enumerate}
+
+\subsection*{GPT 补充参考答案}
+
+\noindent\textbf{选做题参考答案（由 GPT 给出）。}
+\par\noindent 本周仅列“3.1 节第 8 题”等教材题号的必做题：参见教材。
+\begin{enumerate}
+\item $s_n=\sum_{k=0}^n1/k!$ 的级数绝对收敛；由 $e=\lim_n(1+1/n)^n$ 的二项式展开及对尾项的统一估计，得 $s_n\to e$。
+\item 若 $e=p/q$，则 $q!(e-s_q)$ 是正整数；但 $0<q!(e-s_q)<\sum_{j\ge1}(q+1)^{-j}<1$，矛盾。
+\item 连分数：(a) 对有理数运行欧几里得算法得有限展开；末商 $c\ge2$ 可换成 $c-1,1$，故有两种标准写法。(b) 矩阵乘积归纳给 $p_n=a_np_{n-1}+p_{n-2}$、$q_n=a_nq_{n-1}+q_{n-2}$。(c) 行列式给 $p_nq_{n-1}-p_{n-1}q_n=(-1)^{n-1}$，故题给相邻差公式。(d) 因 $q_n$ 至少按 Fibonacci 速度增长，相邻差可求和，渐近分数收敛。(e) 偶次渐近分数严格递增、奇次严格递减且差趋零，夹住同一极限 $\alpha$；若 $\alpha=p/q$，对充分大的 $n$ 有 $q_{n+1}>q$，而任何不同于 $p/q$ 的 $p_n/q_n$ 与其距离至少 $1/(qq_n)$，与误差上界 $1/(q_nq_{n+1})$ 矛盾。(f) $\varphi=[1;1,1,\ldots]$，分母满足 $q_{n+1}=q_n+q_{n-1}$，由特征方程得 Fibonacci 通项。(g) 写尾连分数为 $\alpha_{n+1}\in(a_{n+1},a_{n+1}+1)$，恒等式 $|\alpha-p_n/q_n|=[q_n(q_n\alpha_{n+1}+q_{n-1})]^{-1}$，直接给题中上下界。(h) 误差 $|q_n\alpha-p_n|=[q_n\alpha_{n+1}+q_{n-1}]^{-1}$ 随 $n$ 递减。(i) 相邻向量 $(p_n,q_n),(p_{n+1},q_{n+1})$ 的行列式绝对值为 $1$，整数点的最优逼近性质给：若 $0<q<q_{n+1}$，则 $|q\alpha-p|\ge|q_n\alpha-p_n|$。
+\item 令 $t_k=s_0s_1\cdots s_k\in\{-1,1\}$，则 $c_n=\sum_{k=0}^nt_k/2^k$ 绝对收敛且 $|h(s)|\le2$。每个 $y\in[-2,2]$ 可先按符号选 $t_0$，再对余量逐位选 $t_k$，所以 $h:\mathcal S\to[-2,2]$ 满射；二进制端点有双重表示，故非单射。\textbf{原题符号错误：}写成 $h:\mathcal S\to(1,2]$ 不成立，例如全取 $s_k=-1$ 可得非正值。嵌套根式的最内层应为 $\sqrt2$；用半角公式 $2\sin(\theta/2)=\sqrt{2-2\cos\theta}$ 并按 $s_k$ 选符号，可归纳得到修订后的恒等式。全为正号时 $n$ 层根式单调增且有界于 $2$，极限满足 $L=\sqrt{2+L}$，故为 $2$。
+\item Banach--Mazur 游戏是研究拓扑“大”集合的无限回合博弈；此条原稿只要求查阅概念，并无待计算或证明的具体命题。
+\end{enumerate}
+
+\clearpage
+
+\section{10月14--20日 · Week 6}
+
+\subsection*{作业}
+
+\begin{enumerate}
+
+
+\item 计算下列极限:
+\begin{align*}
+(1) & \lim_{x \to +\infty} \left( \frac{2}{\pi} \arctan x\right)^x  & (2) & \lim_{x \to \frac{\pi}{2}-} (\sin x )^{\tan x}\\
+(3) & \lim_{x \to \infty} \left( \frac{x^2 -1}{x^2 +1}\right)^{x^2} & (4) & \lim_{x \to \frac{\pi}{2}-} (\cos x)^{\frac{\pi}{2} - x} \\
+(5) & \lim_{x \to 0} \frac{\sin 2x - 2 \sin x}{x^3} & (6) & \lim_{x \to 1} \left[(1-x)\tan\left(\frac{\pi}{2}x\right) \right]
+\end{align*}
+
+
+\item 求极限: 
+\begin{align*}
+1. & \ \lim_{x \to 0} \frac{\sqrt{1 + x \sin x} -1}{x \arctan x}\\
+2. & \ \lim_{x \to 0} \frac{\sin 2x + 2 \arctan 3x + 3x^2}{\ln(1 + 3x + \sin^2 x) + xe^x} \\
+3. & \ \lim_{x \to 0+}(\sin x)^{\frac{1}{\ln x}}
+\end{align*}
+
+\item 设$a>0, b>0$, 求极限
+\[
+\lim_{n \to \infty} \left( \frac{\sqrt[n]{a} + \sqrt[n]{b}}{2} \right)^n.
+\]
+
+\item (选做)计算极限$\lim\limits_{n \to \infty}\prod_{k=1}^n \cos \frac{x}{2^k}$, 并证明Vi\'ete公式
+\[
+\frac{\pi}{2} = \frac{1}{\sqrt{\frac{1}{2}} \cdot \sqrt{\frac{1}{2} + \frac{1}{2}\sqrt{\frac{1}{2}}} \cdot \sqrt{\frac{1}{2} + \frac{1}{2}\sqrt{\frac{1}{2} + \frac{1}{2}\sqrt{\frac{1}{2}}}} \cdot \cdots}.
+\]
+
+\item 求极限
+\begin{align*}
+(1) & \lim_{n \to \infty} \frac{3 \sqrt[n]{16} - 4 \sqrt[n]{8} +1}{(\sqrt[n]{2}-1)^2} \\
+(2) & \lim_{n \to \infty}\frac{\sqrt[n]{n^4} + 2 \sqrt[n]{n^2} -3}{\sqrt[n]{n^2} - 3 \sqrt[n]{n} +2}.
+\end{align*}
+
+\item 设$f(x)$定义在$[a, b]$上. 若对任意的$\xi \in [a, b]$, 均存在极限$\lim_{x \to \xi}f(x)$, 则$f(x)$在$[a, b]$上有界.
+
+\item 求极限
+\begin{align*}
+(1) & \ a_n = \sum_{k=1}^n \frac{1}{\sqrt{1^3 + 2^3 + \cdots + k^3}} \\ 
+(2) & \ a_n = \sum_{k=1}^n \frac{1}{k(k+1)(k+2)}\\
+(3) & \lim_{n \to \infty} \sqrt[n]{(x^2 + 1)(x^2 + 2) \cdots (x^2 + n)} - x^2
+\end{align*}
+
+\item 3.5节6, 7, 8.
+
+\end{enumerate}
+
+\subsection*{原稿参考答案}
+
+\noindent 原稿未附这一周的参考答案。
+
+\subsection*{GPT 补充参考答案}
+
+\noindent\textbf{以下由 GPT 给出。}按原稿题序：
+\begin{enumerate}
+\item 六个极限依次为 $e^{-2/\pi},1,e^{-2},1,-1,2/\pi$。分别使用 $\ln(1+t)\sim t$、$\sin t\sim t$、$\arctan t\sim t$，以及 $\arctan x\to\pi/2$。
+\item 三个极限依次为 $1/2,2,e$；在 $0/0$ 型中先化为标准等价无穷小，再取对数处理指数型。
+\item 两正数的题目极限为 $\sqrt{ab}$；取对数后用 Ces\`aro 均值。
+\item（选做）由 $\sin x=2^n\sin(x/2^n)\prod_{k=1}^n\cos(x/2^k)$，令 $n\to\infty$ 得 $\prod_{k=1}^\infty\cos(x/2^k)=\sin x/x$（$x=0$ 时按连续值取 $1$）。令 $x=\pi/2$ 即 Vi\`ete 公式。
+\item 两个极限分别为 $6,-8$。
+\item 在每个点附近，有限单侧或双侧极限使函数在穿孔邻域内有界；再考虑该点函数值。用紧区间有限覆盖取全局界。
+\item 三个极限分别为 $2,1/4,+\infty$。前两题分别用 $\sum_{k=1}^n k^3=[n(n+1)/2]^2$ 与望远镜求和；第三题由 $(n!)^{1/n}\sim n/e$，其余固定参数因子的 $n$ 次方根趋 $1$。
+\item 参见教材。
+\end{enumerate}
+
+\clearpage
+
+\section{10月28日--11月3日 · Week 8}
+
+\subsection*{作业}
+
+\begin{enumerate}
+
+\item 有时用函数在一个点的振幅来刻画连续性, 定义如下: 对于点$a$的邻域$U(a, \delta)$, 定义$f$在这个邻域上的振幅为
+\[
+\omega_f(a, \delta) = \sup_{x \in U(a, \delta)}\{ f(x)\} - \inf_{x \in U(a, \delta)}\{ f(x)\},
+\]
+然后令
+\[
+\omega_f(a) = \lim_{\delta \to 0+} \omega_f(a, \delta),
+\]
+称为函数$f$在点$a$的振幅. {\bf 证明}: 函数$f$在点$a$处连续的充分必要条件是$\omega_f(a) =0$.
+ 
+
+\item 设有三个函数$f_1, f_2, f_3 \in C([a, b])$, 对每个$x \in [a, b]$, 定义$f(x)$是$f_1(x), f_2(x), f_3(x)$中处于中间的一个值, 证明: $f \in C([a, b])$.
+
+\item 证明: 偶数次多项式$f(x) = x^{2n} + a_1 x^{2n-1} + \cdots + a_{2n-1} x + a_{2n} = 0$可以没有实根, 但当$a_{2n}<0$时则至少有两个实根.
+
+\item 证明:
+
+(1.) 设$f \in C([a, b])$, 若$(a, b)$中无$f(x)$的极值点, 则$f(x)$在$[a, b]$上单调.
+
+(2.) 设$f \in C(\mathbb R)$. 若对任意的开区间$(a, b)$, 其值域$f((a, b))$必是开区间, 则$f(x)$必单调.
+
+\item 若$f \in C(a, b)$, 且$f(a+) = f(b-) = +\infty$. 证明: $f$在$(a, b)$上有最小值.
+
+\item 若$f \in C(a, b)$, 且$f(a+) = f(b-)$. 证明: $f$在$(a, b)$上至少可以取到最大值或最小值中的一个.
+
+\item 设$f \in C([a, b])$, 且为一对一映射. 证明:
+
+(1) 若$f(a)<f(b)$, 则$f$严格单调增加;
+
+(2) 若$f(a)>f(b)$, 则$f$严格单调减少.
+\item 设函数$f$在区间$[0, 2a]$上连续, 且$f(0) = f(2a)$. 证明: 在$[0, a]$上至少存在某个$x$, 使得$f(x) = f(x+a)$.
+
+\item 设函数$f$在区间$[a, b]$中只有第一类间断点, 证明: $f$在$[a, b]$上有界.
+
+\item 若$f \in C([a, +\infty))$, 且存在有限极限$\lim_{x \to +\infty}f(x)$. 证明: $f$在$[a, +\infty)$上有界.
+
+
+\item 求证三次方程$x^3 + 2x -1=0$只有唯一实根, 此根在$(0, 1)$内.
+
+\item 利用一致连续性的定义直接证明: 若$f$在$(a, b)$上一致连续, 则$f$有界.
+\item 设$f$为$(-\infty, +\infty)$上连续的周期函数, 证明: $f$在$(-\infty, +\infty)$上一致连续.
+
+\end{enumerate}
+\paragraph{选做题}
+\begin{enumerate}
+
+\item 集合$E$被称为开集, 指它的每个点皆为内点, 即$\forall x_0 \in E, \exists \delta >0$使得$(x_0 - \delta, x_0 + \delta ) \subset E$. 开集的补集被称为闭集. 因此对于一维欧氏空间, 开集即是可数个开区间的并集.
+
+{\bf 证明命题}: 函数$f(x)$在$\mathbb R$上连续$\Leftrightarrow$任何开集的逆像仍为开集(即: 设$E$为$\mathbb R$上的开集, 则$f^{-1}(E) := \{ x | f(x) \in E \}$为实轴上的开集).
+
+
+\item 
+
+\begin{enumerate}
+
+\item 开区间上严格单调函数的反函数在自己的定义域上连续.
+
+\item 构造一个具有可数个间断点集合的单调函数.
+
+\item 证明: 如果函数$f : X \to Y$和$f^{-1} : Y \to X$互为反函数($X, Y$都是$\mathbb R$的子集), 并且$f$在点$x_0 \in X$连续, 则由此不能推出$f^{-1}$在点$y_0 = f(x_0) \in Y$连续.
+\end{enumerate}
+
+\item 证明:
+\begin{enumerate}
+
+\item 如果$f, g \in C[a, b]$, 并且$f(a) < g(a), f(b) > g(b)$, 则满足$f(c) = g(c)$的点$c \in [a, b]$存在.
+
+\item 闭区间$[0, 1]$到自身的任何连续映射$f : [0, 1] \to [0, 1]$都有不动点, 即满足$f(x) = x$的点$x \in [0, 1]$.
+
+\item 如果闭区间到自身的两个连续映射$f$和$g$可交换, 即$f \circ g = g \circ f$, 则它们未必有共同的不动点. 
+
+\item 连续映射$f : \mathbb R \to \mathbb R$可以没有不动点.
+
+\item 连续映射$f : [0, 1] \to [0, 1]$可以没有不动点.
+
+\item 如果$f \in C[0, 1]$, $f(0) = 0, f(1) = 1$, 并且在$[0, 1]$上$f \circ f (x) \equiv x$, 则$f (x) \equiv x$.
+\end{enumerate}
+
+\item 证明:
+\begin{enumerate}
+\item 如果$f \in C[0, 1], f(0) = 0, f(1) = 1$, 并且对某个$n \in \mathbb N$, 在$[0, 1]$上成立
+\[
+f^n(x) : = (\underbrace{f \circ \cdots \circ f}_{n\text{次}}) (x) \equiv x,
+\] 
+则$f(x) \equiv x$.
+
+\item 如果$f \in C[0, 1]$是单增不减函数, 则对于任何一个$x \in [0, 1]$, 至少满足以下两种情况:
+\begin{enumerate}
+\item[(i)] $x$是不动点;
+
+\item[(ii)] $f^n(x)$收敛到不动点.
+\end{enumerate}
+
+\end{enumerate}
+
+\item 设$\delta >0$时, 定义函数$f : E \to \mathbb R$的{\bf 连续模}函数$\omega(\delta)$为:
+\[
+\omega(\delta) = \sup_{\substack{|x_1 - x_2| <\delta \\ x_1, x_2 \in E}} |f(x_1) - f(x_2)|.
+\]
+这里对集合$E$中相互距离小于$\delta$的一切可能的两个点取上确界. 证明:
+
+\begin{enumerate}
+\item 连续模函数$\omega(\delta)$单增不减且非负, 且$\omega(\delta +)$存在.
+
+\item 对于任意$\epsilon >0$, 存在$\delta >0$, 使得对于任何两点$x_1, x_2 \in E$满足$|x_1 - x_2| < \delta$, 成立$|f(x_1) - f(x_2)| < \omega(0+) + \epsilon$.
+
+\item 如果$E$是闭区间, 开区间或半开区间, 则连续模函数成立:
+\[
+\omega(\delta_1 + \delta_2) \leq \omega(\delta_1) + \omega(\delta_2).
+\]
+
+\item 设$\delta>0$, 说明$\mathbb R$上的函数$x$和$\sin x^2$的连续模分别是$\omega(\delta) = \delta$和$\omega(\delta) = 2$.
+
+\item 函数$f$在$E$上一致连续的充分必要条件是$\omega(0+) =0$.
+\end{enumerate}
+
+\item 环的理想称为极大的, 如果它除自身外不包含在任何更大的理想中. 闭区间上的连续函数集合$C[a, b]$关于加法和乘法构成环. 求出这个环的极大理想. 
+\end{enumerate}
+
+\subsection*{原稿参考答案}
+
+\begin{enumerate}
+
+\item 有时用函数在一个点的振幅来刻画连续性, 定义如下: 对于点$a$的邻域$U(a, \delta)$, 定义$f$在这个邻域上的振幅为
+\[
+\omega_f(a, \delta) = \sup_{x \in U(a, \delta)}\{ f(x)\} - \inf_{x \in U(a, \delta)}\{ f(x)\},
+\]
+然后令
+\[
+\omega_f(a) = \lim_{\delta \to 0+} \omega_f(a, \delta),
+\]
+称为函数$f$在点$a$的振幅. {\bf 证明}: 函数$f$在点$a$处连续的充分必要条件是$\omega_f(a) =0$.
+ 
+ 
+ \begin{proof}
+
+$\Rightarrow$. 利用连续性的定义, $\forall \epsilon>0$充分小, $\exists \delta>0$, 使得当$x \in U(a, \delta)$时, $|f(x) - f(x_0)| < \epsilon$. 则$\forall y_1, y_2 \in U(a, \delta)$, 则$|f(y_1) - f(y_2)|  < 2 \epsilon$. 注意$\sup_{x \in U(a, \delta)}\{ f(x)\} - \inf_{x \in U(a, \delta)}\{ f(x)\} = \sup_{x, x' \in U(a, \delta)} |f(x) - f(x')|$. 因此$\omega_f(a, \delta) < 2\epsilon$. 即证. 
+
+$\Leftarrow$. 类似可证.
+
+\end{proof}
+
+
+\item 设有三个函数$f_1, f_2, f_3 \in C([a, b])$, 对每个$x \in [a, b]$, 定义$f(x)$是$f_1(x), f_2(x), f_3(x)$中处于中间的一个值, 证明: $f \in C([a, b])$.
+
+
+\begin{proof}
+
+只需注意$f = f_1 + f_2 + f_3 - \max\{ f_1, f_2, f_3\} - \min\{ f_1, f_2, f_3\}$. 再利用4.2节第3题结论即可(自己证明).
+
+\end{proof}
+
+
+\item 证明: 偶数次多项式$f(x) = x^{2n} + a_1 x^{2n-1} + \cdots + a_{2n-1} x + a_{2n} = 0$可以没有实根, 但当$a_{2n}<0$时则至少有两个实根.
+
+
+\begin{proof}
+
+首先注意$f(0) =a_{2n} < 0$, 其次$\lim_{x \to -\infty} f(x) = \lim_{x \to +\infty}f(x) = +\infty$. 在$(-\infty, 0]$和$[0, +\infty$上分别利用推广的零点定理即可(课上证明过, 请重新证明).
+
+
+\end{proof}
+
+\item 证明:
+
+(1.) 设$f \in C([a, b])$, 若$(a, b)$中无$f(x)$的极值点, 则$f(x)$在$[a, b]$上单调.
+
+(2.) 设$f \in C(\mathbb R)$. 若对任意的开区间$(a, b)$, 其值域$f((a, b))$必是开区间, 则$f(x)$必单调.
+
+
+\begin{proof}
+
+(1) 注意最值一定是极值, 因此函数$f$在端点$a, b$处取到最值. 不妨设$f(a)$为最小值, $f(b)$为最大值. 反证, 设存在$x_1 < x_2$使得$f(x_1) > f(x_2)$. 那么在区间$[a, x_2]$上函数取到最大值, 且最大值非$f(x_2)$, 矛盾.
+
+(2) 反证. 假设$f(x)$不单调. 那么根据(1)问, 存在闭区间$[a, b]$使得$(a, b)$中存在$f(x)$的极值点. 不妨设$c\in(a, b)$为极大值点, 那么存在开区间$(c-\delta, c+\delta)$使得$f(c)$为其上的最大值. 可知值域$f((c-\delta, c+\delta))$不是开区间, 矛盾.
+
+\end{proof}
+
+\item 若$f \in C(a, b)$, 且$f(a+) = f(b-) = +\infty$. 证明: $f$在$(a, b)$上有最小值.
+
+\begin{proof}
+
+取$c = \frac{a+b}{2}$. 根据条件, 存在$\delta < \frac{b-a}{4}$使得在$(a, a+\delta)$和$(b-\delta, b)$上$f(x) \geq  f(c)$. 在区间$[a+\delta, b-\delta]$上$f(x)$存在最小值, 并且最小值一定$\leq f(c)$. 即证.
+
+\end{proof}
+
+\item 若$f \in C(a, b)$, 且$f(a+) = f(b-)$. 证明: $f$在$(a, b)$上至少可以取到最大值或最小值中的一个.
+
+
+\begin{proof}
+
+分三种情况讨论即可:
+
+(1) $f(a+) = f(b-) = +\infty$, 此时在$(a, b)$内可以取到最小值.
+
+(2) $f(a+) = f(b-) = -\infty$, 此时在$(a, b)$内可以取到最大值.
+
+(3) $f(a+) = f(b-)$为有限数. 将$f(x)$连续延拓为闭区间$[a, b]$上的连续函数$F(x)$: 
+\[
+F(x) = \begin{cases} 
+f(x), & x \in (a, b)\\
+f(a+), & x =a\\
+f(b-), & x =b
+\end{cases}
+\]
+那么$F(x)$在$[a, b]$上存在最大值和最小值. 如果两个最值均在端点$a$和$b$处取到, 由于$F(a) = F(b)$, 这说明$F(x)$是常值函数, 因此$f(x)$也是常值函数. 无论何种情况, $f(x)$在$(a, b)$内部都有最值点.
+
+
+\end{proof}
+
+
+\item 设$f \in C([a, b])$, 且为一对一映射. 证明:
+
+(1) 若$f(a)<f(b)$, 则$f$严格单调增加;
+
+(2) 若$f(a)>f(b)$, 则$f$严格单调减少.
+
+
+\begin{proof}
+
+只需证明(1). 首先证明最小值为$f(a)$而最大值为$f(b)$, 实际上只需证明在$(a, b)$内没有极值点. 反证, 不妨设在$(a, b)$内存在极小值(极大值同理), 极小值点为$c$. 那么存在$c$的邻域$[c-\delta, c+\delta] \subset (a, b)$(注意怎么选取得到闭邻域)使得$f(x) \geq f(c), \forall x \in [c-\delta, c+\delta]$成立. 根据一一映射条件, 实际上$f(x) > f(c)$. 在两个区间$[c-\delta, c]$和$[c, c+\delta]$上分别考虑. 如果$f(c-\delta) = f(c+\delta)$, 则又与一一映射矛盾. 不妨再设$f(c-\delta) < f(c+\delta)$, 则根据介值定理存在$x' \in (c, c+\delta)$ 使得$f(x') = f(c-\delta)$, 又矛盾. 这说明$f$在$(a, b)$内没有极值, 因此$f$在$[a, b]$上单调(前面习题), 这说明最小值为$f(a)$而最大值为$f(b)$.
+
+再反证. 假设$f$不是严格单调增, 因此存在两个点$x_1 < x_2$使得$f(x_2) \leq f(x_1)$. 由于$f$已证明为单调增函数, 则一定有$f(x_2) = f(x_1)$, 与一一映射矛盾. 
+
+
+\end{proof}
+
+
+\item 设函数$f$在区间$[0, 2a]$上连续, 且$f(0) = f(2a)$. 证明: 在$[0, a]$上至少存在某个$x$, 使得$f(x) = f(x+a)$.
+
+
+\begin{proof}
+
+考虑辅助函数$g(x) = f(x+a) - (x)$在$[0, a]$上连续. 那么
+\[
+g(0) =f(a) - f(0), \ g(a) = f(2a) - f(a) = f(0)- f(a) =  - g(0).
+\]
+利用零点定理即证.
+
+
+\end{proof}
+
+\item 设函数$f$在区间$[a, b]$中只有第一类间断点, 证明: $f$在$[a, b]$上有界.
+
+\begin{proof}
+
+反证. 假设$f$在$[a, b]$上无界, 那么对于任意$n \in \mathbb N^*$, 存在$x_n \in [a, b]$ 使得$|f(x_n)| \geq n$.
+利用致密性定理取子列$\{ x_{k_n} \}$, $x_{k_n} \to \xi \in [a, b]$. 注意
+\[
+\lim_{n \to \infty} f(x_{k_n}) = \infty \neq f(\xi).
+\]
+这说明$\xi$是无穷间断点, 一定不是第一类间断点.
+
+\end{proof}
+
+\item 若$f \in C([a, +\infty))$, 且存在有限极限$\lim_{x \to +\infty}f(x)$. 证明: $f$在$[a, +\infty)$上有界.
+
+\begin{proof}
+
+不妨设$\lim_{x \to +\infty}f(x)=A$. 取$\epsilon =1$, 则存在$M \geq a$使得$A-1\leq f(x) \leq A+1$当$x \in [M, +\infty)$时成立. 在$[a, M]$上用有界性定理即可.
+
+\end{proof}
+
+\item 求证三次方程$x^3 + 2x -1=0$只有唯一实根, 此根在$(0, 1)$内.
+
+\begin{proof}
+
+设$f(x) = x^3 + 2x -1=0$. 则$f(0) =-1, f(1) = 2$, 因此在$(0, 1)$内有零点. 再注意$f(x)$为严格单调增函数即可.
+
+\end{proof}
+
+\item 利用一致连续性的定义直接证明: 若$f$在$(a, b)$上一致连续, 则$f$有界.
+
+\begin{proof}
+
+根据一致连续型定义, 取$\epsilon =1$, 存在$\delta_1 > 0$, 使得$\forall x, x' \in (a, b)$, 只要$|x - x'|<\delta_1$, 成立$|f(x) - f(x'')|<1$. 根据阿基米德原理, 存在正整数$n > \frac{b-a}{\delta_1}$. 在$(a ,b)$中插入$n$个点$a<x_1< x_2 < \cdots < x_n<b$将$(a, b)$均分为$n+1$个区间, 那么每个区间的长度都$\leq \frac{b-a}{n} < \delta_1$. 因此$\forall x \in (a, b)$, 都存在$x_i, 1 \leq i \leq n$, 使得
+\[
+|f(x) - f(x_i)| < 1.
+\]
+令$M  = \max_{1 \leq i \leq n}\{ f(x_i)\}, m = \min_{1 \leq i \leq n}\{ f(x_i)\}$, 那么
+\[
+m-1 \leq f(x) \leq M+1, \forall x \in (a, b).
+\]
+即证.
+
+\end{proof}
+
+\item 设$f$为$(-\infty, +\infty)$上连续的周期函数, 证明: $f$在$(-\infty, +\infty)$上一致连续.
+
+\begin{proof}
+
+设周期为$T >0$. 那么$f(x)$在$[0, 2T]$上一致连续. 因此$\forall \epsilon>0$, 存在$\delta >0$, 使得$\forall x', x'' \in [0, 2T], |x'-x''|< \delta$, 成立$|f(x') -f(x'')| <\epsilon$.
+
+
+现在对于任意的$x_1, x_2 \in (-\infty, +\infty), |x_1 - x_2|<\delta$, 不妨设$x_1, x_2 \in [kT, (k+2)T], k \in \mathbb Z$. 令$x_1' =x_1 - kT, x_2' =x_2 -kT $, 那么$x_1', x_2' \in [0, 2T]$, $|x_1' -x_2'| < \delta$, 且
+\[
+|f(x_1) - f(x_2)| = |f(x_1') - f(x_2')| < \epsilon.
+\]
+即证.
+
+\end{proof}
+
+\end{enumerate}
+
+\subsection*{GPT 补充参考答案}
+
+\noindent\textbf{选做题参考答案（由 GPT 给出）。}
+\begin{enumerate}
+\item 若 $f$ 连续，$x\in f^{-1}(U)$ 时可取 $f(x)$ 的小邻域包含于开集 $U$，连续性给 $x$ 的邻域落在逆像中。反过来，对 $f(x)$ 的任意开邻域 $U$，$f^{-1}(U)$ 在 $x$ 附近是开邻域，故 $f$ 在 $x$ 连续。
+\item (a) 单调且有反函数意味着严格单调；介值性保证像区间无空隙，故逆函数连续。(b) $f(x)=\sum_{n\ge1}2^{-n}\mathbf1_{[q_n,\infty)}(x)$，其中 $\{q_n\}$ 枚举有理数，是单调函数且间断点恰为可数稠密集 $\{q_n\}$。(c) 取 $X=\{0,1,2,\ldots\}$、$Y=\{0\}\cup\{1/n:n\ge1\}$，$f(0)=0,f(n)=1/n$；$0$ 在 $X$ 中孤立故 $f$ 于此连续，但 $f^{-1}$ 在 $0\in Y$ 不连续。
+\item (a) 对 $f-g$ 用介值定理。(b) 对 $f(x)-x$ 用介值定理。(c) 两个可交换的连续区间自映射可能没有共同不动点；具体构造参见 Boyce, \emph{Commuting functions with no common fixed point}, Trans. Amer. Math. Soc. 137 (1969), 77--92, DOI 10.1090/S0002-9947-1969-0236331-5。(d) $f(x)=x+1$。(e) \textbf{原稿命题为假}，与 (b) 矛盾，应改为“不能没有不动点”。(f) 连续自反映射是单调双射；端点固定迫使其单调增。若存在 $f(x)>x$ 或 $f(x)<x$，迭代不可能两步回到 $x$，故 $f(x)=x$。
+\item (a) $f^n=\mathrm{id}$ 使 $f$ 为连续单射，端点固定迫使单调增；若 $f(x)\ne x$，单调迭代与 $f^n(x)=x$ 矛盾。(b) 若 $f(x)>x$，迭代序列单调增且有界；若 $f(x)<x$ 则单调减。极限 $L$ 满足 $f(L)=L$；等号情形已是不动点。
+\item 连续模：(a) 随 $\delta$ 增大取上确界的点对增加，故非负单调，右极限存在。(b) 取足够小的 $\delta$ 使 $\omega(\delta)<\omega(0+)+\varepsilon$。(c) 区间内任意相距小于 $\delta_1+\delta_2$ 的两点可插入中点，使两段距离分别小于 $\delta_1,\delta_2$，三角不等式给次可加性。(d) $f(x)=x$ 的模为 $\delta$；$\sin x^2$ 在任意固定距离内、充分远处可取近邻的极大与极小值，模为 $2$。(e) 一致连续的定义正是 $\omega(\delta)\to0$。
+\item 对任意 $c\in[a,b]$，$M_c=\{f:f(c)=0\}$ 是极大理想，因为求值映射 $C[a,b]\to\mathbb R$ 的核为 $M_c$。反过来，若极大理想 $I$ 的全部函数没有公共零点，紧致性给有限个 $f_1,\ldots,f_m\in I$ 使 $\sum f_i^2>0$ 处处成立；于是 $1=\sum_i f_i[f_i/(\sum_jf_j^2)]\in I$，矛盾。故 $I\subset M_c$，极大性给 $I=M_c$。
+\end{enumerate}
+
+\clearpage
+
+\section{11月4--10日 · Week 9}
+
+\subsection*{作业}
+
+\begin{enumerate}
+\item 设函数$f(x)$在点$a$处连续, 且$f(a) \neq 0, [f(x)]^2$在点$a$可导. 证明: $f(x)$也在点$a$可导. 
+\begin{enumerate}
+\item $\lim\limits_{n \to \infty} \Big[\frac{f(a + \frac{1}{n})}{f(a)}\Big]^n$ (已知$f'(a)$存在且$f(a) \neq 0$).
+\item $\lim\limits_{x \to 0} \frac{f(x) e^x -f(0)}{f(x) \cos x - f(0)}$ ($f'(0) \neq 0$).
+\item $\lim\limits_{x \to x_0} \Big[ \frac{f(x)}{f(x_0)}\Big]^{\frac{1}{\ln x- \ln x_0}}$ ($x_0>0$, $f'(x_0)$存在, $f(x_0)>0$).
+\item $\lim\limits_{x \to 0} \frac{1}{x} \sum_{i=1}^k f\left( \frac{x}{i}\right)$ (已知$f'(0)$存在, 且$f(0) =0$, $k \in \mathbb N^*$ ).
+\end{enumerate}
+
+\item ({\bf 选做})求和式$\sum_{k=1}^n \frac{1}{2^k} \tan \frac{x}{2^k} $. 
+
+
+\item 证明:
+\begin{enumerate}
+\item 可导的偶函数的导函数为奇函数.
+\item 可导的奇函数的导函数为偶函数.
+\item 可导的周期函数的导函数为周期函数.
+\end{enumerate}
+\item 设偶函数$f(x)$在点$x=0$处可导, 求$f'(0)$.
+\item 设$f$是一个三次多项式, 且$f(a) =f(b) =0$. 证明: 函数$f$在$[a, b]$上不变号的充分必要条件是$f'(a) f'(b) \leq 0$.
+\item 设函数$f$在$[a, b]$上可导, $f(a) = f(b) =0$, 且
+\[
+(\lim_{x \to a+} f'(x)) (\lim_{x \to b-} f'(x)) >0.
+\]
+证明: $f$在$(a, b)$内至少有一个零点.
+
+
+\item 设$f(x)$为多项式, $a$是实数. 若$f(a) =0$, 则称$a$为$f(x)$的一个根. 若有因式分解$f(x) = (x - a)^k g(x)$, 其中$g(x)$也是多项式(注意常数是零次多项式), $g(a) \neq 0$, $k \geq 1$为正整数, 则称$a$是$f(x)$的$k$重根. 若$k=1$, 则称$x = a$为$f(x)$的单根. 
+
+
+证明: 若$x =a $是$f(x)$的$k$重根, 则$x =a $也是$f'(x)$的$k-1$重根.
+
+\item 设在原点某邻域$U(0)$上有$|f(x)| \leq |g(x)|$, 且$g(0) = g'(0) =0$, 求$f'(0)$.
+\item 给定函数
+\[
+f(x) = \begin{cases}
+0, & x \notin \mathbb Q\\
+x, & x \in \mathbb Q,
+\end{cases} \ \ 
+g(x) =  \begin{cases}
+0, & x \notin \mathbb Q\\
+x^2, & x \in \mathbb Q,
+\end{cases}
+\]
+讨论连续性与可导性.
+
+\item 设$f(x) = x(x-1)(x-2) \cdots (x-100)$, 求$f'(0)$.
+
+\item 设$y = \arctan x$, 求$y^{(n)}(0)$.
+
+\end{enumerate}
+
+\subsection*{原稿参考答案}
+
+\noindent 原稿未附这一周的参考答案。
+
+\subsection*{GPT 补充参考答案}
+
+\noindent\textbf{以下由 GPT 给出。}按原稿题序：
+\begin{enumerate}
+\item 因 $f(a)\ne0$，$f(x)-f(a)=[f(x)^2-f(a)^2]/[f(x)+f(a)]$，故 $f'(a)=(f^2)'(a)/(2f(a))$。随后四个极限依次为 $\exp(f'(a)/f(a))$、$1+f(0)/f'(0)$、$\exp(x_0f'(x_0)/f(x_0))$、$H_k f'(0)$；均须满足原题所写非零条件。
+\item（选做）利用 $\tan t=\cot t-2\cot(2t)$ 望远镜求和，得 $\sum_{k=1}^n2^{-k}\tan(x/2^k)=2^{-n}\cot(x/2^n)-\cot x$；若再令 $n\to\infty$，极限为 $1/x-\cot x$（在各式有定义的区间）。
+\item 奇函数的导数为偶函数，偶函数的导数为奇函数；可导周期函数的导数同周期。
+\item 偶函数在 $0$ 可导时，左右差商互为相反数，故 $f'(0)=0$。
+\item 三次多项式在两个不同实根 $a<b$ 间不变号，当且仅当第三根不位于 $(a,b)$；等价于 $f'(a)f'(b)\le0$（按重根计）。
+\item $f'(a+)$ 与 $f'(b-)$ 同号且 $f(a)=f(b)=0$ 时，两端附近的 $f$ 值异号，介值定理给出内部零点。
+\item 若 $f(x)=(x-a)^k g(x)$ 且 $g(a)\ne0$，则前 $k-1$ 阶导数在 $a$ 为零，第 $k$ 阶为 $k!g(a)$。
+\item 从 $|f(x)|\le |g(x)|$ 及 $g(0)=g'(0)=0$ 得 $|f(x)/x|\le|g(x)/x|\to0$，故 $f'(0)=0$。
+\item 原稿两个有理/无理分段函数都仅在 $0$ 连续；$x$ 与 $0$ 拼成者在 $0$ 不可导，$x^2$ 与 $0$ 拼成者在 $0$ 可导且导数为 $0$。
+\item $f(x)=\prod_{j=0}^{100}(x-j)$ 时 $f'(0)=\prod_{j=1}^{100}(-j)=100!$。
+\item $\arctan x=\sum_{m\ge0}(-1)^m x^{2m+1}/(2m+1)$，故偶阶导数在 $0$ 为 $0$，第 $2m+1$ 阶为 $(-1)^m(2m)!$。
+\end{enumerate}
+
+\clearpage
+
+\section{11月11--17日 · Week 10}
+
+\subsection*{作业}
+
+\begin{enumerate}
+
+\item 设$f(x)$在$[a, b]$上二次可导, $f(a) = f(b) =0$. 若存在$a < c < b$使得$f(c) >0$, 则存在$\xi \in (a, b)$, 使得$f''(\xi) <0$.
+
+\item 证明: 设$f'(x)$在$x=a$处的右极限存在且有限, 则$f(x)$在$x=a$的右极限也存在且有限.
+
+\item 设函数$f(x)$在闭区间$[a, b]$上连续, 在开区间$(a, b)$内可导, 且$f(a) = f(b)$. 求证: 若$f(x)$在$[a, b]$上不为常数, 则$\exists \xi, \eta \in (a, b)$, 使得
+\[
+f'(\xi) \cdot f'(\eta) <0.
+\]
+
+\item 证明等式、不等式或求极限:
+\begin{enumerate}
+\item 当$0 < \alpha < \beta < \frac{\pi}{2}$时, $\frac{\beta - \alpha}{\cos^2 \alpha} < \tan \beta - \tan \alpha < \frac{\beta - \alpha}{\cos^2 \beta}$.
+
+\item $\arctan e^x + \arctan e^{-x} = \frac{\pi}{2}, x \in (-\infty, +\infty)$.
+
+\item 当$x>1$时, $e^x > e x$.
+
+\item $\lim_{x \to a} \frac{\sin x^x - \sin a^x}{a^{x^x} - a^{a^x}} (a > 1)$.
+
+\item $\lim_{n \to \infty} n[\arctan[\ln(n+1)] - \arctan (\ln n)]$.
+
+\end{enumerate}
+
+\item 函数$f(x)$在$[a, b]$可导, 其中$a >0$, 证明: 存在$\xi \in (a, b)$, 使得
+\[
+2 \xi [f(b) - f(a)] = (b^2 - a^2) f'(\xi).
+\]
+
+
+\item 设奇函数$f(x)$在$[-1, 1]$上具有二阶导数, 且$f(1) =1$, 证明:
+
+(1) 存在$\xi \in (0, 1)$使$f'(\xi) =1$.
+
+(2) 存在$\eta \in (-1, 1)$使得$f''(\eta) + f'(\eta) =1$.
+
+
+\item 设$f(x)$在$[a, b]$上连续, 在$(a, b)$内可导. 求证: 存在$\xi \in (a, b)$, 使得
+\[
+f(\xi) + \xi f'(\xi) = \frac{bf(b) - af(a)}{b-a}.
+\]
+
+\item 设函数$f(x)$在$(a, b)$内可导, $a, b >0$, 且$f(a+), f(b-)$均存在且为有限数. 证明: $\exists \xi \in (a, b)$使得
+\[
+\frac{1}{a - b}  \left| 
+\begin{array}{cc}
+a & b \\
+f(a+) & f(b-) 
+\end{array}
+\right| = f(\xi) - \xi f'(\xi).
+\]
+
+\item 设$f(x)$在$[a, b]$上连续, 在$(a, b)$内可导, 且
+\[
+f(a) \cdot f(b) >0, \ f(a) \cdot f\left( \frac{a+b}{2} \right) <0.
+\]
+证明: $\xi \in (a, b)$, 使得$f'(\xi) = f(\xi)$.
+
+\item 设函数$f(x)$在$[0, 1]$上连续, 在$(0, 1)$内可导, 且$f(0) = 0, f(1) = \frac{1}{2}$. 证明: 存在$\xi, \eta \in (0, 1), \xi \neq \eta$, 使得
+\[
+f'(\xi) + f'(\eta) = \xi + \eta.
+\]
+
+
+\end{enumerate}
+
+\subsection*{原稿参考答案}
+
+\noindent 原稿未附这一周的参考答案。
+
+\subsection*{GPT 补充参考答案}
+
+\noindent\textbf{以下由 GPT 给出。}按原稿题序：
+\begin{enumerate}
+\item 若处处 $f''\ge0$，凸函数位于连接两个零端点的弦下方，便有 $f\le0$，与原题的正值矛盾。因此某处 $f''<0$。
+\item 右导数有有限极限则在端点附近有界；由中值定理 $|f(x)-f(y)|\le M|x-y|$，故 $f(a+)$ 存在。
+\item 非常值函数有相等端点值时，某处高于或低于端点值；中值定理分别给出正、负导数值。
+\item 四个不等式及极限：$\sec^2x$ 单增可用于第一式；第二式用 $\arctan u+\arctan(1/u)=\pi/2$；第三式取对数化为 $\ln x<x-1$；末项 $n[\arctan\ln(n+1)-\arctan\ln n]\to0$。另一个涉及 $\sin x^x$ 的式子必须先澄清幂和函数的括号；若解释为 $\sin(x^x)$，其极限为 $\cos(a^a)/(a^{a^a}\ln a)$。
+\item 对 $f$ 与 $x^2$ 应用 Cauchy 中值定理。
+\item 奇函数且 $f(1)=1$ 给 $f(0)=0$，故某处 $f'=1$。另一个结论把 $f''+f'$ 在 $[-1,1]$ 积分，其平均值为 $1$，连续性给出所求点。
+\item 对 $g(x)=xf(x)$ 应用中值定理。
+\item 对 $f(x)/x$ 与 $1/x$ 应用 Cauchy 中值定理（在正区间）。
+\item $e^{-x}f(x)$ 在端点同号而中间异号，至少有两个零点；Rolle 定理给 $f'=f$ 的点。
+\item 令 $g=f-x^2/2$，则 $g(0)=g(1)=0$。若 $g'\equiv0$，任取两不同点；否则 $g'$ 具有正负值，利用导数的介值性选两不同点使 $g'(\xi)+g'(\eta)=0$。
+\end{enumerate}
+
+\clearpage
+
+\section{11月25日--12月1日 · Week 12}
+
+\subsection*{作业}
+
+\begin{enumerate}
+\item 将多项式$1 + 2x + 3x^2 + 4x^3 + 5x^4$按$x+1$的幂展开.
+\item 按指定次数写出函数$f$的Maclaurin式.
+\begin{align*}
+(1) & f(x) = \frac{1 + x + x^2}{1 - x + x^2}, \text{ 写到$x$的4次};\\
+(2) & f(x) = e^{2x - x^2}, \text{ 写到$x$的5次};\\
+(3) & f(x) = \ln (\cos x), \text{ 写到$x$的6次};\\
+(4) & f(x) = \frac{x}{e^x -1}, \text{ 写到$x$的4次};\\
+(5) & f(x) = \frac{1}{\sqrt{1 - x^2}}, \text{ 写到$x$的6次}.
+\end{align*}
+\item 按指定次数写出函数$f$在指定点$x_0$处的Taylor多项式:
+\begin{align*}
+(1) & f(x) = \sin x, x_0 = \frac{\pi}{2}, \text{ 写到$2n$次};\\
+(2) & f(x) = \cos x, x_0 = \pi, \text{ 写到$2n$次};\\
+(3) & f(x) = e^x, x_0 = 1, \text{ 写到$n$次};\\
+(4) & f(x) = \ln x, x_0 = 2, \text{ 写到$n$次};\\
+(5) & f(x) = \frac{x}{1 + x^2}, x_0 = 0, \text{ 写到$2n+1$次};\\
+(6) & f(x) = xe^{-x^2}, x_0 = -1, \text{ 写到$2n+1$次}.
+\end{align*}
+
+\item 证明定理6.13. 
+
+\item 设$f(x)$在$[0, + \infty)$上具有连续的二阶导数, 且
+\[
+f(0) >0, f'(0) <0, f''(x) < 0 (x \in [0, + \infty))
+\]
+证明: 存在$\xi \in \left( 0, - \frac{f(0)}{f'(0)}\right)$, 使得$f(\xi ) = 0$.
+
+\item 求常数$a$和$n$, 使得当$x \to 0$时$e^{-x^2} - \cos(\sqrt{2}x) \sim ax^n$.
+
+\item 求极限$\lim_{x \to 0} \frac{x^2 e^{2x} + \ln (1 - x^2)}{x \cos x - \sin x}$.
+
+\item 求极限$\lim_{x \to +\infty} x^{\frac{3}{2}} (\sqrt{x+1} + \sqrt{x-1} - 2 \sqrt x)$.
+
+\item 求函数$f(x) = x^2 2^x$在$x = 0$处的$n$阶导数$f^{(n)}(0)$.
+
+
+\end{enumerate}
+
+\subsection*{原稿参考答案}
+
+\noindent 原稿未附这一周的参考答案。
+
+\subsection*{GPT 补充参考答案}
+
+\noindent\textbf{以下由 GPT 给出。}按原稿题序：
+\begin{enumerate}
+\item 以 $y=x+1$ 表示，原多项式为 $5y^4-16y^3+21y^2-12y+3$。
+\item Maclaurin 展开依次为：$1+2x+2x^2-2x^4+O(x^5)$；$1+2x+x^2-\frac23x^3-\frac56x^4-\frac1{15}x^5+O(x^6)$；$-\frac{x^2}{2}-\frac{x^4}{12}-\frac{x^6}{45}+O(x^8)$；$1-\frac{x}{2}+\frac{x^2}{12}-\frac{x^4}{720}+O(x^5)$；$1+\frac{x^2}{2}+\frac{3x^4}{8}+\frac{5x^6}{16}+O(x^8)$。
+\item 令 $h=x-x_0$：$\sin(\pi/2+h)=\cos h$，$\cos(\pi+h)=-\cos h$，$e^{1+h}=e\sum h^k/k!$，$\ln(2+h)=\ln2+\sum_{k\ge1}(-1)^{k-1}h^k/(k2^k)$，$x/(1+x^2)=\sum_{k\ge0}(-1)^kx^{2k+1}$；$x e^{-x^2}$ 在 $x_0=-1$ 时为 $(-1+h)e^{-1}e^{2h-h^2}$，按题给阶数截断。
+\item 参见教材。
+\item 严格凹性给 $f(x)<f(0)+f'(0)x$。取 $T=-f(0)/f'(0)>0$，得 $f(T)<0$；介值定理给 $(0,T)$ 内零点。
+\item $e^{-x^2}-\cos(\sqrt2x)=x^4/3+O(x^6)$，故 $n=4,a=1/3$。
+\item 分子为 $2x^3+O(x^4)$，分母为 $-x^3/3+O(x^5)$，极限为 $-6$。
+\item 根式差为 $-1/(4x^{3/2})+O(x^{-7/2})$，所求极限为 $-1/4$。
+\item $x^22^x=x^2e^{(\ln2)x}$，故 $f^{(n)}(0)=n(n-1)(\ln2)^{n-2}$（$n\ge2$），前两阶为 $0$。
+\end{enumerate}
+
+\clearpage
+
+\chapter{春季学期}
+
+\clearpage
+
+\section{2月17--23日 · Week 1}
+
+\subsection*{作业}
+
+\begin{enumerate}
+\item $\int \frac{dx}{3x^2 + 3x -1}$
+\item $\int \frac{dx}{x^2 - 5x + 7}$
+\item $\int \frac{x+1}{\sqrt{x^2 -2x-3}}dx$
+\item $\int (3x -1) \sqrt{3x^2 - 2x + 7} dx$
+\item  $\int \frac{\sqrt{x(x+1)}}{\sqrt x + \sqrt{x+1}} dx$
+\item $\int \frac{dx}{x(x^n + 1)}$ 
+\item $\int x(1-x)^n dx$
+\item  $\int \frac{\sec x \cdot \csc x}{\ln \tan x} dx$
+\item $\int \frac{\arctan^2 x}{1 + x^2}dx$
+\item $\int \frac{dx}{(ax+b)^2} (ab \neq 0)$
+\item $\int \cos ax \sin bx dx$
+\item $\int \sin ax \sin bx dx$
+\item $\int \sin^7 x dx$
+\item $\int \frac{\cos x + \sin x}{\sqrt[3]{\sin x - \cos x}} dx$
+\item $\int \frac{dx}{2 - \sin^2 x}$
+\item $\int \frac{\cos x \sin x}{a^2 \cos^2 x + b^2 \sin^2 x}dx$
+\item $\int \frac{dx}{\cos x + \sin x}$
+\item $\int \frac{dx}{a \cos x + b \sin x}$
+\item $\int \frac{\cos x }{\sqrt{2 + \cos 2x}}dx$
+\item $\int \frac{dx}{x \sqrt{x^2 + 1}}$ 
+\end{enumerate}
+
+\subsection*{原稿参考答案}
+
+\noindent 原稿未附这一周的参考答案。
+
+\subsection*{GPT 补充参考答案}
+
+\noindent\textbf{以下由 GPT 给出。}各式均须在被积函数有定义的连通区间上取原函数，末尾均省略积分常数 $C$；含参数者需满足题设或分情况讨论。
+\begin{enumerate}
+\item $\frac1{\sqrt{21}}\ln\left|\frac{6x+3-\sqrt{21}}{6x+3+\sqrt{21}}\right|$。
+\item $\frac2{\sqrt3}\arctan\frac{2x-5}{\sqrt3}$。
+\item $\sqrt{x^2-2x-3}+2\ln|x-1+\sqrt{x^2-2x-3}|$。
+\item $\frac13(3x^2-2x+7)^{3/2}$。
+\item $\frac25x^{5/2}+\frac23x^{3/2}-\frac25(x+1)^{5/2}+\frac23(x+1)^{3/2}$（$x\ge0$）。
+\item $\ln|x|-\frac1n\ln|1+x^n|$（$n\ne0$）。
+\item $-\frac{(1-x)^{n+1}}{n+1}+\frac{(1-x)^{n+2}}{n+2}$（$n\ne-1,-2$）。
+\item $\ln|\ln(\tan x)|$，仅在 $\tan x>0$ 且 $\ln\tan x\ne0$ 的区间。
+\item $\frac13(\arctan x)^3$。
+\item $-1/[a(ax+b)]$。
+\item 令 $S_c(x)=-\cos(cx)/c$（$c\ne0$），$S_0(x)=0$；结果为 $[S_{a+b}(x)+S_{b-a}(x)]/2$。
+\item 令 $C_c(x)=\sin(cx)/c$（$c\ne0$），$C_0(x)=x$；结果为 $[C_{a-b}(x)-C_{a+b}(x)]/2$。
+\item $-\cos x+\cos^3x-\frac35\cos^5x+\frac17\cos^7x$。
+\item $\frac32(\sin x-\cos x)^{2/3}$（在不穿过零点的区间按实值导数理解）。
+\item $\frac1{\sqrt2}\arctan(\tan x/\sqrt2)$，仅作局部原函数。
+\item 若 $a^2\ne b^2$，为 $\frac{\ln(a^2\cos^2x+b^2\sin^2x)}{2(b^2-a^2)}$；若 $a^2=b^2>0$，为 $\sin^2x/(2a^2)$。
+\item $\frac1{\sqrt2}\ln\left|\tan\left(\frac{x+\pi/4}{2}\right)\right|$。
+\item 令 $R=\sqrt{a^2+b^2}>0$，取 $a=R\cos\phi,b=R\sin\phi$，则为 $R^{-1}\ln|\sec(x-\phi)+\tan(x-\phi)|$。
+\item $\frac1{\sqrt2}\arcsin\left(\sqrt{\frac23}\sin x\right)$。
+\item $\ln\left|\frac{x}{1+\sqrt{x^2+1}}\right|$。
+\end{enumerate}
+
+\clearpage
+
+\section{2月24日--3月2日 · Week 2}
+
+\subsection*{作业}
+
+计算以下不定积分
+\begin{enumerate}
+\item $\int e^{2x} (\tan x +1)^2 dx$
+\item $\int \frac{xe^{\arctan x}}{(1 + x^2)^{\frac{3}{2}}}dx$
+\item $\int e^{\sqrt[3]{x}}dx$
+\item $\int \ln \left( 1 + \sqrt{\frac{x+1}{x}}\right)dx, (x > 0)$(换元)
+\item $ \int \ln(1 + \sqrt x)dx$
+\item $\int \frac{x \ln x}{\sqrt{1 + x^2}}dx$
+\item 设对正整数$n > 2$, 定义$I_n = \int \frac{\sin n x}{\sin x}dx$, 证明:
+\[
+I_n = \frac{2}{n-1} \sin (n-1) x + I_{n-2}.
+\]
+\item 求不定积分$I = \int x e^{ax} \cos b x dx$, $J = \int xe^{ax} \sin b x dx(ab \neq 0)$.
+\item 求不定积分$\int \frac{1}{1 + x^3}dx$(选做)
+\item 求不定积分$\int \frac{1}{1 + x^4}dx$(选做)
+\item 求$\int \frac{1-x^3}{(1 + x)^4}dx$
+\item 求$I = \int \frac{2x^4 + 5x^2 -2}{2x^3 - x - 1}dx$
+\item 求$\int \frac{1}{\sin x (1 + \cos x)}dx$
+\item 求$I = \int \frac{\cos 2x}{\sin^4 x + \cos^4 x}dx$
+\item 求$I = \int \arctan \sqrt{\frac{a-x}{a+x}} dx (a > 0)$
+\item 求$I = \int \frac{x^2}{(1 - x^2)^{\frac{3}{2}}}dx$(选做)
+\item 设$f \in C([0, 1])$且$f(x) > 0 (0 \leq x \leq 1)$, 证明:
+\[
+\frac{1}{\int_0^1 \frac{1}{f(x)}dx} \leq e^{\int_0^1 \ln f(x) dx} \leq \int_0^1 f(x) dx.
+\]
+\item 设$f$在$[a, b]$上可积, 且$I = \int_a^b f(x) dx >0$, 证明存在子区间$[c, d] \subset [a, b]$和$\mu>0$, 使得在区间$[c, d]$上成立$f(x) \geq \mu$.
+\item 证明: $\pi$是一个无理数. (选做, 自查资料)
+\end{enumerate}
+
+\subsection*{原稿参考答案}
+
+\noindent 原稿未附这一周的参考答案。
+
+\subsection*{GPT 补充参考答案}
+
+\noindent\textbf{以下由 GPT 给出。}本周计算题较多；先给可直接复核的结果或代换，未完成的参数积分不以猜测填充。
+\begin{enumerate}
+\item 展开 $(\tan x+1)^2=2\tan x+\tan^2x=2\tan x+\sec^2x-1$，而 $(e^{2x}\tan x)'=e^{2x}(2\tan x+\sec^2x)$，故原函数 $e^{2x}(\tan x-1/2)$。
+\item 令 $t=\arctan x$，有 $x/\sqrt{1+x^2}=\sin t$，积分化为 $\int e^t\sin t\,dt=\frac12e^t(\sin t-\cos t)$。
+\item 令 $t=x^{1/3}$，得到 $3e^t(t^2-2t+2)$。
+\item 令 $t=\sqrt{1+1/x}$（$x>0$），则原函数为 $x\ln(1+t)-\frac14\ln\frac{t-1}{t+1}-\frac1{2(t+1)}$。
+\item 令 $t=\sqrt x$，分部积分得 $(x-1)\ln(1+\sqrt x)-x/2+\sqrt x$；求导可复核。
+\item 分部积分 $u=\ln x$，$dv=x/\sqrt{1+x^2}\,dx$，得 $\sqrt{1+x^2}\ln x-\sqrt{1+x^2}+\ln\left|\frac{1+\sqrt{1+x^2}}x\right|$。
+\item 由 $\sin(nx)=2\sin x\cos((n-1)x)+\sin((n-2)x)$，两边除以 $\sin x$ 后积分，得到题给递推式；原式无误。
+\item 令 $D=a^2+b^2$、$K=e^{ax}(a\cos bx+b\sin bx)/D$、$L=e^{ax}(a\sin bx-b\cos bx)/D$；分部积分得 $I=xK-(aK+bL)/D$，$J=xL-(aL-bK)/D$。
+\item（选做）$\frac13\ln|x+1|-\frac16\ln(x^2-x+1)+\frac1{\sqrt3}\arctan\frac{2x-1}{\sqrt3}$。
+\item（选做）令 $L=\ln[(x^2+\sqrt2x+1)/(x^2-\sqrt2x+1)]$，则原函数为 $\frac{L}{4\sqrt2}+\frac1{2\sqrt2}[\arctan(\sqrt2x-1)+\arctan(\sqrt2x+1)]$。
+\item 先令 $t=1+x$；分子 $1-(t-1)^3=2-3t+3t^2-t^3$，故原函数 $-\frac2{3t^3}+\frac3{2t^2}-\frac3t-\ln|t|$。
+\item 分式$x^2/2+\ln|x-1|+\ln(x^2+x+1/2)+\arctan(2x+1)$（在不跨越 $x=1$ 的区间）。
+\item $\frac12\ln|\tan(x/2)|+\frac14\tan^2(x/2)$（在分母非零的区间）。
+\item 令 $t=\tan x$，原函数为 $\frac1{2\sqrt2}\ln[(t^2+\sqrt2t+1)/(t^2-\sqrt2t+1)]$，按正切的局部定义域取值。
+\item 令 $t=\arctan\sqrt{(a-x)/(a+x)}$，则 $x=a\cos2t$（在 $-a<x<a$），分部积分可得 $xt-\frac a2\sin2t$。
+\item（选做）令 $x=\sin t$，原函数为 $\tan t-t=\frac{x}{\sqrt{1-x^2}}-\arcsin x$（$|x|<1$）。
+\item Jensen 不等式分别用于 $\ln$ 的凹性与 $1/x$ 的凸性：$\int\ln f\le\ln\int f$，$\int 1/f\ge\exp(-\int\ln f)$；区间长度为 $1$。
+\item 由于 $\int_a^bf>0$，可取某个分割使下和严格为正；若每个小区间的 $\inf f\le0$，下和就不可能为正。因此某个小区间有 $\inf f=\mu>0$，取其闭子区间 $[c,d]$ 即得。
+\item（选做）$\pi$ 无理性的经典积分法：若 $\pi=a/b\in\mathbb Q$，令 $F_n(x)=b^nx^n(a-bx)^n/n!$，反复积分分部并估计 $0<\int_0^\pi F_n(x)\sin x\,dx<1$，同时由边界项它是整数，矛盾。需注意规范化变量与整数边界导数。
+\end{enumerate}
+
+\clearpage
+
+\section{3月3--9日 · Week 3}
+
+\subsection*{作业}
+
+\begin{tcolorbox}[title=欧拉变换, colback=white, breakable]
+
+可以证明, 对于形如
+\[
+\int R(x, \sqrt{ax^2 + bx + c}) dx \ (a \neq 0)
+\]
+的不定积分(其中R为有理分式), 利用Euler变换一定能解决. 我们假设二次三项式$ax^2 + bx + c$没有重根, 即根式$\sqrt{ax^2 + bx + c}$无法表示为有理式. Euler变换分三种情形, 包含了所有可能. 特别地, 如果$ax^2 + bx + c$没有实根, 即$b^2 - 4ac < 0$, 那么三项式
+\[
+ax^2 + bx + c = \frac{1}{4a} [ (2ax + b)^2 + (4ac - b^2) ]
+\]
+其中$(2ax + b)^2 + (4ac - b^2) > 0$, 三项式$ax^2 + bx + c$的符号最终和$a$符号一致, 因此必然有$a>0$.
+
+
+\noindent
+Case (i) $a>0$. 此时令$\sqrt{ax^2 + bx + c} = t \pm \sqrt a x $. 两边平方消去平方项
+\[
+\Rightarrow bx + c = t^2 - 2 \sqrt a t x \Rightarrow x = \frac{t^2 -c}{2 \sqrt a t +b}
+\]
+\[
+\Rightarrow \sqrt{ax^2 + bx + c} = t - \sqrt a \frac{t^2 - c}{2 \sqrt a t + b} = \frac{\sqrt a t^2 + b t + c \sqrt a}{2 \sqrt a t + b}, dx = 2 \frac{\sqrt a t^2 + bt + c \sqrt a}{(2 \sqrt a t + b)^2}dt.
+\]
+
+
+\noindent
+Case (ii) $c >0$. 此时令$\sqrt{ax^2 + bx + c} = xt + \sqrt c (\mbox{或 } xt - \sqrt c)$. 两边平方消去$c$, 并约去$x$, 得到$ax + b = xt^2 + 2 \sqrt c t$, 同样得到$x$的一次方程:
+\[
+x = \frac{2 \sqrt c t - b}{a - t^2}, \sqrt{ax^2 + bx + c} = \frac{\sqrt c t^2 - bt + \sqrt c a}{a-t^2}, dx = 2 \frac{\sqrt c t^2 - bt + \sqrt c a}{(a-t^2)^2}dt.
+\]
+
+
+\noindent
+Case (iii) 若$ax^2 + bx +c$有两个相异的实根$\lambda, \mu$, 即
+\[
+ax^2 + bx + c = a(x - \lambda) (x - \mu).
+\]
+此时令$\sqrt{ax^2 + bx + c} = t(x - \lambda)$, 两边平方后, 约去$x - \lambda$, 得到$a(x - \mu) = t^2 (x - \lambda)$. 于是
+\[
+x = \frac{-a\mu + \lambda t^2}{t^2 - a}, \sqrt{ax^2 + bx + c} = \frac{a(\lambda - \mu)t}{t^2 - a}, dx = \frac{2a (\mu - \lambda)t}{(t^2 - a)^2}dt.
+\]
+
+一般而言, Euler变换会带来繁重的计算. 因此对下述几种形式, 可作适当调整:
+\[
+(i) I = \int \frac{P_n(x) dx}{\sqrt{ax^2 + bx + c}} \ (P_n(x) \mbox{为多项式}) \ \ (ii) I = \int \frac{dx}{(x - \alpha)^k \sqrt{ax^2 + bx + c}}
+\]
+
+
+第(i)种形式: 可化为$I = \int Q(x) \sqrt{ax^2 + bx + c} dx + \lambda \int \frac{dx}{\sqrt{ax^2 + bx + c}}$, 其中$Q(x)$是次数不高于$n-1$的多项式. 实际上, 对两端求导并乘以$\sqrt{ax^2 + bx + c}$可得多项式恒等式, 而求出$\lambda$及$Q(x)$的系数.
+
+
+第(ii)种形式: 作代换$t = \frac{1}{x - \alpha}$, 可转化为第(i)种形式.
+
+
+此外对不定积分
+\[
+I = \int \frac{dx}{(\alpha x + \beta)^n \sqrt{ax^2 + bx + c}},
+\]
+可作变换$\alpha x + \beta = \frac{1}{t}$, 即$x = \frac{1 - \beta t}{\alpha t}$, 使得
+\[
+I = \int \frac{t^k}{\sqrt{At^2 + Bt + C}}dt.
+\]
+
+
+\end{tcolorbox}
+
+
+\begin{enumerate}
+\item 求$I = \int \frac{dx}{x + \sqrt{x^2 + x + 1}}$.
+\item 求$I = \int \frac{1 - \sqrt{1 + x + x^2}}{x \sqrt{1 + x + x^2}}dx$.
+\item 求$I = \int \frac{dx}{(2x+1)^2 \sqrt{4x^2 + 4x + 5}}$.
+\item 求$I = \int \frac{dx}{(x - a)\sqrt{(x-a)(x-b)}} (a \neq b)$.
+\item 证明:
+\[
+I = \lim_{n \to \infty} \sum_{k=1}^n \frac{\sin \frac{k\pi}{n}}{ n + \frac{k}{n}} = \frac{2}{\pi}.
+\]
+\item 求
+\[
+\lim_{n \to \infty} (a^{\frac{1}{n}} -1 ) \sum_{k=1}^n a^{\frac{k}{n}} \sin \left( a^{\frac{2k-1}{2n}} \right), a \geq 1.
+\]
+(选做, 对比9.4节第1题.)
+\item 求极限:
+\[
+\lim_{n \to \infty} \int_a^b e^{-nx^2} dx \ ( 0 < a < b).
+\]
+\item 证明: $\int_0^{2 \pi} | a \cos x + b \sin x| dx \leq 2 \pi \sqrt{a^2 + b^2}$.
+\item 证明: $\int_0^1 x^m (1-x)^n dx \leq \frac{m^m n^n}{(m+n)^{m+n}} (m, n \in \mathbb N^+)$. (tip: 利用均值不等式)
+\item 设$a, b >0$, $f \in C[-a, b]$; 又设$f > 0$且$\int_{-a}^b x f(x) dx =0$. 求证:
+\[
+\int_{-a}^b x^2 f(x) dx \leq ab \int_{-a}^b f(x) dx.
+\]
+\item 设$f_k \in R([a, b]) (1 \leq k \leq m)$. 证明:
+\[
+\sqrt{ \left( \int_a^b f_1(x)dx \right)^2 + \cdots +  \left( \int_a^b f_m(x)dx \right)^2   } \leq \int_a^b \sqrt{f_1^2(x) + \cdots + f_m^2(x)} dx.
+\]
+(利用Cauchy-Schwarz不等式.)
+\item 设$f \in R([0, 1])$, 令
+\[
+I_n = \sum_{i=1}^n \ln \left[ 1 + \frac{1}{n}f\left( \frac{i}{n} \right) \right].
+\]
+求: $\lim\limits_{n \to \infty} I_n$.
+(选做, 利用不等式$|x - \ln (1+x) | \leq x^2, |x| \leq \frac{1}{2}$.)
+\item 设函数$f$在$[a, b]$上可积, 且在$[a, b]$内任何子区间$\Delta$上, 有$\sup_{\Delta} f \geq \sigma $, 这里$\sigma$为一常数. 证明:
+\[
+\int_a^b f(x) dx \geq \sigma (b-a).
+\]
+\end{enumerate}
+
+\subsection*{原稿参考答案}
+
+\noindent 原稿未附这一周的参考答案。
+
+\subsection*{GPT 补充参考答案}
+
+\noindent\textbf{以下由 GPT 给出。}原稿的 Euler 变换导言只作为计算提示；下列题目以原题为准。
+\begin{enumerate}
+\item 令 $t=x+\sqrt{x^2+x+1}$，则 $x=(t^2-1)/(2t+1)$，原函数为 $2\ln|t|-\frac32\ln|2t+1|+\frac3{2(2t+1)}$，在 $t\ne0$ 的区间使用。
+\item 将被积函数拆为 $1/[x\sqrt{1+x+x^2}]-1/x$。令 $t=1/x$，原函数为 $-\operatorname{sgn}(x)\operatorname{arsinh}[(2t+1)/\sqrt3]-\ln|x|$，在 $x\ne0$ 的每个区间使用。
+\item 令 $u=2x+1$，原函数为 $-\sqrt{u^2+4}/(8u)$，适用于 $u\ne0$ 的每个区间。
+\item 令 $t=\sqrt{(x-b)/(x-a)}$，原函数为 $[2\operatorname{sgn}(x-a)/(b-a)]t$；仅在原根式为正且 $x\ne a$ 的各连通区间使用。
+\item 因 $n+k/n=n[1+O(1/n)]$ 一致，和式与 $n^{-1}\sum_{k=1}^n\sin(k\pi/n)$ 同极限，后者是 $\int_0^1\sin(\pi t)dt=2/\pi$。
+\item（选做）设 $t_k=a^{k/n}$，则 $a^{1/n}-1$ 乘原和恰是 $\sum_{k=1}^n(t_k-t_{k-1})\sin\sqrt{t_{k-1}t_k}$，为 $\int_1^a\sin t\,dt=\cos1-\cos a$ 的 Riemann 和；$a=1$ 时为 $0$。
+\item 对 $x\in[a,b]$ 有 $0\le e^{-nx^2}\le e^{-na^2}$，积分夹逼趋 $0$。
+\item Cauchy--Schwarz 给 $|a\cos x+b\sin x|\le\sqrt{a^2+b^2}$，积分得到题给界；实际上精确值为 $4\sqrt{a^2+b^2}$。
+\item $x^m(1-x)^n$ 在 $[0,1]$ 的最大值出现在 $x=m/(m+n)$，因此积分不超过该最大值。
+\item 从 $(x+a)(b-x)\ge0$ 得 $x^2\le(b-a)x+ab$；乘 $f(x)>0$ 积分，利用 $\int xf=0$ 即得。
+\item 记 $v(x)=(f_1(x),\ldots,f_m(x))$。对任意单位向量 $u$，$u\cdot\int v=\int u\cdot v\le\int\lVert{} v\rVert_2$；取 $u$ 为 $\int v$ 的方向即得。
+\item \textbf{题面条件缺失：}原题只设 $f\in R([a,b])$，却用 $f(i/n)$；应改为 $f\in R([0,1])$。在此条件下，因 $f$ 有界，$\ln(1+f(i/n)/n)=f(i/n)/n+O(n^{-2})$ 一致，极限为 $\int_0^1f(x)dx$。
+\item 任意分割的上和至少为 $\sigma(b-a)$，而 $f$ 可积使上和可趋向积分，故结论成立。
+\end{enumerate}
+
+\clearpage
+
+\section{3月10--16日 · Week 4}
+
+\subsection*{作业}
+
+\noindent
+{\bf 定义:} 设$f(x)$为$[a, b]$上的有限函数, 如果对$[a, b]$的一切分割
+\[
+\pi: a = x_0  < x_1 < x_2 < \cdots < x_{n-1} < x_n =b,
+\]
+使集合$\{ \sum_{i=1}^n |f(x_i) - f(x_{i-1})| \}$为有界集, 即
+\[
+M = \sup_{\pi}\{ \sum_{i=1}^n |f(x_i) - f(x_{i-1})| \} < \infty,
+\]
+则称$f(x)$是$[a, b]$上的有界变差函数, 并称$M$为$f(x)$在$[a, b]$上的全变差, 记为$V_a^b(f)$.
+
+\begin{enumerate}
+
+\item
+\begin{enumerate}
+\item 证明$[a, b]$上的有界变差函数是有界的.
+\item 证明$[a, b]$上的单调函数是有界变差的.
+\item ({\bf Jordan分解定理}) 证明$f$是$[a, b]$上的有界变差函数的充分必要条件是$f$可以分解为两个单调增函数的差. (tip: 证明函数$V_a^x(f)$是单调的).
+\item 证明$[a, b]$上的有界变差函数Riemann可积.
+\end{enumerate}
+
+\item 设$f(x)$在$[a, b]$的每一点处极限存在并皆为0. (利用有限覆盖定理)
+\begin{enumerate}
+\item 证明: $f(x)$在$[a, b]$上有界.
+\item 证明: $f(x)$在$[a, b]$上可积, 且$\int_a^b f(x) dx = 0$.
+ \end{enumerate}
+\item 证明: 若$f$在$[a, b]$上可积, 且处处有$f(x) > 0$, 则$\int_a^b f(x) dx > 0$.
+\item 用有限覆盖定理证明零点定理: 设 $f(x)$ 在 $[a,b]$ 上连续, $f(a) \cdot f(b) <0$. 证明 $\exists c \in (a,b)$, 使得 $f(c) = 0$.
+\item 设 $\{O_{\alpha}\}_{\alpha}$ 为 $[a,b]$ 的一个开覆盖. 求证: 存在 $\delta>0$, 对任意 $x', x'' \in [a,b]$, 只要 $|x' - x''| < \delta$, 就有开区间 $O\in \{O_{\alpha}\}_{\alpha}$, 使得 $x', x'' \in O$.
+
+\item 证明Jensen不等式: 设$f, p \in R[a, b], m \leq f(x) \leq M$, $p(x)$非负且$\int_a^b p(x) >0$, 则当$\varphi$是$[m, M]$上的凸函数时, 成立不等式
+\[
+\varphi \left( \frac{ \int_a^b p(x) f(x) dx}{\int_a^b p(x) dx} \right) \leq \frac{\int_a^b p(x) \varphi(f(x))dx}{\int_a^b p(x) dx}.
+\]
+\end{enumerate}
+
+\subsection*{原稿参考答案}
+
+\noindent 原稿未附这一周的参考答案。
+
+\subsection*{GPT 补充参考答案}
+
+\noindent\textbf{以下由 GPT 给出。}
+\begin{enumerate}
+\item 对任意 $x$，$|f(x)|\le |f(a)|+V_a^b(f)$；单调函数变差为 $|f(b)-f(a)|$。令 $v(x)=V_a^x(f)$，则 $v$ 与 $v-f$ 均单调增，$f=v-(v-f)$；反向由两个单调函数的变差不等式得有限变差。单调函数 Riemann 可积，故有界变差函数可积。
+\item 对任意 $\varepsilon>0$，集合 $E_\varepsilon=\{x:|f(x)|\ge\varepsilon\}$ 必有限，否则紧区间内有聚点，与该点的穿孔极限为零矛盾。取 $\varepsilon=1$ 得有界；$f$ 除至多可数点外为零，且利用有限个较大值点的小区间可使上下和差任意小，故 Riemann 可积且积分为零。
+\item Riemann 可积函数的连续点稠密。取一个连续点 $c$，$f(c)>0$，故其附近 $f\ge f(c)/2$，积分严格为正。
+\item 若 $f(a)<0<f(b)$ 而无零点，则连续性使每一点有一个保持符号的邻域；紧致性给有限子覆盖，沿区间连通性迫使符号全同，矛盾。也可取负值点集合的上确界证明。
+\item 取有限子覆盖，再把每个成员缩小成仍覆盖 $[a,b]$ 的开集；每个缩小集到原开集补集的距离有正下界，取有限个距离之最小值得 Lebesgue 数 $\delta$。相距小于 $\delta$ 的两点落在同一原开集内。
+\item 令 $\bar f=(\int pf)/(\int p)$。凸函数在 $\bar f$ 有支撑斜率 $s$，使 $\varphi(t)\ge\varphi(\bar f)+s(t-\bar f)$；乘 $p\ge0$ 积分即得 Jensen 不等式。
+\end{enumerate}
+
+\clearpage
+
+\section{3月17--23日 · Week 5}
+
+\subsection*{作业}
+
+\begin{enumerate}
+\item 9.5节: 8, 12, 13题(已布置的可跳过). 16题{\bf (选做)}.
+\item 证明Minkowski不等式(第9章总练, 7题)
+设$f(x), g(x)$在$[a, b]$上可积, $1 \leq p < +\infty$, 则
+\[
+\left( \int_a^b |f(x) + g(x)|^p dx \right)^{\frac{1}{p}} \leq \left( \int_a^b |f(x)|^p dx \right)^{\frac{1}{p}} + \left( \int_a^b |g(x)|^p dx \right)^{\frac{1}{p}}.
+\]
+Tip: 利用H$\ddot{o}$lder不等式和绝对值的三角不等式.
+
+
+\item 设$f(x)$在$[0, 1]$上有连续导数, 且$f(1) - f(0) =1$. 则 
+\[
+\int_0^1 (f'(x))^2 dx \geq 1.
+\]
+\item 已知$f(x) \geq 0$在$[a, b]$上连续, $\int_a^b f(x) dx =1$, $k$为任意实数, 证明:
+\[
+\left( \int_a^b f(x) \cos kx dx \right)^2 + \left( \int_a^b f(x) \sin kx dx \right)^2 \leq 1. \eqno{(1)}
+\]
+
+Tip: 利用Cauchy-Schwarz不等式.
+
+\item 设$f(x) \geq 0$在$[0, 1]$上连续, $f(1) = 0$. 证明: 存在$\xi \in (0, 1)$, 使得
+\[
+f(\xi) = \int_0^{\xi} f(x) dx.
+\]
+
+
+\item 设$f(x) = \int_0^x \frac{\sin t}{\pi - t} dt$, 求$\int_0^{\pi} f(x) dx$.
+
+\item 设$f(x)$在$[A, B]$上连续, $A < a < b < B$. 求证:
+\[
+\lim_{h \to 0} \int_a^b \frac{f(x+h) - f(x)}{h} dx = f(b) - f(a).
+\]
+
+\item {\bf (选做)}设函数$f$在闭区间$[A, B]$上可积. 证明: $f$具有积分的连续性, 即
+\[
+\lim_{h \to 0} \int_a^b | f(x+h) - f(x) | dx =0 \ (A < a < b < B).
+\]
+
+\item {\bf (选做)} 设$f(x)$在$[a, b]$上连续可导, 且$f(a) = f(b) =0$, 则
+\[
+\max\limits_{a \leq x \leq b} |f'(x)| \geq \frac{4}{(b - a)^2} \int_a^b |f(x) | dx.
+\]
+
+\item {\bf (选做)} 设$f(x)> 0, g(x)> 0$, 且在$[a, b]$上连续. 求证: 
+\[
+\lim_{n \to \infty} \sqrt[n]{\int_a^b (f(x))^n g(x) dx } = \max_{a \leq x \leq b} f(x).
+\]
+
+\end{enumerate}
+
+\subsection*{原稿参考答案}
+
+\noindent 原稿未附这一周的参考答案。
+
+\subsection*{GPT 补充参考答案}
+
+\noindent\textbf{以下由 GPT 给出。}
+\begin{enumerate}
+\item 参见教材。
+\item $p=1$ 是积分三角不等式。$p>1$ 时，写 $\int|f+g|^p\le\int|f||f+g|^{p-1}+\int|g||f+g|^{p-1}$，分别用 H\"older 不等式，除以 $\lVert{}f+g\rVert_p^{p-1}$。
+\item $1=\int_0^1f'$，由 Cauchy--Schwarz，$1\le(\int_0^1(f')^2)^{1/2}$。
+\item 左边是 $|\int_a^b f(x)e^{ikx}dx|^2$，由 $f\ge0$、$|e^{ikx}|=1$、$\int f=1$，模不超过 $1$。
+\item 若 $f\equiv0$，任意 $\xi$ 均可。否则 $G(x)=e^{-x}\int_0^xf(t)dt$ 在 $[0,1]$ 有正的内部最大值（因 $G(0)=0$、$G'(1)=-G(1)<0$），故该点 $G'=0$ 即 $f(\xi)=\int_0^\xi f$。
+\item 交换积分次序，$\int_0^\pi f(x)dx=\int_0^\pi(\pi-t)\frac{\sin t}{\pi-t}dt=2$。
+\item 换元后原积分为 $\int_{a+h}^{b+h}f(t)dt-\int_a^bf(t)dt$ 除以 $h$，由连续性趋 $f(b)-f(a)$。
+\item（选做）Riemann 可积函数可在 $L^1$ 中由阶梯函数逼近；阶梯函数的平移差 $L^1$ 范数随 $h\to0$ 为零。三角不等式给出原结论。
+\item（选做）若 $M=\max|f'|$，由两个端点零值，$|f(x)|\le M\min(x-a,b-x)$。积分得 $\int|f|\le M(b-a)^2/4$。
+\item（选做）上界由 $f\le M$ 得到；在最大点附近选 $f\ge M-\varepsilon$ 的非退化区间，且 $g$ 在其上有正下界，得到下极限至少 $M-\varepsilon$。令 $\varepsilon\downarrow0$。
+\end{enumerate}
+
+\clearpage
+
+\section{3月24--30日 · Week 6}
+
+\subsection*{作业}
+
+\begin{enumerate}
+
+\item 计算$\int_{- \frac{\pi}{2}}^{\frac{\pi}{2}} \frac{e^x}{1 + e^x} \sin^4 x dx$.
+
+\item 计算$\int_0^{\frac{\pi}{2}} \sin x \ln \sin x dx$.
+
+\item 计算$\int_{-1}^1 \frac{dx}{(e^x+1)(x^2 + 1)}$.
+
+\item 计算$\int_0^{\frac{\pi}{4}} \frac{\sin x dx}{\sin x + \cos x}$.
+
+\item 计算$\int_0^{\ln 2} \sqrt{e^x -1} dx$. 
+
+\item 计算$\int_0^2 (2x+1) \sqrt{2x -x^2} dx$. 
+
+\item 计算$\int_{-4}^{-3} \frac{dx}{x \sqrt{x^2 -4}}$. 
+
+\item 求$I_n = \int_0^1 (\arcsin x)^n dx$, $\forall n \geq 1$.
+
+\item 写出$(2n)!!$, $(2n-1)!!$和$C_{2n}^n$的渐近表达式.
+
+
+\item 设$f(x)$在$[a, b]$上二次可导, 且$f''(x) > 0$. 证明:
+\[
+\int_a^b f(x) dx - \frac{1}{2} (b - a) (f(a) + f(b)) = \frac{1}{2} \int_a^b f''(x) (x - a)(x - b)dx.
+\]
+
+\item ({\bf 选做})求极限
+\[
+\lim_{n \to \infty} \sum_{k = 1}^n \left( k \ln \frac{2k+1}{2k-1} -1 \right).
+\]
+
+\item ({\bf 选做}) 设函数$f(x)$在$[a, b]$上可导, $f'(x)$在$[a, b]$上递减, 且$f'(x) \geq m >0$. 证明:
+\[
+\Big| \int_a^b \cos f(x) dx \Big| \leq \frac{2}{m}.
+\]
+
+\end{enumerate}
+
+\subsection*{原稿参考答案}
+
+\noindent 原稿未附这一周的参考答案。
+
+\subsection*{GPT 补充参考答案}
+
+\noindent\textbf{以下由 GPT 给出。}按原稿题序：
+\begin{enumerate}
+\item 由 $e^x/(1+e^x)+e^{-x}/(1+e^{-x})=1$ 及 $\sin^4x$ 为偶函数，积分为 $\frac12\int_{-\pi/2}^{\pi/2}\sin^4x\,dx=3\pi/16$。
+\item 令 $u=\cos x$，得 $\frac12\int_0^1\ln(1-u^2)du=\ln2-1$。
+\item 同第一题的对称性，结果为 $\frac12\int_{-1}^1dx/(1+x^2)=\pi/4$。
+\item 用 $\sin x/(\sin x+\cos x)=\frac12-\frac12(\ln(\sin x+\cos x))'$，结果为 $\pi/8-\frac14\ln2$。
+\item 令 $t=\sqrt{e^x-1}$，得 $2\int_0^1t^2/(1+t^2)dt=2-\pi/2$。
+\item 令 $t=x-1$，奇函数部分积分为零，余下 $3\int_{-1}^1\sqrt{1-t^2}dt=3\pi/2$。
+\item 令 $x=-2\sec\theta$，结果为 $\frac12[\arccos(2/3)-\pi/3]$（负值符合原被积函数符号）。
+\item 令 $t=\arcsin x$，$I_n=\int_0^{\pi/2}t^n\cos t\,dt$。$I_0=1$、$I_1=\pi/2-1$；$n\ge2$ 时 $I_n=(\pi/2)^n-n(n-1)I_{n-2}$。
+\item Stirling 公式给 $(2n)!!\sim\sqrt{2\pi n}(2n/e)^n$，$(2n-1)!!\sim\sqrt2(2n/e)^n$，$\binom{2n}{n}\sim4^n/\sqrt{\pi n}$。
+\item 两次分部积分：先对右侧以 $(x-a)(x-b)$ 及 $f''$ 配对，即得左侧。
+\item（选做）部分和化为 $n\ln(2n+1)-\ln((2n-1)!!)-n$，用 Stirling 公式得极限 $(1-\ln2)/2$。
+\item（选做）令 $u=f(x)$；因 $f'\ge m>0$ 且递减，$1/f'(f^{-1}(u))$ 单调递增、至多 $1/m$。对 $\int\cos u\,w(u)du$ 用第二积分中值定理，绝对值至多 $2/m$。
+\end{enumerate}
+
+\clearpage
+
+\section{4月14--20日 · Week 9}
+
+\subsection*{作业}
+
+\begin{enumerate}
+
+\item 讨论积分$\int_0^{+\infty} x^{s-1} e^{-x}dx$的敛散性. (这个积分确定了一个以$s$为变量的函数$\Gamma(s)$, 称为Gamma函数.)
+
+\item 讨论积分$\int_0^1 x^{p-1} (1-x)^{q-1} dx$的敛散性. (这个积分定义了一个以$p, q$为变量的二元函数$B (p, q)$, 称为Beta函数.)
+
+\item 设$p>0$, 讨论积分
+\[
+\int_0^1 \frac{\sin \frac{1}{x}}{x^p} dx
+\]
+的敛散性.
+
+\item 讨论积分$\int_1^{+\infty} (-1)^{[x]} dx$和$\int_1^{+\infty} (-1)^{[x^2]} dx$的收敛性, 这里$[x]$表示取整函数.
+
+\item 设$f$在$[a, +\infty)$上非负, 如果存在一个递增趋于$+\infty$的数列$\{ A_n \} (A_1 = a)$, 使得级数
+\[
+\sum_{n=1}^{\infty} \int_{A_n}^{A_{n+1}} f(x) dx
+\] 
+收敛, 证明: 积分$\int_a^{+\infty} f(x) dx$收敛, 并且
+\[
+\int_a^{+\infty} f(x) dx = \sum_{n=1}^{\infty} \int_{A_n}^{A_{n+1}} f(x) dx.
+\]
+
+
+\item (面积原理一)若$x \geq m \in \mathbb N^*$时, $f(x)$为非负递增函数. 则当$\xi \geq m$时, 有
+\[
+\Big| \sum_{k=m}^{[\xi]} f(k) - \int_m^{\xi} f(x) dx \Big| \leq f(\xi). \eqno{(1)}
+\]
+
+\item (面积原理二) 设$x \geq m \in \mathbb N^*$时, $f$为非负递减函数, 则极限
+\[
+\lim_{n \to \infty} \left( \sum_{k=m}^n f(k) - \int_m^n f(x) dx \right) = \alpha 
+\]
+存在, 且$0 \leq \alpha \leq f(m)$. 进一步地, 如果$\lim\limits_{x \to +\infty} f(x) =0$, 那么
+\[
+\Big| \sum_{k=m}^{[\xi]} f(k) - \int_m^{\xi} f(x) dx - \alpha \Big| \leq f(\xi -1), 
+\]
+这里$\xi \geq m+1$.
+
+\item 设$f \in C[a, +\infty)$, 且$\int_a^{+\infty} f(x) dx$收敛, 则存在数列$\{ x_n \} \subset [a, +\infty)$, 满足条件
+\[
+\lim_{n \to \infty} x_n = +\infty, \ \ \lim_{n \to \infty} f(x_n) = 0.
+\]
+
+\item 证明:
+\[
+\lim_{n \to +\infty} \int_0^{+\infty} \frac{dx}{1 + x^n} =1.
+\]
+
+\item 设$f(x)$在$[0, +\infty)$上递增, 若$\lim\limits_{X \to +\infty} \frac{1}{X} \int_0^X f(x) dx = A$, 证明: $\lim\limits_{x \to +\infty} f(x) = A$.
+\end{enumerate}
+
+\subsection*{原稿参考答案}
+
+\begin{enumerate}
+\item 讨论积分$\int_1^{+\infty} (-1)^{[x]} dx$和$\int_1^{+\infty} (-1)^{[x^2]} dx$的收敛性, 这里$[x]$表示取整函数.
+
+
+\begin{proof}
+
+若$\int_1^{+\infty} (-1)^{[x]} dx$收敛, 那么
+\[
+\int_1^{+\infty} (-1)^{[x]} dx = \sum_{n=1}^{\infty} \int_n^{n+1} (-1)^{[x]} dx.
+\]
+但显然级数
+\[
+\sum_{n=1}^{\infty} \int_n^{n+1} (-1)^{[x]} dx = \sum_{n=1}^{\infty} (-1)^n
+\]
+发散, 因此积分发散.
+
+
+对第二个积分作变换$x^2 = t$, 那么
+\[
+\int_1^{+\infty} (-1)^{[x^2]} dx = \frac{1}{2} \int_1^{+\infty} \frac{(-1)^{[t]}}{\sqrt t} dt.
+\]
+令$g(t) = \frac{1}{\sqrt t}, f(t) = (-1)^{[t]}$. 那么$g(t)$当$t \to +\infty$时递减趋于0. 任取$A>1$, 存在正整数$n$, 使得$n \leq A < n+1$. 于是
+\[
+\int_1^A (-1)^{[t]} dt = \sum_{k=1}^{n-1} \int_k^{k+1}  (-1)^{[t]} dt + \int_n^A  (-1)^{n} dt = \sum_{k=1}^{n-1} (-1)^k + (-1)^n (A-n).
+\]
+由此易知
+\[
+\Big| \int_1^A (-1)^{[t]} dt \Big| \leq 2.
+\]
+由Dirichlet判别法知积分收敛, 且条件收敛.
+\end{proof}
+
+
+\item 讨论积分$\int_0^{+\infty} x^{s-1} e^{-x}dx$的敛散性.
+
+
+\begin{proof}
+
+
+首先这是一个正值函数的反常积分, 因此不需要判断条件收敛性.
+
+
+当$s \geq 1$时, 收敛性显然. 当$s < 1$时, $x = 0$是瑕点, 但原积分又是无穷积分. 拆分成两部分来考虑:
+\[
+\int_0^{+\infty} x^{s-1} e^{-x}dx = \int_0^{1} x^{s-1} e^{-x}dx + \int_1^{+\infty} x^{s-1} e^{-x}dx.
+\]
+当$x \to 0$时,
+\[
+x^{s-1} e^{-x} \sim x^{s-1}.
+\]
+因而第一个积分当$s > 0$时收敛. 当$x \to +\infty$时,
+\[
+x^2 \cdot x^{s-1} e^{-x} \to 0.
+\]
+实际上可以说明,
+\[
+x^{s-1} e^{-x}  = o \left( \frac{1}{x^p} \right) (x \to +\infty), \forall p > 1.
+\]
+从而第二个积分无论$s$为何值都收敛.
+
+综上, 原积分当$s > 0$时收敛.
+
+\end{proof}
+
+
+
+
+\item 讨论积分$\int_0^1 x^{p-1} (1-x)^{q-1} dx$的敛散性.
+
+
+\begin{proof}
+
+当$ p < 1$时, $x=0$为瑕点; 当$q < 1$时, $x = 1$是瑕点. 当$p, q \geq 1$时为定积分, 无需考虑.
+
+
+分解积分为
+\[
+\int_0^1 x^{p-1} (1-x)^{q-1} dx = \int_0^a x^{p-1} (1-x)^{q-1} dx + \int_a^1 x^{p-1} (1-x)^{q-1} dx = I_1 + I_2,
+\]
+其中$a \in (0, 1)$.
+
+对$I_1$, 当$x \to 0$时,
+\[
+x^{p-1} (1-x)^{q-1} \sim x^{p-1},
+\]
+因此$p > 0$时积分收敛.
+
+对$I_2$, 当$x \to 1$时,
+\[
+x^{p-1} (1-x)^{q-1} \sim (1-x)^{q-1},
+\]
+因此当$q >0$时收敛.
+
+
+综上, 原积分在$p>0, q>0$时收敛.
+
+
+\end{proof}
+
+
+\item 设$p>0$, 讨论积分
+\[
+\int_0^1 \frac{\sin \frac{1}{x}}{x^p} dx
+\]
+的敛散性.
+
+
+\begin{proof}
+
+首先判断瑕点为$x = 0$. 作变换$t = \frac{1}{x}$, 记得
+\[
+\int_0^1 \frac{\sin \frac{1}{x}}{x^p} dx = \int_1^{+\infty} \frac{\sin t}{t^{2-p}} dt.
+\]
+因此$0 < p < 1$时绝对收敛; $1 \leq p < 2$时条件收敛; $p \geq 2$时积分发散.
+
+\end{proof}
+
+
+\item 设$f \in C[a, +\infty)$, 且$\int_a^{+\infty} f(x) dx$收敛, 则存在数列$\{ x_n \} \subset [a, +\infty)$, 满足条件
+\[
+\lim_{n \to \infty} x_n = +\infty, \ \ \lim_{n \to \infty} f(x_n) = 0.
+\]
+
+
+\begin{proof}
+
+
+根据反常积分收敛的条件得到
+\[
+\lim_{n \to \infty} \int_n^{n+1} f(x) dx =0.
+\]
+利用积分第一中值定理, 并用$x_n$记其中的中值, 就有
+\[
+\lim_{n \to \infty} f(x_n) = 0,
+\]
+这时$x_n \in (n, n+1)$.
+\end{proof}
+
+
+
+\end{enumerate}
+
+\subsection*{GPT 补充参考答案}
+
+\noindent\textbf{以下由 GPT 给出。}原稿已解部分题目，此处补出其余结论，并供核对。
+\begin{enumerate}
+\item $\Gamma(s)$ 在 $0$ 附近由 $x^{s-1}$ 控制，故当且仅当 $s>0$ 收敛；无穷远处指数衰减保证收敛。
+\item $B(p,q)$ 在两端分别等价于 $x^{p-1}$、$(1-x)^{q-1}$，故当且仅当 $p>0,q>0$ 收敛。
+\item 令 $t=1/x$，积分为 $\int_1^\infty t^{p-2}\sin t\,dt$。$0<p<1$ 绝对收敛；$1\le p<2$ 条件收敛；$p\ge2$ 发散。
+\item $\int_1^\infty(-1)^{\lfloor x\rfloor}dx$ 发散（整数端点的部分积分振荡）；$\int_1^\infty(-1)^{\lfloor x^2\rfloor}dx=\sum_{n\ge1}(-1)^n(\sqrt{n+1}-\sqrt n)$ 收敛，且最后未满区间长度趋零。
+\item 因 $f\ge0$，每个 $X$ 的截断积分被后续分块和控制，趋向该收敛级数之和。
+\item 非负递增函数的每个单位区间面积夹在相邻两个端点矩形之间；逐段相加，并处理最后不足 $1$ 的区间，即得 $f(\xi)$ 上界。
+\item 非负递减函数时，把 $\sum f(k)-\int f$ 写为逐段非负误差和；误差部分和有界单调，极限存在，尾部由 $f(\xi-1)$ 控制。
+\item 收敛积分使 $\int_n^{n+1}f\to0$；积分中值定理给 $x_n\in[n,n+1]$ 满足 $f(x_n)=\int_n^{n+1}f$，故 $x_n\to\infty$ 且 $f(x_n)\to0$。
+\item 对 $n\ge2$，$x\in[0,1]$ 时被积函数趋 $1$ 且被 $1$ 控制；$x\ge1$ 时趋 $0$ 且被 $x^{-2}$ 控制。支配收敛给极限 $1$。
+\item 单调函数的极限 $L$ 在扩展实数意义下存在；其 Ces\`aro 积分均值若有有限极限 $A$，必有 $L=A$（用尾段区间夹逼均值）。
+\end{enumerate}
+
+\clearpage
+
+\section{4月21日--5月4日 · Week 10--11}
+
+\subsection*{作业}
+
+\begin{enumerate}
+
+\item 设$a_n >0$, $ S_n = a_1 + \cdots + a_n$, 证明:
+\[
+\sum_{n=1}^{\infty} \frac{a_n}{S_n^2} < +\infty.
+\]
+
+\item 设$\sum_{n=1}^{\infty} a_n$为正项级数, $p>1$, 证明: 无论$\sum_{n=1}^{\infty} a_n$收敛与否, 级数$\sum_{n=1}^{\infty} \frac{a_n}{S_n^p}$总收敛.
+
+\item 设$p>0, q>0$. 当$p, q$取何值时, 级数
+\[
+\sum_{n=1}^{\infty} \frac{p(p+1)\cdots (p+n-1)}{n!} \frac{1}{n^q}
+\]
+收敛. (用Raabe判别法)
+
+\item 设$\sum_{n=1}^{\infty} a_n$是递减的正项发散级数, 证明当$n \to \infty$时
+\[
+\frac{a_1 + a_3 + \cdots + a_{2n-1}}{a_2 + a_4 + \cdots + a_{2n}} \to 1.
+\]
+
+\item 设
+\[
+a_n = \left( 1 - \frac{p \ln n}{n} \right)^n,
+\]
+讨论级数$\sum_{n=1}^{\infty} a_n$关于$p$的敛散性.
+
+\item 讨论级数的敛散性:
+\[
+(1) \sum_{n=1}^{\infty} \frac{1}{3^{\ln n}}; \ \ (2) \sum_{n=2}^{\infty} \frac{1}{(\ln n)^{\ln n}}; \ \ (3) \sum_{n=3}^{\infty} \frac{1}{(\ln n)^{\ln \ln n}}.
+\]
+
+\item 设$a_n \neq 0 (n = 1, 2, \cdots)$, 且$\lim\limits_{n \to \infty} a_n = a \ (a \neq 0)$. 证明: 级数$\sum_{n=1}^{\infty} |a_n - a_{n+1}|$与$\sum_{n=1}^{\infty} \Big| \frac{1}{a_{n+1}} - \frac{1}{a_n} \Big|$同敛散.
+
+
+\item 若级数$\sum_{n=1}^{\infty} n (a_n - a_{n-1})$收敛且$\lim\limits_{n \to \infty}n a_n$存在. 证明$\sum_{n=0}^{\infty} a_n$收敛.
+
+\item 讨论级数
+\[
+\sum_{n=1}^{\infty} a_n = \frac{1}{1^p} - \frac{1}{2^q} + \frac{1}{3^p} - \frac{1}{4^q} + \cdots + \frac{1}{(2n-1)^p} - \frac{1}{(2n)^q} + \cdots \eqno{(1)}
+\]
+$(p>0, q>0)$的绝对收敛和条件收敛性.
+
+\item 设正项级数$\sum_{n=1}^{\infty} a_n$收敛, 证明
+\[
+\lim_{n \to \infty} \frac{\sum_{k=1}^n k a_k}{n} = 0.
+\]
+tip: 利用Abel变换.
+
+\end{enumerate}
+
+\subsection*{原稿参考答案}
+
+\begin{enumerate}
+
+
+\item 设$\sum_{n=1}^{\infty} a_n$为正项级数, $p>1$, 证明: 无论$\sum_{n=1}^{\infty} a_n$收敛与否, 级数$\sum_{n=1}^{\infty} \frac{a_n}{S_n^p}$总收敛.
+
+
+\begin{proof}
+
+我们对通项裂项处理:
+\[
+\frac{a_n}{S_n^p} = \frac{S_n - S_{n-1}}{S_n^p}.
+\]
+在$[S_{n-1}, S_n]$上对函数$x^{-(p-1)}$使用Lagrange中值定理, 
+\[
+\frac{1}{S_{n}^{p-1}} - \frac{1}{S_{n-1}^{p-1}} = - \frac{p-1}{\xi^p} \cdot (S_n-S_{n-1}) <- ( p - 1) \cdot \frac{S_n-S_{n-1}}{S_n^p}
+\]
+即
+\[
+\frac{a_n}{S_n^p} = \frac{S_n - S_{n-1}}{S_n^p} < \frac{1}{p-1} \left( \frac{1}{S_{n-1}^{p-1}} - \frac{1}{S_n^{p-1}} \right).
+\]
+因此
+\begin{align*}
+\sum_{k=1}^{n} \frac{a_k}{S_k^p} &= \frac{1}{a_1^{p-1}} + \sum_{k=2}^{n} \frac{a_k}{S_k^p} < \frac{1}{a_1^{p-1}} + \frac{1}{p-1} \sum_{k=2}^{n} \left( \frac{1}{S_{k-1}^{p-1}} - \frac{1}{S_k^{p-1}} \right)\\
+&< \frac{1}{a_1^{p-1}} + \frac{1}{p-1} \cdot \frac{1}{a_1^{p-1}} = \frac{p}{p-1} \cdot \frac{1}{a_1^{p-1}}.
+\end{align*}
+因此级数收敛.
+
+\end{proof}
+
+
+\item 设$p>0, q>0$. 当$p, q$取何值时, 级数
+\[
+\sum_{n=1}^{\infty} \frac{p(p+1)\cdots (p+n-1)}{n!} \frac{1}{n^q}
+\]
+收敛. 
+
+利用Raabe判别法,
+\begin{align*}
+\frac{a_n}{a_{n+1}} &= \frac{n+1}{n+p} \left( 1 + \frac{1}{n}  \right)^q =  \left( 1 + \frac{1-p}{n+p}  \right)  \left( 1 + \frac{q}{n} + o \left( \frac{1}{n} \right) \right)\\
+&= 1 + \frac{q}{n} + \frac{1-p}{n+p} + o \left( \frac{1}{n} \right)= 1 + \frac{1+q-p}{n} + o \left( \frac{1}{n} \right).
+\end{align*}
+故原级数当$q > p$时收敛, 当$q < p$时发散, 当$q =p$时无法判断.
+
+\item 设$\sum_{n=1}^{\infty} a_n$是递减的正项发散级数, 证明当$n \to \infty$时
+\[
+\frac{a_1 + a_3 + \cdots + a_{2n-1}}{a_2 + a_4 + \cdots + a_{2n}} \to 1.
+\]
+
+\begin{proof}
+
+记分子分母为$A, B$. 显然$A \geq B$且
+\[
+A - a_1 = a_3 + a_5 + \cdots + a_{2n-1} \leq B.
+\]
+又
+\[
+2B \geq B + A - a_1 = \sum_{k=2}^n a_k \to \infty \ (n \to \infty).
+\]
+故
+\[
+\Big| \frac{A}{B} -1 \Big| = \frac{|A-B|}{B} \leq \frac{a_1}{B} \to 0.
+\]
+
+\end{proof}
+
+\item 设
+\[
+a_n = \left( 1 - \frac{p \ln n}{n} \right)^n,
+\]
+讨论级数$\sum_{n=1}^{\infty} a_n$关于$p$的敛散性.
+
+
+\begin{proof}
+
+由于
+\[
+\lim_{n \to \infty} \ln (n^p a_n) = \lim_{n \to \infty} \ln \left[  n^p  \left( 1 - \frac{p \ln n}{n} \right)^n \right]
+\]
+\[
+= \lim_{n \to \infty} \left[ p \ln n + n \ln \left( 1 - \frac{p \ln n}{n} \right) \right]
+\]
+\[
+= \lim_{n \to \infty} \frac{1}{\frac{1}{n}} \left[ - \frac{1}{n} p \ln \frac{1}{n} + \ln \left( 1 + \frac{p}{n} \ln \frac{1}{n} \right) \right]
+\]
+\[
+= \lim_{x \to 0} \frac{1}{x} [ \ln(1 + px \ln x) - px \ln x] =0.
+\]
+故$a_n \sim 1/n^p$, 故当$p > 1$时收敛, 当$ p \leq 1$时发散.
+
+\end{proof}
+
+
+
+\item 设$a_n \neq 0 (n = 1, 2, \cdots)$, 且$\lim\limits_{n \to \infty} a_n = a \ (a \neq 0)$. 证明: 级数$\sum_{n=1}^{\infty} |a_n - a_{n+1}|$与$\sum_{n=1}^{\infty} \Big| \frac{1}{a_{n+1}} - \frac{1}{a_n} \Big|$同敛散.
+
+\begin{proof}
+
+设$u_n = |a_n - a_{n+1}|, v_n = \Big| \frac{1}{a_{n+1}} - \frac{1}{a_n} \Big|$. 则$\sum_{n=1}^{\infty} u_n, \sum_{n=1}^{\infty} v_n$均为正项级数, 且
+\[
+\lim_{n \to \infty} \frac{u_n}{v_n} = \lim_{n \to \infty} |a_{n+1} a_n| = a^2 \neq 0.
+\]
+\end{proof}
+
+
+\item 若级数$\sum_{n=1}^{\infty} n (a_n - a_{n-1})$收敛且$\lim\limits_{n \to \infty}n a_n$存在. 证明$\sum_{n=0}^{\infty} a_n$收敛.
+
+
+\begin{proof}
+
+令$\sigma_n = \sum_{k=1}^n k (a_k - a_{k-1}), S_n = \sum_{k=0}^{n-1} a_k$, 则
+\[
+\sigma_n = \sum_{k=1}^n\{ [ ka_k - (k-1)a_{k-1} ] -a_{k-1} \} = n a_n - \sum_{k=1}^n a_{k-1} = na_n - S_n.
+\]
+取极限即证.
+
+\end{proof}
+
+
+
+\item 设正项级数$\sum_{n=1}^{\infty} a_n$收敛, 证明
+\[
+\lim_{n \to \infty} \frac{\sum_{k=1}^n k a_k}{n} = 0.
+\]
+
+
+\begin{proof}
+
+利用Able变换,
+\[
+\lim_{n \to \infty} \frac{\sum_{k=1}^n k a_k}{n} = \lim_{n \to \infty} \frac{n S_n - \sum_{k=1}^{n-1} S_k}{n} =  \lim_{n \to \infty} \left( S_n - \frac{n-1}{n} \frac{\sum_{k=1}^{n-1} S_k}{n-1} \right) =0.
+\]
+
+\end{proof}
+\end{enumerate}
+
+\subsection*{GPT 补充参考答案}
+
+\noindent\textbf{以下由 GPT 给出。}原稿已有的证明也保留在上节。
+\begin{enumerate}
+\item 对 $n\ge2$，$a_n/S_n^2\le a_n/(S_{n-1}S_n)=1/S_{n-1}-1/S_n$，故收敛。
+\item 对 $n\ge2$，$a_n/S_n^p\le\int_{S_{n-1}}^{S_n}t^{-p}dt$；$p>1$ 且 $S_{n-1}\ge S_1>0$，故总和有限。
+\item 由 Gamma 比值或 Raabe 判别，通项渐近于 $n^{p-q-1}/\Gamma(p)$，故当且仅当 $q>p$ 收敛。
+\item 奇项和与偶项和之差 $\sum_{k=1}^n(a_{2k-1}-a_{2k})$ 非负且不超过 $a_1$；偶项和因原级数发散而趋无穷，故比值趋 $1$。
+\item \textbf{原题缺条件：}$a_n=(1-p\ln n/n)^n\sim n^{-p}$，因此级数当且仅当 $p>1$ 收敛。原题“证明收敛”在 $p\le1$ 时为假；应改为讨论 $p$ 的范围。
+\item (1) $3^{-\ln n}=n^{-\ln3}$，$\ln3>1$，收敛；(2) $(\ln n)^{-\ln n}=n^{-\ln\ln n}$，最终小于 $n^{-2}$，收敛；(3) $(\ln n)^{-\ln\ln n}=e^{-(\ln\ln n)^2}\ge n^{-1/2}$（充分大的 $n$），发散。
+\item \textbf{符号勘误：}左级数求和下标应为 $n$。由于 $a_n\to a\ne0$，$|a_na_{n+1}|$ 最终有正的上下界，且 $|a_n^{-1}-a_{n+1}^{-1}|=|a_n-a_{n+1}|/|a_na_{n+1}|$，两级数同敛散。
+\item Abel 变换给 $\sum_{n=1}^Nn(a_n-a_{n-1})=Na_N-\sum_{n=0}^{N-1}a_n$；题设两项极限存在，故 $\sum_{n=0}^\infty a_n$ 收敛。
+\item $p,q>1$ 时绝对收敛；$p=q\in(0,1]$ 时相邻项配对差为 $O(n^{-p-1})$ 且原项趋零，条件收敛；其余参数下发散。
+\item 设 $s_n=\sum_{k=1}^na_k\to s$。Abel 变换给 $\sum_{k=1}^nka_k=ns_n-\sum_{k=1}^{n-1}s_k$；除以 $n$，由 Ces\`aro 定理趋 $s-s=0$。
+\end{enumerate}
+
+\clearpage
+
+\section{5月5--11日 · Week 12}
+
+\subsection*{作业}
+
+\begin{enumerate}
+
+\item 13.1节,  2, 7, 11, 13题
+
+\item 设$|q| < 1$. 证明:
+\[
+\left( \sum_{n=0}^{\infty} q^n \right)^2 = \sum_{n=0}^{\infty} (n+1) q^n.
+\]
+
+\item 讨论函数列$f_n(x) = \left( \frac{\sin x}{x} \right)^n, n =1, 2, \cdots$在$(0, 1)$上的一致收敛性.
+
+\item 证明函数列$\left( 1 + \frac{x}{n} \right)^n \ (n \geq 1)$在$[0, 1]$上一致收敛.
+
+\item 证明:
+
+
+(1) 若$f_n(x)$在区间$I$上一致收敛到$f(x)$, 且$f$在$I$上有界, 则$\{f_n(x) \}$除至多有限项外在$I$上一致有界.
+
+(2) 若$f_n(x)$在区间$I$上一致收敛到$f(x)$, 且$\forall n \geq 1$, $f_n$在$I$上有界, 则$\{f_n(x) \}$在$I$上一致有界
+
+\end{enumerate}
+
+\subsection*{原稿参考答案}
+
+\noindent 原稿未附这一周的参考答案。
+
+\subsection*{GPT 补充参考答案}
+
+\noindent\textbf{以下由 GPT 给出。}
+\begin{enumerate}
+\item 参见教材。
+\item \textbf{符号勘误：}原稿左端从 $n=1$ 起求和，结论在 $q=0$ 即不成立；应从 $n=0$ 起。此时 $1/(1-q)^2=\sum_{n=0}^\infty(n+1)q^n$（$|q|<1$）。
+\item 对每个 $x\in(0,1)$，$0<\sin x/x<1$，故逐点趋 $0$；但 $\sup_{0<x<1}(\sin x/x)^n=1$，所以不一致收敛。
+\item 对 $0\le x\le1$，$n\ln(1+x/n)=x+O(1/n)$，余项一致有界；指数函数在有界区间上一致连续，故一致收敛到 $e^x$。
+\item (1) 若 $f$ 有界，取 $N$ 使 $\sup_I|f_n-f|\le1$（$n\ge N$），即尾部一致有界。(2) 再把有限个前项各自的界取最大，整个函数列一致有界。
+\end{enumerate}
+
+\clearpage
+
+\section{5月12--18日 · Week 13}
+
+\subsection*{作业}
+
+\begin{enumerate}
+
+\item 33页, 1((1), (3), (5)), 3((2), (4), (6)), 6, 8, 9 ((2), (4), (6)), 10  
+ 
+\item 利用Dirichlet判别法判断32页例6.
+
+\end{enumerate}
+
+\begin{enumerate}
+
+\item 39-40页, 1((1), (3)), 4, 5, 7, 8, 9  
+ 
+\item 设函数列$\{ f_n \}$在区间$[a, b]$上可微, $x_0 \in [a, b]$为 $\{ f_n\}$的收敛点, $f_n'$一致收敛于$g$.
+
+\begin{enumerate}
+\item 利用微分中值定理和Cauchy收敛准则证明$\{f_n(x) - f_n(x_0) \}$在$[a, b]$上一致收敛. (参考(d)的形式)
+
+\item 证明$\{f_n(x) \}$ 在$[a, b]$上一致收敛(于函数$f(x)$).
+
+\item 对任意$c \in [a, b]$, 定义函数
+\[
+g_n(x) = \begin{cases}
+\frac{f_n(x) - f_n(c)}{x - c}, & x \neq c,\\
+f_n'(c), & x = c.
+\end{cases}
+\]
+证明: $g_n(x)$在$[a, b]$上连续.
+
+\item 利用微分中值定理说明当$x \neq c$时, 存在$\xi$介于$x$和$c$之间, 满足
+\[
+|g_n(x) - g_m(x)| = | f_n'(\xi) - f_m'(\xi) |.
+\]
+
+\item 证明$\{ g_n \}$一致收敛, 且极限函数为连续函数:
+\[
+\tilde g(x) = \begin{cases}
+\frac{f(x) - f(c)}{x - c}, & x \neq c,\\
+g(c), & x = c.
+\end{cases}
+\]
+
+\item 证明$f'(c) = g(c)$对任意$c \in [a, b]$成立.
+
+\end{enumerate}
+
+\end{enumerate}
+
+\begin{enumerate}
+
+
+\item 给定函数列
+\[
+f_n(x) = \frac{x (\ln n)^{\alpha}}{n^x}, \ \ n \geq 2.
+\]
+问当$\alpha$取何值时, $\{ f_n(x) \}$在$[0, +\infty)$上一致收敛.
+
+
+\item 证明: 级数$\sum_{n=2}^{\infty} \frac{\cos nx}{n \ln n}$在$(0, \pi]$上不一致收敛.
+
+
+
+\item 设$\sum_{n=1}^{\infty} u_n(x)$为$[a, b]$上可导的函数项级数, 且$\sum_{n=1}^{\infty} u_n'(x)$的部分和函数列在$[a, b]$上一致有界. 证明: 若$\sum_{n=1}^{\infty} u_n(x)$在$[a, b]$上逐点收敛, 则一致收敛.
+
+
+\item 设函数列$\{f_n(x) \} (n \geq 0)$在区间$I$上有定义, 且$\forall x \in I$满足
+
+(1) $|f_0(x)| \leq M$;
+
+(2) $\sum_{n=0}^m |f_n(x) - f_{n+1}(x)| \leq M, m = 0, 1, 2, \cdots$, 其中$M$为常数. 证明: 若级数$\sum_{n=0}^{\infty} b_n$收敛, 则级数$\sum_{n=0}^{\infty} b_n f_n(x)$在$I$上一致收敛.
+
+
+Tip: 使用Abel变换和Cauchy收敛准则.
+
+\item 设函数列$\{ f_n \}$和$\{ g_n \}$在区间$I$上一致收敛. 如果对每个$n \geq 1$, $f_n$和$g_n$都是$I$上的有界函数. 证明:
+
+1. $\{ f_n \}$和$\{ g_n \}$在区间$I$上一致有界.
+
+2. $\{ f_n g_n \}$在$I$上一致收敛.
+
+\end{enumerate}
+
+\subsection*{原稿参考答案}
+
+\noindent 原稿未附这一周的参考答案。
+
+\subsection*{GPT 补充参考答案}
+
+\noindent\textbf{以下由 GPT 给出。}本周原稿同时收录 5 月 12 日、15 日及“第十三周”作业，依原顺序列答。
+\begin{enumerate}
+\item 参见教材。
+\item 参见教材。
+\item 参见教材。
+\item 若 $f_n'$ 在 $[a,b]$ 一致收敛到 $g$，则 $\lVert{}f_n'-f_m'\rVert_\infty\to0$。中值定理给 $|(f_n-f_m)(x)-(f_n-f_m)(x_0)|\le(b-a)\lVert{}f_n'-f_m'\rVert_\infty$；加上 $f_n(x_0)$ 收敛，得 $f_n$ 一致收敛。每个 $g_n$ 在 $c$ 连续，因为 $f_n$ 在 $c$ 可导。对 $x\ne c$，中值定理将 $g_n-g_m$ 写成 $(f_n'-f_m')(\xi)$，在 $x=c$ 也有同样上界，故 $g_n$ 一致收敛到题给的连续函数。由 $g_n(c)=f_n'(c)\to g(c)$，得到 $f'(c)=g(c)$。
+\item 对 $n\ge2$，$f_n(x)=x(\ln n)^\alpha e^{-x\ln n}$，在 $x=1/\ln n$ 取最大值 $e^{-1}(\ln n)^{\alpha-1}$；逐点趋 $0$，故当且仅当 $\alpha<1$ 一致收敛。
+\item 取尾段 $n=N,\ldots,N^2$ 与 $x_N=N^{-2}$，则 $\cos(nx_N)\ge\cos1>0$，而 $\sum_{n=N}^{N^2}1/(n\ln n)\to\ln2$，违背一致 Cauchy 准则。
+\item 部分和 $S_N$ 的导数一致有界，故 $S_N$ 等度连续；又逐点收敛于 $S$。紧区间上等度连续函数列的逐点极限必一致收敛（有限网格论证）。
+\item 设 $B_{m,k}=\sum_{n=m}^kb_n$，原数项级数收敛使 $\sup_{k\ge m}|B_{m,k}|\to0$。Abel 变换及 $|f_n|\le2M$、$\sum|f_{n+1}-f_n|\le M$ 给 $|\sum_{n=m}^Nb_nf_n(x)|\le3M\sup_{k\ge m}|B_{m,k}|$，与 $x$ 无关。
+\item 一致收敛列的所有项在 $I$ 上一致有界（有限个首项各有界）；于是 $|f_ng_n-fg|\le|f_n|\,|g_n-g|+|g|\,|f_n-f|\to0$ 一致。
+\end{enumerate}
+
+\clearpage
+
+\section{5月19--25日 · Week 14}
+
+\subsection*{作业}
+
+\begin{enumerate}
+
+\item 48-49页, 2, 3, 5, 10, 11
+
+
+\item 设$f(x) = \sum_{n=0}^{\infty} \frac{\sin 2^n x}{n!}$. 
+
+\begin{enumerate}
+
+\item 求$f(x)$的收敛域.
+
+\item 说明$f(x)$在收敛域上有任意阶连续导数.
+
+\item 求$f^{(k)}(x), \forall k \geq 1$.
+
+\item 求$f^{(k)}(0), \forall k \geq 1$.
+
+\item 讨论$f$在$x = 0$处麦克劳林式的收敛性. 
+
+\end{enumerate}
+
+\end{enumerate}
+
+\begin{enumerate}
+
+\item 设$\{ f_n(x) \}$是$[a, b]$上的连续函数列, 且$f_n(x)$一致收敛于$f(x)$. 若$\{ x_n \} \subset [a, b], x_n \to x_0 \ (n \to \infty)$, 证明:
+\[
+\lim_{n \to \infty} f_n(x_n) = f(x_0).
+\]
+
+
+\item 证明: 函数
+\[
+f(x) = \sum_{n=1}^{\infty} \frac{\cos nx}{n^4}
+\]
+在$(-\infty, +\infty)$上有二阶连续导数, 并计算$f''(x)$.
+
+\item 设$f(x) = \sum_{n=1}^{\infty} \left( \frac{x}{1 + 2x} \right)^n \cos \frac{n \pi}{x}$. 求: $\lim\limits_{x \to 1} f(x), \lim\limits_{x \to +\infty} f(x)$.
+
+\item 证明:
+\[
+\lim_{x \to 1} \sum_{n=1}^{\infty} \frac{x^n(1 - x)}{n(1 - x^{2n})} = \frac{1}{2} \sum_{n=1}^{\infty} \frac{1}{n^2}.
+\]
+
+
+
+\item 求下述幂级数的和:
+\[
+\sum_{n=1}^{\infty} \frac{x^n}{n(n+1)(n+2)} \ (|x| \leq 1).
+\]
+
+
+\item 求下述级数的和:
+\[
+\sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{(2n-1)(2n+1)}.
+\]
+
+\end{enumerate}
+
+\subsection*{原稿参考答案}
+
+\noindent 原稿未附这一周的参考答案。
+
+\subsection*{GPT 补充参考答案}
+
+\noindent\textbf{以下由 GPT 给出。}本周原稿含 5 月 22 日及“第十四周”两份作业。
+\begin{enumerate}
+\item 参见教材。
+\item 因 $|\sin(2^nx)|/n!\le1/n!$，级数对所有 $x\in\mathbb R$ 一致收敛。任意固定阶 $k$ 的导数项绝对值至多 $2^{nk}/n!$，总和 $e^{2^k}<\infty$，故可逐项求导且 $f\in C^\infty(\mathbb R)$。$f^{(k)}(x)=\sum_{n=0}^\infty(2^n)^k\sin(2^nx+k\pi/2)/n!$，从而 $f^{(k)}(0)=e^{2^k}\sin(k\pi/2)$。Maclaurin 系数对奇数 $k$ 增长过快，级数除 $x=0$ 外处处发散，收敛半径为 $0$。
+\item $f_n\to f$ 一致且 $f$ 连续，故 $|f_n(x_n)-f(x_0)|\le\lVert{}f_n-f\rVert_\infty+|f(x_n)-f(x_0)|\to0$。
+\item 二阶导数项为 $-\cos(nx)/n^2$，其级数一致收敛，故 $f''(x)=-\sum_{n=1}^\infty\cos(nx)/n^2$。
+\item 近 $x=1$ 时 $r(x)=x/(1+2x)\to1/3$ 且 $\cos(n\pi/x)\to(-1)^n$，一致控制给极限 $\sum_{n=1}^\infty(-1/3)^n=-1/4$。$x\to+\infty$ 时 $r(x)\to1/2$，余弦趋 $1$，极限为 $\sum_{n=1}^\infty2^{-n}=1$。
+\item 原级数的单项写为 $x^n/[n(1+x+\cdots+x^{2n-1})]$；在 $x$ 趋近 $1$ 时由一致可求和的 $O(n^{-2})$ 界控制，逐项极限为 $1/(2n^2)$，结论成立。
+\item 当 $|x|\le1$，$x\ne0,1$ 时，和为 $\frac{(1-x)^2}{2x^2}[-\ln(1-x)]+\frac34-\frac1{2x}$；$x=0$ 连续定义为 $0$，$x=1$ 为 $1/4$。
+\item 拆成 $\frac12[(2n-1)^{-1}-(2n+1)^{-1}]$，借 $\sum_{n\ge1}(-1)^{n-1}/(2n-1)=\pi/4$，得和为 $\pi/4-1/2$。
+\end{enumerate}
+
+\end{document}
+

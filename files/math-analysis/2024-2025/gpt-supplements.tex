@@ -1,0 +1,273 @@
+% ANSWERS: f1
+\noindent\textbf{选做题补充。}以下解答由 GPT 给出，原稿已有的必做题解答见上节。
+\par\noindent 原稿只列教材第 4、8 页题号的题目：参见教材。
+\begin{enumerate}
+\item 由 $3(abc)^{2/3}\le ab+bc+ca$ 及 $3(ab+bc+ca)\le(a+b+c)^2$ 即得两式；零因子可直接验证。
+\item 有限集到自身的单射必为满射，故逆映射存在。依次指定 $n$ 个不同像，排列数为 $n!$。
+\item 若两向量都非零，将其单位化后用 $2uv\le u^2+v^2$ 求和，所得点积不超过 $1$；对 $-a$ 同用一次。也可展开 Lagrange 恒等式，右端为平方和。等号的准确条件是存在 $\lambda\in\mathbb R$ 使 $a_i=\lambda b_i$（或 $b$ 向量全零）；原题用 $a_i/b_i$ 表示的条件在 $b_i=0$ 时无定义。
+\item 左逆与右逆若都存在，则 $g=g(fh)=(gf)h=h$。左逆推出单射；反向在 $A\ne\varnothing$ 时，先在 $f(A)$ 上定义逆，再把 $B\setminus f(A)$ 映到 $A$ 中固定元素。右逆推出满射；满射反向对每个 $b$ 选一个原像（本题有限集无需额外选择公理）。\textbf{条件说明：}当 $A=\varnothing\ne B$ 时，$f$ 是单射却不存在 $B\to A$ 的左逆，原题应排除该情形。
+\end{enumerate}
+% ANSWERS: f2
+\noindent\textbf{选做题参考答案（由 GPT 给出）。}按原稿题序：
+\begin{enumerate}
+\item 若 $\sqrt[3]2=p/q$ 为既约分数，则 $p^3=2q^3$ 迫使 $p,q$ 同为偶数。若 $r=\sqrt2+\sqrt3$ 为有理数，则 $\sqrt6=(r^2-5)/2$ 也有理，矛盾。
+\item (1) 若 $s\ne0$，则 $\sqrt2=-r/s$ 有理，矛盾。(2) 若 $r+s\sqrt2=-t\sqrt3$，平方后 $2rs\sqrt2=3t^2-r^2-2s^2$；当 $rs\ne0$ 即矛盾。当 $r=0$ 或 $s=0$，分别利用 $\sqrt{3/2}$、$\sqrt3$ 无理，得到各系数为零。
+\item 长除法每一步的余数只可能为 $0,1,\ldots,q-1$，故余数归零或重复；后者给循环小数。循环节为整数 $m$、长度 $k$ 时，其尾数是 $m/(10^k-1)$ 的十进制位移，故有理。
+\item 该 Champernowne 小数无理：整数 $10^k$ 在其小数展开中给出任意长的连续零串，同时也有无限多个非零位；最终周期的小数若有任意长零串，则只能最终全零，矛盾。
+\item Dirichlet 逼近：令 $N=\lfloor Q\rfloor$，把 $0,\{\alpha\},\ldots,\{N\alpha\}$ 连同端点 $1$ 排序。$N+1$ 个间隙总长为 $1$，故有长度至多 $1/(N+1)<1/Q$ 的间隙。相邻点差给 $1\le q\le N\le Q$ 且 $|q\alpha-p|<1/Q$；约分后仍满足结论。
+\item 对每个整数 $Q$ 用上一题找到 $q\le Q$、$|\alpha-p/q|<1/(qQ)\le1/q^2$。若只有有限个既约分数，它们到 $\alpha$ 的距离有正下界，与 $Q\to\infty$ 矛盾。
+\item 每个整系数多项式由一个有限整数元组确定，故多项式集合是可数并集 $\bigcup_{n\ge0}\mathbb Z^{n+1}$，为可数集；每个非零多项式只有有限个复根，代数数集仍可数。
+\item 每个非退化区间都含有有理数；两两不交区间对应不同有理数，故区间族至多可数。
+\end{enumerate}
+% ANSWERS: f3
+\noindent\textbf{选做题参考答案（由 GPT 给出）。}
+\begin{enumerate}
+\item Fibonacci 数列的通项可由特征方程 $r^2=r+1$ 求得：$F_n=(\varphi^{n+1}-\psi^{n+1})/\sqrt5$，其中 $\varphi=(1+\sqrt5)/2$、$\psi=(1-\sqrt5)/2$。因 $|\psi|<\varphi$，比值趋 $1/\varphi=(\sqrt5-1)/2$。
+\item 令 $y_n=x_n-x_{n-1}$，则 $y_n+y_{n-1}=x_n-x_{n-2}\to0$。递推得 $(-1)^ny_n=C+\sum_{k=2}^n(-1)^k(y_k+y_{k-1})$；右端是收敛到零的项的部分和，除以 $n$ 趋零（Ces\`aro），故 $y_n/n\to0$。
+\item 若 $|A|>0$，最终 $|a_n|>|A|/2$；若符号无限变化，相邻两项某次异号而差至少 $|A|$，与 $a_{n+1}-a_n\to0$ 矛盾。因此符号最终固定，再由 $a_n^2\to A^2$ 得 $a_n\to\pm|A|$。若 $A=0$，直接 $a_n\to0$。
+\item 令 $t_{nk}=2^{-n}\binom nk$，则 $t_{nk}\ge0$、$\sum_{k=0}^nt_{nk}=1$，且固定 $k$ 时 $t_{nk}\to0$。Toeplitz 定理给结论；亦可在固定 $K$ 处分开求和，前 $K$ 项权重趋零，尾项由 $|a_k-a|<\varepsilon$ 控制。
+\item Toeplitz 定理：$\sum t_{nk}(a_k-a)$ 在固定 $K$ 前的有限项逐项趋零，$k>K$ 的尾项绝对值不超过 $\varepsilon\sum_{k>K}t_{nk}\le\varepsilon$。
+\item Stolz 定理：写 $a_n=a_0+\sum_{k=1}^n(b_k-b_{k-1})r_k$，$r_k=(a_k-a_{k-1})/(b_k-b_{k-1})$。除以 $b_n$ 后，首项趋零，余项是 $r_k$ 的加权均值；Toeplitz 定理给有限极限。极限为 $\pm\infty$ 时用同样的尾项下界或上界。
+\end{enumerate}
+% ANSWERS: f4
+\noindent 原稿参考答案已覆盖本周题目。若发现原稿的证明与题面不符，应以修订版为准；本周没有另加未经核对的 GPT 解答。
+% ANSWERS: f5
+\noindent\textbf{选做题参考答案（由 GPT 给出）。}
+\par\noindent 本周仅列“3.1 节第 8 题”等教材题号的必做题：参见教材。
+\begin{enumerate}
+\item $s_n=\sum_{k=0}^n1/k!$ 的级数绝对收敛；由 $e=\lim_n(1+1/n)^n$ 的二项式展开及对尾项的统一估计，得 $s_n\to e$。
+\item 若 $e=p/q$，则 $q!(e-s_q)$ 是正整数；但 $0<q!(e-s_q)<\sum_{j\ge1}(q+1)^{-j}<1$，矛盾。
+\item 连分数：(a) 对有理数运行欧几里得算法得有限展开；末商 $c\ge2$ 可换成 $c-1,1$，故有两种标准写法。(b) 矩阵乘积归纳给 $p_n=a_np_{n-1}+p_{n-2}$、$q_n=a_nq_{n-1}+q_{n-2}$。(c) 行列式给 $p_nq_{n-1}-p_{n-1}q_n=(-1)^{n-1}$，故题给相邻差公式。(d) 因 $q_n$ 至少按 Fibonacci 速度增长，相邻差可求和，渐近分数收敛。(e) 偶次渐近分数严格递增、奇次严格递减且差趋零，夹住同一极限 $\alpha$；若 $\alpha=p/q$，对充分大的 $n$ 有 $q_{n+1}>q$，而任何不同于 $p/q$ 的 $p_n/q_n$ 与其距离至少 $1/(qq_n)$，与误差上界 $1/(q_nq_{n+1})$ 矛盾。(f) $\varphi=[1;1,1,\ldots]$，分母满足 $q_{n+1}=q_n+q_{n-1}$，由特征方程得 Fibonacci 通项。(g) 写尾连分数为 $\alpha_{n+1}\in(a_{n+1},a_{n+1}+1)$，恒等式 $|\alpha-p_n/q_n|=[q_n(q_n\alpha_{n+1}+q_{n-1})]^{-1}$，直接给题中上下界。(h) 误差 $|q_n\alpha-p_n|=[q_n\alpha_{n+1}+q_{n-1}]^{-1}$ 随 $n$ 递减。(i) 相邻向量 $(p_n,q_n),(p_{n+1},q_{n+1})$ 的行列式绝对值为 $1$，整数点的最优逼近性质给：若 $0<q<q_{n+1}$，则 $|q\alpha-p|\ge|q_n\alpha-p_n|$。
+\item 令 $t_k=s_0s_1\cdots s_k\in\{-1,1\}$，则 $c_n=\sum_{k=0}^nt_k/2^k$ 绝对收敛且 $|h(s)|\le2$。每个 $y\in[-2,2]$ 可先按符号选 $t_0$，再对余量逐位选 $t_k$，所以 $h:\mathcal S\to[-2,2]$ 满射；二进制端点有双重表示，故非单射。\textbf{原题符号错误：}写成 $h:\mathcal S\to(1,2]$ 不成立，例如全取 $s_k=-1$ 可得非正值。嵌套根式的最内层应为 $\sqrt2$；用半角公式 $2\sin(\theta/2)=\sqrt{2-2\cos\theta}$ 并按 $s_k$ 选符号，可归纳得到修订后的恒等式。全为正号时 $n$ 层根式单调增且有界于 $2$，极限满足 $L=\sqrt{2+L}$，故为 $2$。
+\item Banach--Mazur 游戏是研究拓扑“大”集合的无限回合博弈；此条原稿只要求查阅概念，并无待计算或证明的具体命题。
+\end{enumerate}
+% ANSWERS: f6
+\noindent\textbf{以下由 GPT 给出。}按原稿题序：
+\begin{enumerate}
+\item 六个极限依次为 $e^{-2/\pi},1,e^{-2},1,-1,2/\pi$。分别使用 $\ln(1+t)\sim t$、$\sin t\sim t$、$\arctan t\sim t$，以及 $\arctan x\to\pi/2$。
+\item 三个极限依次为 $1/2,2,e$；在 $0/0$ 型中先化为标准等价无穷小，再取对数处理指数型。
+\item 两正数的题目极限为 $\sqrt{ab}$；取对数后用 Ces\`aro 均值。
+\item（选做）由 $\sin x=2^n\sin(x/2^n)\prod_{k=1}^n\cos(x/2^k)$，令 $n\to\infty$ 得 $\prod_{k=1}^\infty\cos(x/2^k)=\sin x/x$（$x=0$ 时按连续值取 $1$）。令 $x=\pi/2$ 即 Vi\`ete 公式。
+\item 两个极限分别为 $6,-8$。
+\item 在每个点附近，有限单侧或双侧极限使函数在穿孔邻域内有界；再考虑该点函数值。用紧区间有限覆盖取全局界。
+\item 三个极限分别为 $2,1/4,+\infty$。前两题分别用 $\sum_{k=1}^n k^3=[n(n+1)/2]^2$ 与望远镜求和；第三题由 $(n!)^{1/n}\sim n/e$，其余固定参数因子的 $n$ 次方根趋 $1$。
+\item 参见教材。
+\end{enumerate}
+% ANSWERS: f8
+\noindent\textbf{选做题参考答案（由 GPT 给出）。}
+\begin{enumerate}
+\item 若 $f$ 连续，$x\in f^{-1}(U)$ 时可取 $f(x)$ 的小邻域包含于开集 $U$，连续性给 $x$ 的邻域落在逆像中。反过来，对 $f(x)$ 的任意开邻域 $U$，$f^{-1}(U)$ 在 $x$ 附近是开邻域，故 $f$ 在 $x$ 连续。
+\item (a) 单调且有反函数意味着严格单调；介值性保证像区间无空隙，故逆函数连续。(b) $f(x)=\sum_{n\ge1}2^{-n}\mathbf1_{[q_n,\infty)}(x)$，其中 $\{q_n\}$ 枚举有理数，是单调函数且间断点恰为可数稠密集 $\{q_n\}$。(c) 取 $X=\{0,1,2,\ldots\}$、$Y=\{0\}\cup\{1/n:n\ge1\}$，$f(0)=0,f(n)=1/n$；$0$ 在 $X$ 中孤立故 $f$ 于此连续，但 $f^{-1}$ 在 $0\in Y$ 不连续。
+\item (a) 对 $f-g$ 用介值定理。(b) 对 $f(x)-x$ 用介值定理。(c) 两个可交换的连续区间自映射可能没有共同不动点；具体构造参见 Boyce, \emph{Commuting functions with no common fixed point}, Trans. Amer. Math. Soc. 137 (1969), 77--92, DOI 10.1090/S0002-9947-1969-0236331-5。(d) $f(x)=x+1$。(e) \textbf{原稿命题为假}，与 (b) 矛盾，应改为“不能没有不动点”。(f) 连续自反映射是单调双射；端点固定迫使其单调增。若存在 $f(x)>x$ 或 $f(x)<x$，迭代不可能两步回到 $x$，故 $f(x)=x$。
+\item (a) $f^n=\mathrm{id}$ 使 $f$ 为连续单射，端点固定迫使单调增；若 $f(x)\ne x$，单调迭代与 $f^n(x)=x$ 矛盾。(b) 若 $f(x)>x$，迭代序列单调增且有界；若 $f(x)<x$ 则单调减。极限 $L$ 满足 $f(L)=L$；等号情形已是不动点。
+\item 连续模：(a) 随 $\delta$ 增大取上确界的点对增加，故非负单调，右极限存在。(b) 取足够小的 $\delta$ 使 $\omega(\delta)<\omega(0+)+\varepsilon$。(c) 区间内任意相距小于 $\delta_1+\delta_2$ 的两点可插入中点，使两段距离分别小于 $\delta_1,\delta_2$，三角不等式给次可加性。(d) $f(x)=x$ 的模为 $\delta$；$\sin x^2$ 在任意固定距离内、充分远处可取近邻的极大与极小值，模为 $2$。(e) 一致连续的定义正是 $\omega(\delta)\to0$。
+\item 对任意 $c\in[a,b]$，$M_c=\{f:f(c)=0\}$ 是极大理想，因为求值映射 $C[a,b]\to\mathbb R$ 的核为 $M_c$。反过来，若极大理想 $I$ 的全部函数没有公共零点，紧致性给有限个 $f_1,\ldots,f_m\in I$ 使 $\sum f_i^2>0$ 处处成立；于是 $1=\sum_i f_i[f_i/(\sum_jf_j^2)]\in I$，矛盾。故 $I\subset M_c$，极大性给 $I=M_c$。
+\end{enumerate}
+% ANSWERS: f9
+\noindent\textbf{以下由 GPT 给出。}按原稿题序：
+\begin{enumerate}
+\item 因 $f(a)\ne0$，$f(x)-f(a)=[f(x)^2-f(a)^2]/[f(x)+f(a)]$，故 $f'(a)=(f^2)'(a)/(2f(a))$。随后四个极限依次为 $\exp(f'(a)/f(a))$、$1+f(0)/f'(0)$、$\exp(x_0f'(x_0)/f(x_0))$、$H_k f'(0)$；均须满足原题所写非零条件。
+\item（选做）利用 $\tan t=\cot t-2\cot(2t)$ 望远镜求和，得 $\sum_{k=1}^n2^{-k}\tan(x/2^k)=2^{-n}\cot(x/2^n)-\cot x$；若再令 $n\to\infty$，极限为 $1/x-\cot x$（在各式有定义的区间）。
+\item 奇函数的导数为偶函数，偶函数的导数为奇函数；可导周期函数的导数同周期。
+\item 偶函数在 $0$ 可导时，左右差商互为相反数，故 $f'(0)=0$。
+\item 三次多项式在两个不同实根 $a<b$ 间不变号，当且仅当第三根不位于 $(a,b)$；等价于 $f'(a)f'(b)\le0$（按重根计）。
+\item $f'(a+)$ 与 $f'(b-)$ 同号且 $f(a)=f(b)=0$ 时，两端附近的 $f$ 值异号，介值定理给出内部零点。
+\item 若 $f(x)=(x-a)^k g(x)$ 且 $g(a)\ne0$，则前 $k-1$ 阶导数在 $a$ 为零，第 $k$ 阶为 $k!g(a)$。
+\item 从 $|f(x)|\le |g(x)|$ 及 $g(0)=g'(0)=0$ 得 $|f(x)/x|\le|g(x)/x|\to0$，故 $f'(0)=0$。
+\item 原稿两个有理/无理分段函数都仅在 $0$ 连续；$x$ 与 $0$ 拼成者在 $0$ 不可导，$x^2$ 与 $0$ 拼成者在 $0$ 可导且导数为 $0$。
+\item $f(x)=\prod_{j=0}^{100}(x-j)$ 时 $f'(0)=\prod_{j=1}^{100}(-j)=100!$。
+\item $\arctan x=\sum_{m\ge0}(-1)^m x^{2m+1}/(2m+1)$，故偶阶导数在 $0$ 为 $0$，第 $2m+1$ 阶为 $(-1)^m(2m)!$。
+\end{enumerate}
+% ANSWERS: f10
+\noindent\textbf{以下由 GPT 给出。}按原稿题序：
+\begin{enumerate}
+\item 若处处 $f''\ge0$，凸函数位于连接两个零端点的弦下方，便有 $f\le0$，与原题的正值矛盾。因此某处 $f''<0$。
+\item 右导数有有限极限则在端点附近有界；由中值定理 $|f(x)-f(y)|\le M|x-y|$，故 $f(a+)$ 存在。
+\item 非常值函数有相等端点值时，某处高于或低于端点值；中值定理分别给出正、负导数值。
+\item 四个不等式及极限：$\sec^2x$ 单增可用于第一式；第二式用 $\arctan u+\arctan(1/u)=\pi/2$；第三式取对数化为 $\ln x<x-1$；末项 $n[\arctan\ln(n+1)-\arctan\ln n]\to0$。另一个涉及 $\sin x^x$ 的式子必须先澄清幂和函数的括号；若解释为 $\sin(x^x)$，其极限为 $\cos(a^a)/(a^{a^a}\ln a)$。
+\item 对 $f$ 与 $x^2$ 应用 Cauchy 中值定理。
+\item 奇函数且 $f(1)=1$ 给 $f(0)=0$，故某处 $f'=1$。另一个结论把 $f''+f'$ 在 $[-1,1]$ 积分，其平均值为 $1$，连续性给出所求点。
+\item 对 $g(x)=xf(x)$ 应用中值定理。
+\item 对 $f(x)/x$ 与 $1/x$ 应用 Cauchy 中值定理（在正区间）。
+\item $e^{-x}f(x)$ 在端点同号而中间异号，至少有两个零点；Rolle 定理给 $f'=f$ 的点。
+\item 令 $g=f-x^2/2$，则 $g(0)=g(1)=0$。若 $g'\equiv0$，任取两不同点；否则 $g'$ 具有正负值，利用导数的介值性选两不同点使 $g'(\xi)+g'(\eta)=0$。
+\end{enumerate}
+% ANSWERS: f12
+\noindent\textbf{以下由 GPT 给出。}按原稿题序：
+\begin{enumerate}
+\item 以 $y=x+1$ 表示，原多项式为 $5y^4-16y^3+21y^2-12y+3$。
+\item Maclaurin 展开依次为：$1+2x+2x^2-2x^4+O(x^5)$；$1+2x+x^2-\frac23x^3-\frac56x^4-\frac1{15}x^5+O(x^6)$；$-\frac{x^2}{2}-\frac{x^4}{12}-\frac{x^6}{45}+O(x^8)$；$1-\frac{x}{2}+\frac{x^2}{12}-\frac{x^4}{720}+O(x^5)$；$1+\frac{x^2}{2}+\frac{3x^4}{8}+\frac{5x^6}{16}+O(x^8)$。
+\item 令 $h=x-x_0$：$\sin(\pi/2+h)=\cos h$，$\cos(\pi+h)=-\cos h$，$e^{1+h}=e\sum h^k/k!$，$\ln(2+h)=\ln2+\sum_{k\ge1}(-1)^{k-1}h^k/(k2^k)$，$x/(1+x^2)=\sum_{k\ge0}(-1)^kx^{2k+1}$；$x e^{-x^2}$ 在 $x_0=-1$ 时为 $(-1+h)e^{-1}e^{2h-h^2}$，按题给阶数截断。
+\item 参见教材。
+\item 严格凹性给 $f(x)<f(0)+f'(0)x$。取 $T=-f(0)/f'(0)>0$，得 $f(T)<0$；介值定理给 $(0,T)$ 内零点。
+\item $e^{-x^2}-\cos(\sqrt2x)=x^4/3+O(x^6)$，故 $n=4,a=1/3$。
+\item 分子为 $2x^3+O(x^4)$，分母为 $-x^3/3+O(x^5)$，极限为 $-6$。
+\item 根式差为 $-1/(4x^{3/2})+O(x^{-7/2})$，所求极限为 $-1/4$。
+\item $x^22^x=x^2e^{(\ln2)x}$，故 $f^{(n)}(0)=n(n-1)(\ln2)^{n-2}$（$n\ge2$），前两阶为 $0$。
+\end{enumerate}
+% ANSWERS: s1
+\noindent\textbf{以下由 GPT 给出。}各式均须在被积函数有定义的连通区间上取原函数，末尾均省略积分常数 $C$；含参数者需满足题设或分情况讨论。
+\begin{enumerate}
+\item $\frac1{\sqrt{21}}\ln\left|\frac{6x+3-\sqrt{21}}{6x+3+\sqrt{21}}\right|$。
+\item $\frac2{\sqrt3}\arctan\frac{2x-5}{\sqrt3}$。
+\item $\sqrt{x^2-2x-3}+2\ln|x-1+\sqrt{x^2-2x-3}|$。
+\item $\frac13(3x^2-2x+7)^{3/2}$。
+\item $\frac25x^{5/2}+\frac23x^{3/2}-\frac25(x+1)^{5/2}+\frac23(x+1)^{3/2}$（$x\ge0$）。
+\item $\ln|x|-\frac1n\ln|1+x^n|$（$n\ne0$）。
+\item $-\frac{(1-x)^{n+1}}{n+1}+\frac{(1-x)^{n+2}}{n+2}$（$n\ne-1,-2$）。
+\item $\ln|\ln(\tan x)|$，仅在 $\tan x>0$ 且 $\ln\tan x\ne0$ 的区间。
+\item $\frac13(\arctan x)^3$。
+\item $-1/[a(ax+b)]$。
+\item 令 $S_c(x)=-\cos(cx)/c$（$c\ne0$），$S_0(x)=0$；结果为 $[S_{a+b}(x)+S_{b-a}(x)]/2$。
+\item 令 $C_c(x)=\sin(cx)/c$（$c\ne0$），$C_0(x)=x$；结果为 $[C_{a-b}(x)-C_{a+b}(x)]/2$。
+\item $-\cos x+\cos^3x-\frac35\cos^5x+\frac17\cos^7x$。
+\item $\frac32(\sin x-\cos x)^{2/3}$（在不穿过零点的区间按实值导数理解）。
+\item $\frac1{\sqrt2}\arctan(\tan x/\sqrt2)$，仅作局部原函数。
+\item 若 $a^2\ne b^2$，为 $\frac{\ln(a^2\cos^2x+b^2\sin^2x)}{2(b^2-a^2)}$；若 $a^2=b^2>0$，为 $\sin^2x/(2a^2)$。
+\item $\frac1{\sqrt2}\ln\left|\tan\left(\frac{x+\pi/4}{2}\right)\right|$。
+\item 令 $R=\sqrt{a^2+b^2}>0$，取 $a=R\cos\phi,b=R\sin\phi$，则为 $R^{-1}\ln|\sec(x-\phi)+\tan(x-\phi)|$。
+\item $\frac1{\sqrt2}\arcsin\left(\sqrt{\frac23}\sin x\right)$。
+\item $\ln\left|\frac{x}{1+\sqrt{x^2+1}}\right|$。
+\end{enumerate}
+% ANSWERS: s2
+\noindent\textbf{以下由 GPT 给出。}本周计算题较多；先给可直接复核的结果或代换，未完成的参数积分不以猜测填充。
+\begin{enumerate}
+\item 展开 $(\tan x+1)^2=2\tan x+\tan^2x=2\tan x+\sec^2x-1$，而 $(e^{2x}\tan x)'=e^{2x}(2\tan x+\sec^2x)$，故原函数 $e^{2x}(\tan x-1/2)$。
+\item 令 $t=\arctan x$，有 $x/\sqrt{1+x^2}=\sin t$，积分化为 $\int e^t\sin t\,dt=\frac12e^t(\sin t-\cos t)$。
+\item 令 $t=x^{1/3}$，得到 $3e^t(t^2-2t+2)$。
+\item 令 $t=\sqrt{1+1/x}$（$x>0$），则原函数为 $x\ln(1+t)-\frac14\ln\frac{t-1}{t+1}-\frac1{2(t+1)}$。
+\item 令 $t=\sqrt x$，分部积分得 $(x-1)\ln(1+\sqrt x)-x/2+\sqrt x$；求导可复核。
+\item 分部积分 $u=\ln x$，$dv=x/\sqrt{1+x^2}\,dx$，得 $\sqrt{1+x^2}\ln x-\sqrt{1+x^2}+\ln\left|\frac{1+\sqrt{1+x^2}}x\right|$。
+\item 由 $\sin(nx)=2\sin x\cos((n-1)x)+\sin((n-2)x)$，两边除以 $\sin x$ 后积分，得到题给递推式；原式无误。
+\item 令 $D=a^2+b^2$、$K=e^{ax}(a\cos bx+b\sin bx)/D$、$L=e^{ax}(a\sin bx-b\cos bx)/D$；分部积分得 $I=xK-(aK+bL)/D$，$J=xL-(aL-bK)/D$。
+\item（选做）$\frac13\ln|x+1|-\frac16\ln(x^2-x+1)+\frac1{\sqrt3}\arctan\frac{2x-1}{\sqrt3}$。
+\item（选做）令 $L=\ln[(x^2+\sqrt2x+1)/(x^2-\sqrt2x+1)]$，则原函数为 $\frac{L}{4\sqrt2}+\frac1{2\sqrt2}[\arctan(\sqrt2x-1)+\arctan(\sqrt2x+1)]$。
+\item 先令 $t=1+x$；分子 $1-(t-1)^3=2-3t+3t^2-t^3$，故原函数 $-\frac2{3t^3}+\frac3{2t^2}-\frac3t-\ln|t|$。
+\item 分式$x^2/2+\ln|x-1|+\ln(x^2+x+1/2)+\arctan(2x+1)$（在不跨越 $x=1$ 的区间）。
+\item $\frac12\ln|\tan(x/2)|+\frac14\tan^2(x/2)$（在分母非零的区间）。
+\item 令 $t=\tan x$，原函数为 $\frac1{2\sqrt2}\ln[(t^2+\sqrt2t+1)/(t^2-\sqrt2t+1)]$，按正切的局部定义域取值。
+\item 令 $t=\arctan\sqrt{(a-x)/(a+x)}$，则 $x=a\cos2t$（在 $-a<x<a$），分部积分可得 $xt-\frac a2\sin2t$。
+\item（选做）令 $x=\sin t$，原函数为 $\tan t-t=\frac{x}{\sqrt{1-x^2}}-\arcsin x$（$|x|<1$）。
+\item Jensen 不等式分别用于 $\ln$ 的凹性与 $1/x$ 的凸性：$\int\ln f\le\ln\int f$，$\int 1/f\ge\exp(-\int\ln f)$；区间长度为 $1$。
+\item 由于 $\int_a^bf>0$，可取某个分割使下和严格为正；若每个小区间的 $\inf f\le0$，下和就不可能为正。因此某个小区间有 $\inf f=\mu>0$，取其闭子区间 $[c,d]$ 即得。
+\item（选做）$\pi$ 无理性的经典积分法：若 $\pi=a/b\in\mathbb Q$，令 $F_n(x)=b^nx^n(a-bx)^n/n!$，反复积分分部并估计 $0<\int_0^\pi F_n(x)\sin x\,dx<1$，同时由边界项它是整数，矛盾。需注意规范化变量与整数边界导数。
+\end{enumerate}
+% ANSWERS: s3
+\noindent\textbf{以下由 GPT 给出。}原稿的 Euler 变换导言只作为计算提示；下列题目以原题为准。
+\begin{enumerate}
+\item 令 $t=x+\sqrt{x^2+x+1}$，则 $x=(t^2-1)/(2t+1)$，原函数为 $2\ln|t|-\frac32\ln|2t+1|+\frac3{2(2t+1)}$，在 $t\ne0$ 的区间使用。
+\item 将被积函数拆为 $1/[x\sqrt{1+x+x^2}]-1/x$。令 $t=1/x$，原函数为 $-\operatorname{sgn}(x)\operatorname{arsinh}[(2t+1)/\sqrt3]-\ln|x|$，在 $x\ne0$ 的每个区间使用。
+\item 令 $u=2x+1$，原函数为 $-\sqrt{u^2+4}/(8u)$，适用于 $u\ne0$ 的每个区间。
+\item 令 $t=\sqrt{(x-b)/(x-a)}$，原函数为 $[2\operatorname{sgn}(x-a)/(b-a)]t$；仅在原根式为正且 $x\ne a$ 的各连通区间使用。
+\item 因 $n+k/n=n[1+O(1/n)]$ 一致，和式与 $n^{-1}\sum_{k=1}^n\sin(k\pi/n)$ 同极限，后者是 $\int_0^1\sin(\pi t)dt=2/\pi$。
+\item（选做）设 $t_k=a^{k/n}$，则 $a^{1/n}-1$ 乘原和恰是 $\sum_{k=1}^n(t_k-t_{k-1})\sin\sqrt{t_{k-1}t_k}$，为 $\int_1^a\sin t\,dt=\cos1-\cos a$ 的 Riemann 和；$a=1$ 时为 $0$。
+\item 对 $x\in[a,b]$ 有 $0\le e^{-nx^2}\le e^{-na^2}$，积分夹逼趋 $0$。
+\item Cauchy--Schwarz 给 $|a\cos x+b\sin x|\le\sqrt{a^2+b^2}$，积分得到题给界；实际上精确值为 $4\sqrt{a^2+b^2}$。
+\item $x^m(1-x)^n$ 在 $[0,1]$ 的最大值出现在 $x=m/(m+n)$，因此积分不超过该最大值。
+\item 从 $(x+a)(b-x)\ge0$ 得 $x^2\le(b-a)x+ab$；乘 $f(x)>0$ 积分，利用 $\int xf=0$ 即得。
+\item 记 $v(x)=(f_1(x),\ldots,f_m(x))$。对任意单位向量 $u$，$u\cdot\int v=\int u\cdot v\le\int\lVert{} v\rVert_2$；取 $u$ 为 $\int v$ 的方向即得。
+\item \textbf{题面条件缺失：}原题只设 $f\in R([a,b])$，却用 $f(i/n)$；应改为 $f\in R([0,1])$。在此条件下，因 $f$ 有界，$\ln(1+f(i/n)/n)=f(i/n)/n+O(n^{-2})$ 一致，极限为 $\int_0^1f(x)dx$。
+\item 任意分割的上和至少为 $\sigma(b-a)$，而 $f$ 可积使上和可趋向积分，故结论成立。
+\end{enumerate}
+% ANSWERS: s4
+\noindent\textbf{以下由 GPT 给出。}
+\begin{enumerate}
+\item 对任意 $x$，$|f(x)|\le |f(a)|+V_a^b(f)$；单调函数变差为 $|f(b)-f(a)|$。令 $v(x)=V_a^x(f)$，则 $v$ 与 $v-f$ 均单调增，$f=v-(v-f)$；反向由两个单调函数的变差不等式得有限变差。单调函数 Riemann 可积，故有界变差函数可积。
+\item 对任意 $\varepsilon>0$，集合 $E_\varepsilon=\{x:|f(x)|\ge\varepsilon\}$ 必有限，否则紧区间内有聚点，与该点的穿孔极限为零矛盾。取 $\varepsilon=1$ 得有界；$f$ 除至多可数点外为零，且利用有限个较大值点的小区间可使上下和差任意小，故 Riemann 可积且积分为零。
+\item Riemann 可积函数的连续点稠密。取一个连续点 $c$，$f(c)>0$，故其附近 $f\ge f(c)/2$，积分严格为正。
+\item 若 $f(a)<0<f(b)$ 而无零点，则连续性使每一点有一个保持符号的邻域；紧致性给有限子覆盖，沿区间连通性迫使符号全同，矛盾。也可取负值点集合的上确界证明。
+\item 取有限子覆盖，再把每个成员缩小成仍覆盖 $[a,b]$ 的开集；每个缩小集到原开集补集的距离有正下界，取有限个距离之最小值得 Lebesgue 数 $\delta$。相距小于 $\delta$ 的两点落在同一原开集内。
+\item 令 $\bar f=(\int pf)/(\int p)$。凸函数在 $\bar f$ 有支撑斜率 $s$，使 $\varphi(t)\ge\varphi(\bar f)+s(t-\bar f)$；乘 $p\ge0$ 积分即得 Jensen 不等式。
+\end{enumerate}
+% ANSWERS: s5
+\noindent\textbf{以下由 GPT 给出。}
+\begin{enumerate}
+\item 参见教材。
+\item $p=1$ 是积分三角不等式。$p>1$ 时，写 $\int|f+g|^p\le\int|f||f+g|^{p-1}+\int|g||f+g|^{p-1}$，分别用 H\"older 不等式，除以 $\lVert{}f+g\rVert_p^{p-1}$。
+\item $1=\int_0^1f'$，由 Cauchy--Schwarz，$1\le(\int_0^1(f')^2)^{1/2}$。
+\item 左边是 $|\int_a^b f(x)e^{ikx}dx|^2$，由 $f\ge0$、$|e^{ikx}|=1$、$\int f=1$，模不超过 $1$。
+\item 若 $f\equiv0$，任意 $\xi$ 均可。否则 $G(x)=e^{-x}\int_0^xf(t)dt$ 在 $[0,1]$ 有正的内部最大值（因 $G(0)=0$、$G'(1)=-G(1)<0$），故该点 $G'=0$ 即 $f(\xi)=\int_0^\xi f$。
+\item 交换积分次序，$\int_0^\pi f(x)dx=\int_0^\pi(\pi-t)\frac{\sin t}{\pi-t}dt=2$。
+\item 换元后原积分为 $\int_{a+h}^{b+h}f(t)dt-\int_a^bf(t)dt$ 除以 $h$，由连续性趋 $f(b)-f(a)$。
+\item（选做）Riemann 可积函数可在 $L^1$ 中由阶梯函数逼近；阶梯函数的平移差 $L^1$ 范数随 $h\to0$ 为零。三角不等式给出原结论。
+\item（选做）若 $M=\max|f'|$，由两个端点零值，$|f(x)|\le M\min(x-a,b-x)$。积分得 $\int|f|\le M(b-a)^2/4$。
+\item（选做）上界由 $f\le M$ 得到；在最大点附近选 $f\ge M-\varepsilon$ 的非退化区间，且 $g$ 在其上有正下界，得到下极限至少 $M-\varepsilon$。令 $\varepsilon\downarrow0$。
+\end{enumerate}
+% ANSWERS: s6
+\noindent\textbf{以下由 GPT 给出。}按原稿题序：
+\begin{enumerate}
+\item 由 $e^x/(1+e^x)+e^{-x}/(1+e^{-x})=1$ 及 $\sin^4x$ 为偶函数，积分为 $\frac12\int_{-\pi/2}^{\pi/2}\sin^4x\,dx=3\pi/16$。
+\item 令 $u=\cos x$，得 $\frac12\int_0^1\ln(1-u^2)du=\ln2-1$。
+\item 同第一题的对称性，结果为 $\frac12\int_{-1}^1dx/(1+x^2)=\pi/4$。
+\item 用 $\sin x/(\sin x+\cos x)=\frac12-\frac12(\ln(\sin x+\cos x))'$，结果为 $\pi/8-\frac14\ln2$。
+\item 令 $t=\sqrt{e^x-1}$，得 $2\int_0^1t^2/(1+t^2)dt=2-\pi/2$。
+\item 令 $t=x-1$，奇函数部分积分为零，余下 $3\int_{-1}^1\sqrt{1-t^2}dt=3\pi/2$。
+\item 令 $x=-2\sec\theta$，结果为 $\frac12[\arccos(2/3)-\pi/3]$（负值符合原被积函数符号）。
+\item 令 $t=\arcsin x$，$I_n=\int_0^{\pi/2}t^n\cos t\,dt$。$I_0=1$、$I_1=\pi/2-1$；$n\ge2$ 时 $I_n=(\pi/2)^n-n(n-1)I_{n-2}$。
+\item Stirling 公式给 $(2n)!!\sim\sqrt{2\pi n}(2n/e)^n$，$(2n-1)!!\sim\sqrt2(2n/e)^n$，$\binom{2n}{n}\sim4^n/\sqrt{\pi n}$。
+\item 两次分部积分：先对右侧以 $(x-a)(x-b)$ 及 $f''$ 配对，即得左侧。
+\item（选做）部分和化为 $n\ln(2n+1)-\ln((2n-1)!!)-n$，用 Stirling 公式得极限 $(1-\ln2)/2$。
+\item（选做）令 $u=f(x)$；因 $f'\ge m>0$ 且递减，$1/f'(f^{-1}(u))$ 单调递增、至多 $1/m$。对 $\int\cos u\,w(u)du$ 用第二积分中值定理，绝对值至多 $2/m$。
+\end{enumerate}
+% ANSWERS: s9
+\noindent\textbf{以下由 GPT 给出。}原稿已解部分题目，此处补出其余结论，并供核对。
+\begin{enumerate}
+\item $\Gamma(s)$ 在 $0$ 附近由 $x^{s-1}$ 控制，故当且仅当 $s>0$ 收敛；无穷远处指数衰减保证收敛。
+\item $B(p,q)$ 在两端分别等价于 $x^{p-1}$、$(1-x)^{q-1}$，故当且仅当 $p>0,q>0$ 收敛。
+\item 令 $t=1/x$，积分为 $\int_1^\infty t^{p-2}\sin t\,dt$。$0<p<1$ 绝对收敛；$1\le p<2$ 条件收敛；$p\ge2$ 发散。
+\item $\int_1^\infty(-1)^{\lfloor x\rfloor}dx$ 发散（整数端点的部分积分振荡）；$\int_1^\infty(-1)^{\lfloor x^2\rfloor}dx=\sum_{n\ge1}(-1)^n(\sqrt{n+1}-\sqrt n)$ 收敛，且最后未满区间长度趋零。
+\item 因 $f\ge0$，每个 $X$ 的截断积分被后续分块和控制，趋向该收敛级数之和。
+\item 非负递增函数的每个单位区间面积夹在相邻两个端点矩形之间；逐段相加，并处理最后不足 $1$ 的区间，即得 $f(\xi)$ 上界。
+\item 非负递减函数时，把 $\sum f(k)-\int f$ 写为逐段非负误差和；误差部分和有界单调，极限存在，尾部由 $f(\xi-1)$ 控制。
+\item 收敛积分使 $\int_n^{n+1}f\to0$；积分中值定理给 $x_n\in[n,n+1]$ 满足 $f(x_n)=\int_n^{n+1}f$，故 $x_n\to\infty$ 且 $f(x_n)\to0$。
+\item 对 $n\ge2$，$x\in[0,1]$ 时被积函数趋 $1$ 且被 $1$ 控制；$x\ge1$ 时趋 $0$ 且被 $x^{-2}$ 控制。支配收敛给极限 $1$。
+\item 单调函数的极限 $L$ 在扩展实数意义下存在；其 Ces\`aro 积分均值若有有限极限 $A$，必有 $L=A$（用尾段区间夹逼均值）。
+\end{enumerate}
+% ANSWERS: s1011
+\noindent\textbf{以下由 GPT 给出。}原稿已有的证明也保留在上节。
+\begin{enumerate}
+\item 对 $n\ge2$，$a_n/S_n^2\le a_n/(S_{n-1}S_n)=1/S_{n-1}-1/S_n$，故收敛。
+\item 对 $n\ge2$，$a_n/S_n^p\le\int_{S_{n-1}}^{S_n}t^{-p}dt$；$p>1$ 且 $S_{n-1}\ge S_1>0$，故总和有限。
+\item 由 Gamma 比值或 Raabe 判别，通项渐近于 $n^{p-q-1}/\Gamma(p)$，故当且仅当 $q>p$ 收敛。
+\item 奇项和与偶项和之差 $\sum_{k=1}^n(a_{2k-1}-a_{2k})$ 非负且不超过 $a_1$；偶项和因原级数发散而趋无穷，故比值趋 $1$。
+\item \textbf{原题缺条件：}$a_n=(1-p\ln n/n)^n\sim n^{-p}$，因此级数当且仅当 $p>1$ 收敛。原题“证明收敛”在 $p\le1$ 时为假；应改为讨论 $p$ 的范围。
+\item (1) $3^{-\ln n}=n^{-\ln3}$，$\ln3>1$，收敛；(2) $(\ln n)^{-\ln n}=n^{-\ln\ln n}$，最终小于 $n^{-2}$，收敛；(3) $(\ln n)^{-\ln\ln n}=e^{-(\ln\ln n)^2}\ge n^{-1/2}$（充分大的 $n$），发散。
+\item \textbf{符号勘误：}左级数求和下标应为 $n$。由于 $a_n\to a\ne0$，$|a_na_{n+1}|$ 最终有正的上下界，且 $|a_n^{-1}-a_{n+1}^{-1}|=|a_n-a_{n+1}|/|a_na_{n+1}|$，两级数同敛散。
+\item Abel 变换给 $\sum_{n=1}^Nn(a_n-a_{n-1})=Na_N-\sum_{n=0}^{N-1}a_n$；题设两项极限存在，故 $\sum_{n=0}^\infty a_n$ 收敛。
+\item $p,q>1$ 时绝对收敛；$p=q\in(0,1]$ 时相邻项配对差为 $O(n^{-p-1})$ 且原项趋零，条件收敛；其余参数下发散。
+\item 设 $s_n=\sum_{k=1}^na_k\to s$。Abel 变换给 $\sum_{k=1}^nka_k=ns_n-\sum_{k=1}^{n-1}s_k$；除以 $n$，由 Ces\`aro 定理趋 $s-s=0$。
+\end{enumerate}
+% ANSWERS: s12
+\noindent\textbf{以下由 GPT 给出。}
+\begin{enumerate}
+\item 参见教材。
+\item \textbf{符号勘误：}原稿左端从 $n=1$ 起求和，结论在 $q=0$ 即不成立；应从 $n=0$ 起。此时 $1/(1-q)^2=\sum_{n=0}^\infty(n+1)q^n$（$|q|<1$）。
+\item 对每个 $x\in(0,1)$，$0<\sin x/x<1$，故逐点趋 $0$；但 $\sup_{0<x<1}(\sin x/x)^n=1$，所以不一致收敛。
+\item 对 $0\le x\le1$，$n\ln(1+x/n)=x+O(1/n)$，余项一致有界；指数函数在有界区间上一致连续，故一致收敛到 $e^x$。
+\item (1) 若 $f$ 有界，取 $N$ 使 $\sup_I|f_n-f|\le1$（$n\ge N$），即尾部一致有界。(2) 再把有限个前项各自的界取最大，整个函数列一致有界。
+\end{enumerate}
+% ANSWERS: s13
+\noindent\textbf{以下由 GPT 给出。}本周原稿同时收录 5 月 12 日、15 日及“第十三周”作业，依原顺序列答。
+\begin{enumerate}
+\item 参见教材。
+\item 参见教材。
+\item 参见教材。
+\item 若 $f_n'$ 在 $[a,b]$ 一致收敛到 $g$，则 $\lVert{}f_n'-f_m'\rVert_\infty\to0$。中值定理给 $|(f_n-f_m)(x)-(f_n-f_m)(x_0)|\le(b-a)\lVert{}f_n'-f_m'\rVert_\infty$；加上 $f_n(x_0)$ 收敛，得 $f_n$ 一致收敛。每个 $g_n$ 在 $c$ 连续，因为 $f_n$ 在 $c$ 可导。对 $x\ne c$，中值定理将 $g_n-g_m$ 写成 $(f_n'-f_m')(\xi)$，在 $x=c$ 也有同样上界，故 $g_n$ 一致收敛到题给的连续函数。由 $g_n(c)=f_n'(c)\to g(c)$，得到 $f'(c)=g(c)$。
+\item 对 $n\ge2$，$f_n(x)=x(\ln n)^\alpha e^{-x\ln n}$，在 $x=1/\ln n$ 取最大值 $e^{-1}(\ln n)^{\alpha-1}$；逐点趋 $0$，故当且仅当 $\alpha<1$ 一致收敛。
+\item 取尾段 $n=N,\ldots,N^2$ 与 $x_N=N^{-2}$，则 $\cos(nx_N)\ge\cos1>0$，而 $\sum_{n=N}^{N^2}1/(n\ln n)\to\ln2$，违背一致 Cauchy 准则。
+\item 部分和 $S_N$ 的导数一致有界，故 $S_N$ 等度连续；又逐点收敛于 $S$。紧区间上等度连续函数列的逐点极限必一致收敛（有限网格论证）。
+\item 设 $B_{m,k}=\sum_{n=m}^kb_n$，原数项级数收敛使 $\sup_{k\ge m}|B_{m,k}|\to0$。Abel 变换及 $|f_n|\le2M$、$\sum|f_{n+1}-f_n|\le M$ 给 $|\sum_{n=m}^Nb_nf_n(x)|\le3M\sup_{k\ge m}|B_{m,k}|$，与 $x$ 无关。
+\item 一致收敛列的所有项在 $I$ 上一致有界（有限个首项各有界）；于是 $|f_ng_n-fg|\le|f_n|\,|g_n-g|+|g|\,|f_n-f|\to0$ 一致。
+\end{enumerate}
+% ANSWERS: s14
+\noindent\textbf{以下由 GPT 给出。}本周原稿含 5 月 22 日及“第十四周”两份作业。
+\begin{enumerate}
+\item 参见教材。
+\item 因 $|\sin(2^nx)|/n!\le1/n!$，级数对所有 $x\in\mathbb R$ 一致收敛。任意固定阶 $k$ 的导数项绝对值至多 $2^{nk}/n!$，总和 $e^{2^k}<\infty$，故可逐项求导且 $f\in C^\infty(\mathbb R)$。$f^{(k)}(x)=\sum_{n=0}^\infty(2^n)^k\sin(2^nx+k\pi/2)/n!$，从而 $f^{(k)}(0)=e^{2^k}\sin(k\pi/2)$。Maclaurin 系数对奇数 $k$ 增长过快，级数除 $x=0$ 外处处发散，收敛半径为 $0$。
+\item $f_n\to f$ 一致且 $f$ 连续，故 $|f_n(x_n)-f(x_0)|\le\lVert{}f_n-f\rVert_\infty+|f(x_n)-f(x_0)|\to0$。
+\item 二阶导数项为 $-\cos(nx)/n^2$，其级数一致收敛，故 $f''(x)=-\sum_{n=1}^\infty\cos(nx)/n^2$。
+\item 近 $x=1$ 时 $r(x)=x/(1+2x)\to1/3$ 且 $\cos(n\pi/x)\to(-1)^n$，一致控制给极限 $\sum_{n=1}^\infty(-1/3)^n=-1/4$。$x\to+\infty$ 时 $r(x)\to1/2$，余弦趋 $1$，极限为 $\sum_{n=1}^\infty2^{-n}=1$。
+\item 原级数的单项写为 $x^n/[n(1+x+\cdots+x^{2n-1})]$；在 $x$ 趋近 $1$ 时由一致可求和的 $O(n^{-2})$ 界控制，逐项极限为 $1/(2n^2)$，结论成立。
+\item 当 $|x|\le1$，$x\ne0,1$ 时，和为 $\frac{(1-x)^2}{2x^2}[-\ln(1-x)]+\frac34-\frac1{2x}$；$x=0$ 连续定义为 $0$，$x=1$ 为 $1/4$。
+\item 拆成 $\frac12[(2n-1)^{-1}-(2n+1)^{-1}]$，借 $\sum_{n\ge1}(-1)^{n-1}/(2n-1)=\pi/4$，得和为 $\pi/4-1/2$。
+\end{enumerate}
