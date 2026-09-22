@@ -165,7 +165,8 @@ footer {
 .notice-list time { display: inline-block; min-width: 105px; color: var(--muted); }
 .course-info { display: grid; gap: 9px; }
 .course-info div { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 18px; }
-.math-analysis-site .course-info div { grid-template-columns: 185px minmax(0, 1fr); gap: 8px; }
+.math-analysis-site .course-info div { grid-template-columns: 175px minmax(0, 1fr); gap: 4px; }
+.math-analysis-site #books .course-info div { grid-template-columns: 184px minmax(0, 1fr); gap: 3px; }
 .course-info dt { color: var(--ink); font-weight: 700; }
 .placeholder { color: var(--muted); }
 .top-link { display: inline-block; margin-top: 12px; font-size: .95rem; }
@@ -232,7 +233,7 @@ td span { color: var(--muted); }
   address { font-size: .95rem; }
   .year { min-width: 72px; }
   .course-info div { grid-template-columns: 175px minmax(0, 1fr); }
-  .math-analysis-site .course-info div { grid-template-columns: 175px minmax(0, 1fr); }
+  .math-analysis-site .course-info div { grid-template-columns: 175px minmax(0, 1fr); gap: 4px; }
   .schedule-tools { align-items: flex-start; flex-wrap: wrap; }
 }
 
@@ -250,6 +251,7 @@ td span { color: var(--muted); }
   .course-header h1 span { display: block; margin-top: 4px; font-size: 1.08rem; }
   .course-info div { grid-template-columns: 1fr; gap: 2px; }
   .math-analysis-site .course-info div { grid-template-columns: 1fr; gap: 2px; }
+  .math-analysis-site #books .course-info div { grid-template-columns: 1fr; gap: 2px; }
   footer .visitor-count { order: 3; width: 100%; }
   .utility-label { display: none; }
   .utility-bar { margin: 0; }
