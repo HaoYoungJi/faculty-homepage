@@ -1912,6 +1912,8 @@ I = \int_0^{+\infty} \frac{\ln x}{1 + x^2} dx.
 \item \textbf{比较判别法：}$\int_0^\infty(1+x^5)^{-1/2}\,dx$ 收敛；$\int_1^\infty x^pe^{-x}\,dx$ 对 $p\ge0$ 收敛；$\int_1^\infty(\arctan x)x^{-p}\,dx$ 当且仅当 $p>1$ 收敛；$\int_1^\infty r^{-\ln x}\,dx=\int_1^\infty x^{-\ln r}\,dx$ 当且仅当 $r>e$ 收敛。
 \item \textbf{端点局部展开：}$\int_0^1x^{-p}\sin(1/x)\,dx$ 令 $t=1/x$，化为 $\int_1^\infty t^{p-2}\sin t\,dt$；$p<1$ 时绝对收敛，$1\le p<2$ 时条件收敛。$\int_0^1x^{-p}\sin x\,dx$ 当且仅当 $p<2$ 收敛。
 \item \textbf{其他典型比较：}$1-\cos(2/x)\sim2/x^2$，故相应无穷积分收敛；$\cos(1/x)-1\sim-1/(2x^2)$，亦收敛。$|\ln x|^p$ 在 $0$ 处当且仅当 $p>-1$ 可积。
+\item \textbf{其余比较题：}第 7 小题因被积函数在无穷远处与 $\sin^2x/x^{2p}$ 同阶，在题设 $2p>1$ 下收敛。第 9 小题被积函数与常数倍 $x^{-1/2}$ 同阶，发散。第 10 小题与常数倍 $x^{-1-p/2}$ 同阶，当且仅当 $p>0$ 收敛。第 13--16 小题分别在端点与 $(1-x)^{-1/2}$、$x^{-1/2}$、$x^{-2/3}$、$x^{-1/2}$ 同阶，均收敛。
+\item \textbf{剩余参数题：}第 18 小题 $x^{-p}\ln\cos(1/x)\sim-\tfrac12x^{-p-2}$，当且仅当 $p>-1$ 收敛。第 19 小题还须保证 $x^2+p$ 在积分区间无零点；在 $p>-1$ 下，被积函数主项为 $(1-p)/x$，故当且仅当 $p=1$ 收敛。
 \item \textbf{振荡积分：}$\int_0^\infty x^p\sin x\,dx$ 对题设 $p>0$ 发散；分部积分后的边界项不能趋零。$\int_0^\infty(x-\sin x)x^{-3}\,dx$ 两端比较均可积。
 \end{itemize}
 \clearpage
@@ -1956,6 +1958,7 @@ I = \int_c^{+\infty} \frac{f(x)}{F(x) \ln F(x)} dx, \ J = \int_c^{+\infty} \frac
 \end{enumerate}
 \subsection*{GPT 补充参考答案（选题）}
 \begin{itemize}
+\item \textbf{第 1 题：}按原稿给出的分解，$\int_1^\infty\sin x/x^p\,dx$ 对 $p>0$ 由 Dirichlet 判别收敛；余下的非负积分与 $\int_1^\infty\sin^2x/x^{2p}\,dx$ 同敛散，阈值为 $p=1/2$。绝对收敛阈值为 $p>1$。零点附近被积函数局部可积。
 \item \textbf{Gamma/Beta 型积分：}$\int_0^\infty x^{s-1}e^{-x}\,dx$ 当且仅当 $s>0$ 收敛；$\int_0^1x^{p-1}(1-x)^{q-1}\,dx$ 当且仅当 $p,q>0$ 收敛。
 \item \textbf{反例：}取 $f(x)=\sin(x^2)$，则 Fresnel 型积分 $\int_1^\infty f$ 收敛，但 $\int_1^\infty f^2$ 发散。要展示条件收敛而非绝对收敛，可取 $f(x)=\sin x/x$。
 \item \textbf{变量代换与条件修正：}原稿的 $F(1)=0$，且积分区间内 $F$ 会穿过 $1$，原式的对数分母有奇点。本册改从满足 $F(c)=e$ 的 $c$ 起积分。令 $u=F(x)$，$I=\int_e^\infty du/(u\ln u)$ 发散，$J=\int_e^\infty du/(u\ln^2u)$ 收敛。
