@@ -204,6 +204,11 @@ td span { color: var(--muted); }
 .course-section > h3 { margin: 19px 0 8px; color: var(--ink); font-family: var(--display); font-size: 1.16rem; }
 .academic-year { margin-top: 20px; }
 .academic-year h3 { margin-bottom: 8px; color: var(--ink); font-family: var(--display); font-size: 1.16rem; }
+.weekly-index { margin-top: 9px; }
+.weekly-index summary { width: fit-content; color: var(--accent); font-weight: 650; cursor: pointer; }
+.weekly-index h4 { margin: 12px 0 4px; color: var(--ink); font-size: 1rem; }
+.weekly-index .book-list { columns: 2; }
+.weekly-index .book-list li { break-inside: avoid; margin-bottom: 3px; }
 .chapter-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px 28px; margin: 0; padding-left: 29px; }
 .math-analysis-site .chapter-list { max-width: 980px; column-gap: 18px; }
 .chapter-list li { padding-left: 2px; }
@@ -261,6 +266,7 @@ td span { color: var(--muted); }
   .course-info div { grid-template-columns: 1fr; gap: 2px; }
   .math-analysis-site .course-info div { grid-template-columns: 1fr; gap: 2px; }
   .math-analysis-site #books .course-info div { grid-template-columns: 1fr; gap: 2px; }
+  .weekly-index .book-list { columns: 1; }
   footer .visitor-count { order: 3; width: 100%; }
   .utility-label { display: none; }
   .utility-bar { margin: 0; }
