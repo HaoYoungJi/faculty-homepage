@@ -39,6 +39,40 @@ def no_proofs(value: str) -> str:
     return re.sub(r"\\begin\{proof\}(?:\[[^]]*\])?.*?\\end\{proof\}", "", value, flags=re.S)
 
 
+def attached_proofs(value: str) -> str:
+    """List only the proofs attached to homework items, without repeating questions."""
+    token_re = (r"\\begin\{proof\}(?:\[[^]]*\])?|\\end\{proof\}"
+                r"|\\begin\{(?:enumerate|itemize)\}|\\end\{(?:enumerate|itemize)\}|\\item\b")
+    depth = group = item = 0
+    start = None
+    results = []
+    for match in re.finditer(token_re, value):
+        command = match.group()
+        if command.startswith(r"\begin{proof}"):
+            start = (match.start(), group, item)
+        elif command == r"\end{proof}":
+            if start is None or start[2] == 0:
+                raise ValueError("Proof without a numbered homework item")
+            results.append((start[1], start[2], value[start[0]:match.end()]))
+            start = None
+        elif start is None:
+            if command.startswith(r"\begin{"):
+                if depth == 0:
+                    group += 1
+                    item = 0
+                depth += 1
+            elif command.startswith(r"\end{"):
+                depth -= 1
+            elif command == r"\item" and depth == 1:
+                item += 1
+    if start is not None or depth != 0:
+        raise ValueError("Unbalanced homework excerpt")
+    return "\n\n".join(
+        rf"\paragraph{{{'第 ' + str(g) + ' 组 · ' if group > 1 else ''}第 {n} 题}}" + "\n" + proof
+        for g, n, proof in results
+    )
+
+
 def balanced(value: str) -> str:
     for kind in ("enumerate", "itemize"):
         opens = len(re.findall(r"\\begin\{" + kind + r"\}", value))
@@ -115,7 +149,6 @@ preamble = preamble.replace(r"\usepackage{ctex}", r"\usepackage{ctex}" + "\n" + 
 preamble = re.sub(r"\\title\{.*", r"\\title{数学分析习题课作业\\\\2024--2025学年按周整理}", preamble)
 preamble = preamble.replace(r"\date{\today}", r"\date{}")
 output = [preamble, r"\begin{document}", r"\maketitle",
-          r"\noindent\textbf{编排说明：}本册按郑州大学教学周整理，每周先列作业，再列答案。日期表示整周，并非具体上课日。原稿答案保留并单列；新增答案标注“GPT 补充参考答案”，须由任课教师进一步审阅。已修正发现的明确符号笔误，并在相关答案处说明原题条件不足之处。",
           r"\tableofcontents", r"\clearpage", r"\chapter{秋季学期}"]
 term = "秋季"
 for semester, key, title, questions, originals in weeks:
@@ -125,12 +158,13 @@ for semester, key, title, questions, originals in weeks:
     raw_questions = "\n\n".join(source_part(*span) for span in questions)
     question_text = no_proofs(raw_questions)
     original_answers = [balanced(source_part(*span)) for span in originals]
-    if raw_questions != question_text:
-        original_answers.append(raw_questions)
-    output += [r"\clearpage", rf"\section{{{title}}}", r"\subsection*{作业}", question_text,
-               r"\subsection*{原稿参考答案}"]
+    inline = attached_proofs(raw_questions)
+    if inline:
+        original_answers.append(inline)
+    output += [r"\clearpage", rf"\section{{{title}}}", r"\subsection*{题目}", question_text,
+               r"\clearpage", r"\subsection*{原稿答案}"]
     output.extend(original_answers or [r"\noindent 原稿未附这一周的参考答案。"])
-    output += [r"\subsection*{GPT 补充参考答案}", answers[key]]
+    output += [r"\clearpage", r"\subsection*{GPT 补充答案}", answers[key]]
 output += [r"\end{document}", ""]
 DESTINATION.parent.mkdir(parents=True, exist_ok=True)
 DESTINATION.write_text("\n\n".join(output), encoding="utf-8")

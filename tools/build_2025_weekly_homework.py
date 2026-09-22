@@ -100,8 +100,6 @@ output = [
     r"\begin{document}",
     r"\maketitle",
     r"\tableofcontents",
-    r"\vspace{1.5em}",
-    r"\noindent\textbf{编排说明：}秋季依据原稿交作业日期标注教学周；春季原稿仅列作业次序，故以“第几次作业”排列，不另拟具体日期。每次先列作业，再列原稿参考答案（如有）及注明来源的 GPT 选题参考答案。按班级区分的题目保留班级标记；重复的共同选做题只列一次。教材仅给出章节、页码或题号的题目，答案处写“参见教材”。明确的符号笔误已在本册修正；新增答案须由任课教师进一步审阅。",
     r"\clearpage",
     r"\chapter{秋季学期}",
 ]
@@ -113,11 +111,12 @@ for key, due, week, parts, original in FALL:
         period = f"{start.month}月{start.day}--{end.day}日"
     else:
         period = f"{start.month}月{start.day}日--{end.month}月{end.day}日"
-    output.extend([r"\clearpage", rf"\section{{{period} · Week {week}（{due}）}}", r"\subsection*{作业}"])
+    output.extend([r"\clearpage", rf"\section{{{period} · Week {week}（{due}）}}", r"\subsection*{题目}"])
     for first, last, label in parts:
         if label:
             output.append(rf"\subsubsection*{{{label}}}")
         output.append(excerpt(first, last))
+    output.extend([r"\clearpage", r"\subsection*{原稿答案}"])
     if original:
         original_text = excerpt(*original)
         original_text = re.sub(
@@ -127,15 +126,19 @@ for key, due, week, parts, original in FALL:
             count=1,
             flags=re.S,
         )
-        output.extend([r"\subsection*{原稿参考答案（已校正明确笔误）}", original_text])
-    output.extend([r"\subsection*{GPT 补充参考答案（选题）}", answers[key]])
+        output.append(original_text)
+    else:
+        output.append(r"\noindent 原稿未附本周的参考答案。")
+    output.extend([r"\clearpage", r"\subsection*{GPT 补充答案（选题）}", answers[key]])
 
 output.extend([r"\clearpage", r"\chapter{春季学期}"])
 for key, number, span in SPRING:
     output.extend([
         r"\clearpage", rf"\section{{第{number}次作业 / Homework {number}}}",
-        r"\subsection*{作业}", excerpt(*span),
-        r"\subsection*{GPT 补充参考答案（选题）}", answers[key],
+        r"\subsection*{题目}", excerpt(*span),
+        r"\clearpage", r"\subsection*{原稿答案}",
+        r"\noindent 原稿未附本次作业的参考答案。",
+        r"\clearpage", r"\subsection*{GPT 补充答案（选题）}", answers[key],
     ])
 output.extend([r"\end{document}", ""])
 DESTINATION.parent.mkdir(parents=True, exist_ok=True)

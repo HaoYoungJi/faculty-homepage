@@ -42,6 +42,52 @@ def without_proofs(value: str) -> str:
     return re.sub(r"\n{3,}", "\n\n", value)
 
 
+def inline_proofs(value: str) -> list[str]:
+    """Keep each attached proof once, referring back to its assignment number."""
+    tokens = re.finditer(
+        r"\\begin\{proof\}(?:\[[^]]*\])?|\\end\{proof\}"
+        r"|\\begin\{(?:enumerate|itemize)\}|\\end\{(?:enumerate|itemize)\}"
+        r"|\\item\b",
+        value,
+    )
+    depth = 0
+    group = 0
+    item = 0
+    active_proof: tuple[int, int, int] | None = None
+    found: list[tuple[int, int, str]] = []
+    for token in tokens:
+        command = token.group()
+        if command.startswith(r"\begin{proof}"):
+            if active_proof is not None:
+                raise ValueError("Nested proof environments are unsupported")
+            active_proof = (token.start(), group, item)
+        elif command == r"\end{proof}":
+            if active_proof is None:
+                raise ValueError("Unmatched proof ending")
+            start, proof_group, proof_item = active_proof
+            if proof_item == 0:
+                raise ValueError("Proof outside an assignment item")
+            found.append((proof_group, proof_item, value[start : token.end()]))
+            active_proof = None
+        elif active_proof is None:
+            if command.startswith(r"\begin{"):
+                if depth == 0:
+                    group += 1
+                    item = 0
+                depth += 1
+            elif command.startswith(r"\end{"):
+                depth -= 1
+            elif command == r"\item" and depth == 1:
+                item += 1
+    if active_proof is not None or depth != 0:
+        raise ValueError("Unbalanced source excerpt")
+    multiple_groups = group > 1
+    return [
+        rf"\paragraph{{{'第 ' + str(g) + ' 组 · ' if multiple_groups else ''}第 {n} 题}}" + "\n" + proof
+        for g, n, proof in found
+    ]
+
+
 def list_excerpt(first: int, last: int, kind: str) -> str:
     value = part(first, last)
     opens = len(re.findall(r"\\begin\{" + kind + r"\}", value))
@@ -72,7 +118,7 @@ weeks = [
     ("秋季", "12月28—29日这一周", (1719, 1743), []),
     ("春季", "3月25--31日 · Week 5", (2010, 2065), [(2120, 2303, "enumerate")]),
     ("春季", "4月1--7日 · Week 6", (2071, 2110), [(2309, 2507, "enumerate")]),
-    ("春季", "4月22--28日 · Week 9", (2919, 3650), []),
+    ("春季", "4月22--28日 · Week 9", (2919, 3012), [(2512, 2799, "enumerate")]),
     ("春季", "5月13--19日 · Week 12", (4052, 4094), [(4102, 4238, "enumerate")]),
     ("春季", "5月27日--6月2日 · Week 14", (4243, 4278), []),
     ("春季", "6月3--9日 · Week 15", (4282, 4485), []),
@@ -89,8 +135,6 @@ document = [
     preamble,
     r"\begin{document}",
     r"\maketitle",
-    r"\noindent\textbf{编排说明：}本册按原稿标出的周次或日期整理，逐周先列作业，再列对应的部分参考答案。原稿未附对应答案的周次已明确标注。春季日期依郑州大学校历推算，表示整周范围，并非具体上课日。除两处明确的符号笔误外，题目与解答保持原稿写法。",
-    r"\vspace{1em}",
     r"\tableofcontents",
     r"\clearpage",
     r"\chapter{秋季学期}",
@@ -104,26 +148,23 @@ for semester, label, question, solutions in weeks:
     title = label.replace("—", "--")
     question_text = part(*question)
     question_only = without_proofs(question_text)
-    has_inline_proofs = question_text != question_only
+    attached_answers = inline_proofs(question_text)
     document += [
         r"\clearpage",
         rf"\section{{{title}}}",
-        r"\subsection*{作业}",
+        r"\subsection*{题目}",
         question_only,
-        r"\subsection*{参考答案}",
+        r"\clearpage",
+        r"\subsection*{原稿答案}",
     ]
-    if not solutions and not has_inline_proofs:
+    if not solutions and not attached_answers:
         document.append(r"\noindent\emph{原稿未附这一周对应的参考答案。}")
     else:
         if solutions:
             document.append(r"\noindent\emph{以下为按题干归入本周的原稿部分参考答案。}")
             for first, last, kind in solutions:
                 document.append(list_excerpt(first, last, kind))
-        if has_inline_proofs:
-            document += [
-                r"\paragraph{原稿中随题附有的解答}",
-                question_text,
-            ]
+        document += attached_answers
 
 document += [r"\end{document}", ""]
 DESTINATION.parent.mkdir(parents=True, exist_ok=True)
