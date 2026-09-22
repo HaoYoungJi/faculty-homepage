@@ -38,7 +38,7 @@
 
 \maketitle
 
-\noindent\textbf{编排说明：}本册按原稿标出的周次或日期整理，逐周先列作业，再列对应的部分参考答案。原稿未附对应答案的周次已明确标注。期中考试与春季小测验未收入本册；题目与解答的数学内容保持原稿写法。
+\noindent\textbf{编排说明：}本册按原稿标出的周次或日期整理，逐周先列作业，再列对应的部分参考答案。原稿未附对应答案的周次已明确标注。春季日期依郑州大学校历推算，表示整周范围，并非具体上课日。期中考试与春季小测验未收入本册；除两处明确的符号笔误外，题目与解答保持原稿写法。
 
 \vspace{1em}
 
@@ -144,7 +144,7 @@ x_0^2 = (\sqrt 2 - \frac{\epsilon}{2})^2 = 2 + \frac{\epsilon^2}{4} - \sqrt 2 \e
 \item[3.] 按照提示证明Cauchy-Schwarz不等式:
 \[ \left( \sum_{k=1}^{n}a_k b_k\right)^2 \leq \left( \sum_{k=1}^{n}a_k^2\right) \left( \sum_{k=1}^{n}b_k^2\right).
 \]
-其中等号成立的条件: $\frac{a_1}{b_1} = \frac{a_2}{b_2} = \cdots = \frac{a_k}{b_k} $ 或者$a_i, b_i, i = 1, 2, \ldots, k$中至少有一方全为0.
+其中等号成立的条件: 存在$\lambda\in\mathbb R$使得$a_i=\lambda b_i$（$1\leq i\leq n$），或者$b_1=\cdots=b_n=0$.
 
 \begin{itemize}
 \item[3.1] 利用Young不等式或$|AB| \leq \frac{A^2+B^2}{2}$. tip: 作以下变形：
@@ -154,7 +154,7 @@ x_0^2 = (\sqrt 2 - \frac{\epsilon}{2})^2 = 2 + \frac{\epsilon^2}{4} - \sqrt 2 \e
 
 \item[3.2] 利用Lagrange恒等式
 \[
-\left(\sum\limits_{k=1}^n a_k^2 \right) \left( \sum\limits_{k=1}^n b_k^2\right) - \left( \sum\limits_{k=1}^n |a_k b_k|  \right)^2 = \frac{1}{2} \sum\limits_{k=1}^n \sum\limits_{i=1}^n (|a_k||b_i| - |a_i||b_k|)^2 =  \sum\limits_{k=1}^{n-1} \sum\limits_{j=i+1}^n (|a_k||b_i| - |a_i||b_k|)^2;
+\left(\sum\limits_{k=1}^n a_k^2 \right) \left( \sum\limits_{k=1}^n b_k^2\right) - \left( \sum\limits_{k=1}^n |a_k b_k|  \right)^2 = \frac{1}{2} \sum\limits_{k=1}^n \sum\limits_{i=1}^n (|a_k||b_i| - |a_i||b_k|)^2 =  \sum\limits_{k=1}^{n-1} \sum\limits_{j=k+1}^n (|a_k||b_j| - |a_j||b_k|)^2;
 \]
 
 \end{itemize}
@@ -279,7 +279,7 @@ f(\frac{p}{q}) = f (\overbrace{\frac{1}{q} + \cdots + \frac{1}{q}}^{p\mbox{个}}
 \item[3.] 按照提示证明Cauchy-Schwarz不等式:
 \[ \left( \sum_{k=1}^{n}a_k b_k\right)^2 \leq \left( \sum_{k=1}^{n}a_k^2\right) \left( \sum_{k=1}^{n}b_k^2\right).
 \]
-其中等号成立的条件: $\frac{a_1}{b_1} = \frac{a_2}{b_2} = \cdots = \frac{a_k}{b_k} $ 或者$a_i, b_i, i = 1, 2, \ldots, k$中至少有一方全为0.
+其中等号成立的条件: 存在$\lambda\in\mathbb R$使得$a_i=\lambda b_i$（$1\leq i\leq n$），或者$b_1=\cdots=b_n=0$.
 
 \begin{itemize}
 \item[3.1] 利用Young不等式或$|AB| \leq \frac{A^2+B^2}{2}$. tip: 作以下变形：
@@ -289,7 +289,7 @@ f(\frac{p}{q}) = f (\overbrace{\frac{1}{q} + \cdots + \frac{1}{q}}^{p\mbox{个}}
 
 \item[3.2] 利用Lagrange恒等式
 \[
-\left(\sum\limits_{k=1}^n a_k^2 \right) \left( \sum\limits_{k=1}^n b_k^2\right) - \left( \sum\limits_{k=1}^n |a_k b_k|  \right)^2 = \frac{1}{2} \sum\limits_{k=1}^n \sum\limits_{i=1}^n (|a_k||b_i| - |a_i||b_k|)^2 =  \sum\limits_{k=1}^{n-1} \sum\limits_{j=i+1}^n (|a_k||b_i| - |a_i||b_k|)^2;
+\left(\sum\limits_{k=1}^n a_k^2 \right) \left( \sum\limits_{k=1}^n b_k^2\right) - \left( \sum\limits_{k=1}^n |a_k b_k|  \right)^2 = \frac{1}{2} \sum\limits_{k=1}^n \sum\limits_{i=1}^n (|a_k||b_i| - |a_i||b_k|)^2 =  \sum\limits_{k=1}^{n-1} \sum\limits_{j=k+1}^n (|a_k||b_j| - |a_j||b_k|)^2;
 \]
 
 \end{itemize}
@@ -1922,7 +1922,7 @@ e^x > 1 + \frac{x}{1!} + \frac{x^2}{2!} + \cdots + \frac{x^n}{n!}
 
 \clearpage
 
-\section{第五周}
+\section{3月25--31日 · Week 5}
 
 \subsection*{作业}
 
@@ -2222,7 +2222,7 @@ f(x) = \frac{1}{n!} x^n (a-bx)^n, \ g(x) = f(x) - f^{(2)}(x) + f^{(4)}(x) - \cdo
 
 \clearpage
 
-\section{第六周}
+\section{4月1--7日 · Week 6}
 
 \subsection*{作业}
 
@@ -2508,7 +2508,7 @@ Tip: 证法一: 利用已知结论, 若$f$在$[a, b]$上可积, 则$\forall \eps
 
 \clearpage
 
-\section{第九周}
+\section{4月22--28日 · Week 9}
 
 \subsection*{作业}
 
@@ -3850,7 +3850,7 @@ f(0) \cdot f(1) >0, f''(x) >0 \ (\forall x \in (0, 1)), \int_0^1 f(x) dx =0.
 
 \clearpage
 
-\section{第十二周}
+\section{5月13--19日 · Week 12}
 
 \subsection*{作业}
 
@@ -4036,7 +4036,7 @@ a_n = \left( 1 - \frac{p \ln n}{n} \right)^n,
 
 \clearpage
 
-\section{第十四周}
+\section{5月27日--6月2日 · Week 14}
 
 \subsection*{作业}
 
@@ -4103,7 +4103,7 @@ f_n(x) = \frac{x (\ln n)^{\alpha}}{n^x}, \ \ n \geq 2.
 
 \clearpage
 
-\section{第十五周}
+\section{6月3--9日 · Week 15}
 
 \subsection*{作业}
 
