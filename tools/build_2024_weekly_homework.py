@@ -115,7 +115,7 @@ preamble = preamble.replace(r"\usepackage{ctex}", r"\usepackage{ctex}" + "\n" + 
 preamble = re.sub(r"\\title\{.*", r"\\title{数学分析习题课作业\\\\2024--2025学年按周整理}", preamble)
 preamble = preamble.replace(r"\date{\today}", r"\date{}")
 output = [preamble, r"\begin{document}", r"\maketitle",
-          r"\noindent\textbf{编排说明：}本册按郑州大学教学周整理，每周先列作业，再列答案。日期表示整周，并非具体上课日。原稿答案保留并单列；新增答案标注“GPT 补充参考答案”，须由任课教师进一步审阅。原稿中的期末试题、春季期中测验及单独的“数学分析300题”未收入本册。已修正发现的明确符号笔误，并在相关答案处说明原题条件不足之处。",
+          r"\noindent\textbf{编排说明：}本册按郑州大学教学周整理，每周先列作业，再列答案。日期表示整周，并非具体上课日。原稿答案保留并单列；新增答案标注“GPT 补充参考答案”，须由任课教师进一步审阅。已修正发现的明确符号笔误，并在相关答案处说明原题条件不足之处。",
           r"\tableofcontents", r"\clearpage", r"\chapter{秋季学期}"]
 term = "秋季"
 for semester, key, title, questions, originals in weeks:
