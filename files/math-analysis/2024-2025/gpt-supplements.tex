@@ -44,13 +44,70 @@
 % ANSWERS: f6
 \noindent\textbf{以下由 GPT 给出。}按原稿题序：
 \begin{enumerate}
-\item 六个极限依次为 $e^{-2/\pi},1,e^{-2},1,-1,2/\pi$。分别使用 $\ln(1+t)\sim t$、$\sin t\sim t$、$\arctan t\sim t$，以及 $\arctan x\to\pi/2$。
-\item 三个极限依次为 $1/2,2,e$；在 $0/0$ 型中先化为标准等价无穷小，再取对数处理指数型。
-\item 两正数的题目极限为 $\sqrt{ab}$；取对数后用 Ces\`aro 均值。
-\item（选做）由 $\sin x=2^n\sin(x/2^n)\prod_{k=1}^n\cos(x/2^k)$，令 $n\to\infty$ 得 $\prod_{k=1}^\infty\cos(x/2^k)=\sin x/x$（$x=0$ 时按连续值取 $1$）。令 $x=\pi/2$ 即 Vi\`ete 公式。
-\item 两个极限分别为 $6,-8$。
-\item 在每个点附近，有限单侧或双侧极限使函数在穿孔邻域内有界；再考虑该点函数值。用紧区间有限覆盖取全局界。
-\item 三个极限分别为 $2,1/4,+\infty$。前两题分别用 $\sum_{k=1}^n k^3=[n(n+1)/2]^2$ 与望远镜求和；第三题由 $(n!)^{1/n}\sim n/e$，其余固定参数因子的 $n$ 次方根趋 $1$。
+\item 对前四个指数型，先取对数，再还原指数。
+\begin{enumerate}
+\item $\arctan x=\pi/2-1/x+o(1/x)$，所以
+$x\ln((2/\pi)\arctan x)
+=x\ln(1-2/(\pi x)+o(1/x))\to-2/\pi$，极限为 $e^{-2/\pi}$。
+\item 令 $t=\pi/2-x\to0+$，则
+$\tan x=\cot t\sim1/t$、$\sin x=\cos t=1-t^2/2+o(t^2)$；
+$\tan x\ln(\sin x)\sim-t/2\to0$，极限为 $1$。
+\item 底数 $1-2/(x^2+1)$，故
+$x^2\ln(1-2/(x^2+1))\to-2$，极限为 $e^{-2}$。
+\item 同样令 $t=\pi/2-x$，则
+$t\ln(\cos x)=t\ln(\sin t)\sim t\ln t\to0$，极限为 $1$。
+\item $\sin2x-2\sin x=2\sin x(\cos x-1)\sim2x(-x^2/2)=-x^3$，故为 $-1$。
+\item 令 $t=1-x$，有
+$(1-x)\tan(\pi x/2)=t\cot(\pi t/2)\to2/\pi$。
+\end{enumerate}
+\item 第一式有理化分子：
+\[
+\frac{\sqrt{1+x\sin x}-1}{x\arctan x}
+=\frac{\sin x}{\arctan x\,(\sqrt{1+x\sin x}+1)}
+\longrightarrow\frac12.
+\]
+第二式分子的一阶项是 $2x+6x=8x$，分母的一阶项是 $3x+x=4x$，故极限为 $2$。
+第三式取对数：$\ln[(\sin x)^{1/\ln x}]
+=\ln(\sin x)/\ln x
+=1+\ln(\sin x/x)/\ln x\to1$，故极限为 $e$。
+\item 对 $a,b>0$，写
+$a^{1/n}=1+(\ln a)/n+O(n^{-2})$，$b^{1/n}=1+(\ln b)/n+O(n^{-2})$。
+二者平均为 $1+(\ln a+\ln b)/(2n)+O(n^{-2})$；
+乘 $n$ 取对数后趋 $(\ln a+\ln b)/2$，故原极限为 $\sqrt{ab}$。
+\item（选做）反复应用 $\sin(2t)=2\sin t\cos t$，得到
+\[
+\prod_{k=1}^n\cos\frac{x}{2^k}
+=\frac{\sin x}{2^n\sin(x/2^n)}.
+\]
+当 $n\to\infty$，分母趋 $x$，故无限乘积等于 $\sin x/x$（$x=0$ 取连续值 $1$）。
+令 $x=\pi/2$，将
+$\cos(\pi/2^{k+1})=\sqrt{(1+\cos(\pi/2^k))/2}$
+逐次展开，便得到题目所列嵌套根式的 Vi\`ete 公式。
+\item 令 $t=2^{1/n}\to1$。第一个式子可化为
+$(3t^4-4t^3+1)/(t-1)^2$；
+分子在 $t=1$ 的函数值和一阶导数均为零，二阶 Taylor 系数为
+$(36-24)/2=6$，故极限为 $6$。
+第二式令 $u=n^{1/n}\to1$，约去 $u-1$：
+\[
+\frac{u^4+2u^2-3}{u^2-3u+2}
+=\frac{(u+1)(u^2+3)}{u-2}\longrightarrow-8.
+\]
+\item 对每个 $\xi\in[a,b]$，有限的双侧极限使 $f$ 在某个去心邻域内有界；
+加上点值 $f(\xi)$ 后，得到 $\xi$ 的一个邻域上的界。
+这组邻域覆盖紧集 $[a,b]$，取有限子覆盖；
+有限个局部上界的最大值就是 $f$ 在全区间上的界。端点用单侧极限同理。
+\item 第一个数列由立方和公式化简：
+$\sqrt{\sum_{j=1}^k j^3}=k(k+1)/2$，
+因此 $a_n=\sum_{k=1}^n2/[k(k+1)]=2(1-1/(n+1))\to2$。
+第二个数列拆分
+$1/[k(k+1)(k+2)]
+=\tfrac12[1/(k(k+1))-1/((k+1)(k+2))]$；
+部分和趋 $\tfrac12\cdot(1/2)=1/4$。
+第三式将乘积写成
+$n!\prod_{k=1}^n(1+x^2/k)$。由
+$\frac1n\sum_{k=1}^n\ln(1+x^2/k)\to0$，
+其第二因子的 $n$ 次根趋 $1$；而 $(n!)^{1/n}\sim n/e\to\infty$，
+减去固定的 $x^2$ 后仍趋 $+\infty$。
 \item 参见教材。
 \end{enumerate}
 % ANSWERS: f8
@@ -106,28 +163,87 @@
 \item $x^22^x=x^2e^{(\ln2)x}$，故 $f^{(n)}(0)=n(n-1)(\ln2)^{n-2}$（$n\ge2$），前两阶为 $0$。
 \end{enumerate}
 % ANSWERS: s1
-\noindent\textbf{以下由 GPT 给出。}各式均须在被积函数有定义的连通区间上取原函数，末尾均省略积分常数 $C$；含参数者需满足题设或分情况讨论。
+\noindent\textbf{以下由 GPT 给出。}每题都在被积函数有定义的连通区间上计算，结果均应加积分常数 $C$。
 \begin{enumerate}
-\item $\frac1{\sqrt{21}}\ln\left|\frac{6x+3-\sqrt{21}}{6x+3+\sqrt{21}}\right|$。
-\item $\frac2{\sqrt3}\arctan\frac{2x-5}{\sqrt3}$。
-\item $\sqrt{x^2-2x-3}+2\ln|x-1+\sqrt{x^2-2x-3}|$。
-\item $\frac13(3x^2-2x+7)^{3/2}$。
-\item $\frac25x^{5/2}+\frac23x^{3/2}-\frac25(x+1)^{5/2}+\frac23(x+1)^{3/2}$（$x\ge0$）。
-\item $\ln|x|-\frac1n\ln|1+x^n|$（$n\ne0$）。
-\item $-\frac{(1-x)^{n+1}}{n+1}+\frac{(1-x)^{n+2}}{n+2}$（$n\ne-1,-2$）。
-\item $\ln|\ln(\tan x)|$，仅在 $\tan x>0$ 且 $\ln\tan x\ne0$ 的区间。
-\item $\frac13(\arctan x)^3$。
-\item $-1/[a(ax+b)]$。
-\item 令 $S_c(x)=-\cos(cx)/c$（$c\ne0$），$S_0(x)=0$；结果为 $[S_{a+b}(x)+S_{b-a}(x)]/2$。
-\item 令 $C_c(x)=\sin(cx)/c$（$c\ne0$），$C_0(x)=x$；结果为 $[C_{a-b}(x)-C_{a+b}(x)]/2$。
-\item $-\cos x+\cos^3x-\frac35\cos^5x+\frac17\cos^7x$。
-\item $\frac32(\sin x-\cos x)^{2/3}$（在不穿过零点的区间按实值导数理解）。
-\item $\frac1{\sqrt2}\arctan(\tan x/\sqrt2)$，仅作局部原函数。
-\item 若 $a^2\ne b^2$，为 $\frac{\ln(a^2\cos^2x+b^2\sin^2x)}{2(b^2-a^2)}$；若 $a^2=b^2>0$，为 $\sin^2x/(2a^2)$。
-\item $\frac1{\sqrt2}\ln\left|\tan\left(\frac{x+\pi/4}{2}\right)\right|$。
-\item 令 $R=\sqrt{a^2+b^2}>0$，取 $a=R\cos\phi,b=R\sin\phi$，则为 $R^{-1}\ln|\sec(x-\phi)+\tan(x-\phi)|$。
-\item $\frac1{\sqrt2}\arcsin\left(\sqrt{\frac23}\sin x\right)$。
-\item $\ln\left|\frac{x}{1+\sqrt{x^2+1}}\right|$。
+\item 先配方 $3x^2+3x-1=((6x+3)^2-21)/12$。令 $u=6x+3$，则
+\[
+\int\frac{dx}{3x^2+3x-1}
+=2\int\frac{du}{u^2-21}
+=\frac1{\sqrt{21}}\ln\left|\frac{u-\sqrt{21}}{u+\sqrt{21}}\right|+C.
+\]
+最后代回 $u$；原函数不能跨越分母的零点。
+\item 配方 $x^2-5x+7=(x-\tfrac52)^2+\tfrac34$，令 $u=(2x-5)/\sqrt3$。分母变为 $\tfrac34(1+u^2)$，故
+\[
+\int\frac{dx}{x^2-5x+7}
+=\frac2{\sqrt3}\arctan\frac{2x-5}{\sqrt3}+C.
+\]
+\item 令 $t=x-1$，则根号内为 $t^2-4$，分子为 $t+2$。将积分拆成
+\[
+\int\frac{t\,dt}{\sqrt{t^2-4}}+2\int\frac{dt}{\sqrt{t^2-4}}.
+\]
+前一项为 $\sqrt{t^2-4}$；后一项用标准公式，得到
+$\sqrt{x^2-2x-3}+2\ln|x-1+\sqrt{x^2-2x-3}|+C$，在 $x<-1$ 或 $x>3$ 的区间分别成立。
+\item 设 $u=3x^2-2x+7$，则 $du=2(3x-1)\,dx$，所以原积分
+$=\frac12\int u^{1/2}du=\frac13u^{3/2}+C$。
+\item 在 $x\ge0$ 时，有理化分母：
+\[
+\frac{\sqrt{x(x+1)}}{\sqrt x+\sqrt{x+1}}
+=\sqrt{x(x+1)}\bigl(\sqrt{x+1}-\sqrt x\bigr)
+=(x+1)\sqrt x-x\sqrt{x+1}.
+\]
+分别以 $u=x+1$ 和 $u=x$ 积分，得到
+$\frac25x^{5/2}+\frac23x^{3/2}-\frac25(x+1)^{5/2}+\frac23(x+1)^{3/2}+C$。
+\item 当 $n\ne0$ 时作恒等变形
+\[
+\frac1{x(1+x^n)}=\frac1x-\frac{x^{n-1}}{1+x^n}.
+\]
+第二项令 $u=1+x^n$，故结果为
+$\ln|x|-\frac1n\ln|1+x^n|+C$，限于分母非零的区间。
+\item 令 $u=1-x$，则 $x=1-u$、$dx=-du$，原积分
+$=-\int(u^n-u^{n+1})du$。对 $n\ne-1,-2$，结果是
+$-\frac{(1-x)^{n+1}}{n+1}+\frac{(1-x)^{n+2}}{n+2}+C$。
+当 $n=-1$ 或 $-2$ 时相应幂积分改为对数，不能代入上式。
+\item 因为 $(\ln\tan x)'=\sec x\,\csc x$，令 $u=\ln\tan x$，就有
+$\int du/u=\ln|u|+C=\ln|\ln\tan x|+C$。须在 $\tan x>0$ 且 $u\ne0$ 的区间计算。
+\item 令 $u=\arctan x$，则 $du=dx/(1+x^2)$；原式等于
+$\int u^2du=\frac13(\arctan x)^3+C$。
+\item 令 $u=ax+b$，$du=a\,dx$；于是
+$\int (ax+b)^{-2}dx=\frac1a\int u^{-2}du=-1/[a(ax+b)]+C$，其中 $a\ne0$、$ax+b\ne0$。
+\item 积化和差：
+$\cos(ax)\sin(bx)=\tfrac12[\sin((a+b)x)+\sin((b-a)x)]$。
+定义 $S_c(x)=-\cos(cx)/c$（$c\ne0$），而 $S_0(x)=0$，
+结果为 $\tfrac12[S_{a+b}(x)+S_{b-a}(x)]+C$；这一写法也覆盖 $a=\pm b$。
+\item 同理
+$\sin(ax)\sin(bx)=\tfrac12[\cos((a-b)x)-\cos((a+b)x)]$。
+定义 $C_c(x)=\sin(cx)/c$（$c\ne0$）、$C_0(x)=x$，
+逐项积分得到 $\tfrac12[C_{a-b}(x)-C_{a+b}(x)]+C$。
+\item 写 $\sin^7x=(1-\cos^2x)^3\sin x$。令 $u=\cos x$，$du=-\sin x\,dx$，故
+$-\int(1-u^2)^3du=-u+u^3-\frac35u^5+\frac17u^7+C$，再代回 $u=\cos x$。
+\item 设 $u=\sin x-\cos x$，则 $du=(\cos x+\sin x)dx$；积分为
+$\int u^{-1/3}du=\frac32u^{2/3}+C$。
+由于原被积函数在 $u=0$ 无定义，原函数只在不穿过该点的区间使用。
+\item 在 $\cos x\ne0$ 的区间令 $t=\tan x$，则
+$dx=dt/(1+t^2)$，且 $2-\sin^2x=(2+t^2)/(1+t^2)$。
+所以积分变为 $\int dt/(t^2+2)=\frac1{\sqrt2}\arctan(t/\sqrt2)+C$。
+跨越 $\cos x=0$ 时可在相邻区间分别调整常数。
+\item 令 $u=a^2\cos^2x+b^2\sin^2x$，则
+$du=2(b^2-a^2)\sin x\cos x\,dx$。当 $a^2\ne b^2$ 时，原积分为
+$\ln u/[2(b^2-a^2)]+C$，其中 $u>0$。
+当 $a^2=b^2>0$ 时分母恒为 $a^2$，直接积分得 $\sin^2x/(2a^2)+C$。
+\item 用 $\cos x+\sin x=\sqrt2\cos(x-\pi/4)$，令 $t=x-\pi/4$。
+由 $\int\sec t\,dt=\ln|\sec t+\tan t|+C$，
+结果为 $\frac1{\sqrt2}\ln|\sec(x-\pi/4)+\tan(x-\pi/4)|+C$。
+\item 令 $R=\sqrt{a^2+b^2}>0$，选 $\phi$ 使 $a=R\cos\phi$、$b=R\sin\phi$。
+则 $a\cos x+b\sin x=R\cos(x-\phi)$，原积分
+$=\frac1R\int\sec(x-\phi)\,dx
+=\frac1R\ln|\sec(x-\phi)+\tan(x-\phi)|+C$。
+\item 因 $2+\cos2x=3-2\sin^2x$，令 $u=\sin x$，$du=\cos x\,dx$。
+利用 $\int du/\sqrt{A^2-u^2}=\arcsin(u/A)+C$，得到
+$\frac1{\sqrt2}\arcsin\!\bigl(\sqrt{2/3}\sin x\bigr)+C$。
+\item 令 $x=\sinh t$，则 $dx=\cosh t\,dt$、$\sqrt{1+x^2}=\cosh t$。
+原式化为 $\int\operatorname{csch}t\,dt
+=\ln|\tanh(t/2)|+C$；由 $\tanh(t/2)=x/[1+\sqrt{1+x^2}]$，
+得到 $\ln|x/(1+\sqrt{1+x^2})|+C$，其中 $x\ne0$。
 \end{enumerate}
 % ANSWERS: s2
 \noindent\textbf{以下由 GPT 给出。}本周计算题较多；先给可直接复核的结果或代换，未完成的参数积分不以猜测填充。
