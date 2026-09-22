@@ -46,13 +46,11 @@
 \begin{document}
 \maketitle
 \tableofcontents
-\vspace{1.5em}
-\noindent\textbf{编排说明：}秋季依据原稿交作业日期标注教学周；春季原稿仅列作业次序，故以“第几次作业”排列，不另拟具体日期。每次先列作业，再列原稿参考答案（如有）及注明来源的 GPT 选题参考答案。按班级区分的题目保留班级标记；重复的共同选做题只列一次。教材仅给出章节、页码或题号的题目，答案处写“参见教材”。明确的符号笔误已在本册修正；新增答案须由任课教师进一步审阅。
 \clearpage
 \chapter{秋季学期}
 \clearpage
 \section{10月20--26日 · Week 7（10月20日交）}
-\subsection*{作业}
+\subsection*{题目}
 \begin{enumerate}
 
 \item 习题1.4: 2, 6, 11, 12
@@ -139,7 +137,8 @@ tip: 先交换指标证明后两项相等.
 (2) $f^{-1}(f(S)) = S$对每一个$S \subset A$都成立当且仅当$f$是单射.
 
 \end{enumerate}
-\subsection*{原稿参考答案（已校正明确笔误）}
+\clearpage
+\subsection*{原稿答案}
 \begin{enumerate}
 
 \item 设正数$a, b, c$满足$a + b + c =1$. 证明: $(1-a)(1-b)(1-c) \geq 8abc$. (tip: 展开后利用均值不等式, 需要用调和平均)
@@ -344,18 +343,57 @@ f\circ f (f(a)) = f(a).
 \end{proof}
 
 \end{enumerate}
-\subsection*{GPT 补充参考答案（选题）}
+\clearpage
+\subsection*{GPT 补充答案（选题）}
 \begin{itemize}
 \item \textbf{教材习题 1.4：}参见教材。
-\item \textbf{数列单调性：}令 $u_n=(1+1/n)^n$。由均值不等式，$u_n$ 严格递增；由二项展开或 Bernoulli 不等式，$v_n=(1+1/n)^{n+1}$ 严格递减。两列同趋于 $e$。
-\item \textbf{Cauchy--Schwarz 等号：}正确条件为向量 $(a_k)$ 与 $(b_k)$ 线性相关，包括其中一个零向量的情况。原稿用非零常数表示的写法漏掉了部分零向量情形。
-\item \textbf{双曲函数反函数：}$\sinh:\mathbb R\to\mathbb R$ 严格递增，反函数为 $\operatorname{arsinh}y=\ln(y+\sqrt{1+y^2})$。$\cosh$ 在 $\mathbb R$ 上不是一一对应；限制到 $[0,\infty)$ 后，$\operatorname{arcosh}y=\ln(y+\sqrt{y^2-1})$，$y\ge1$。
-\item \textbf{两道不动点题：}若 $f^2$ 的唯一不动点为 $a$，则 $f(a)$ 也被 $f^2$ 固定，故 $f(a)=a$；任何 $f$ 的不动点也是 $f^2$ 的不动点。若 $f^2$ 恰有 $a,b$ 两个不动点，则 $f$ 将集合 $\{a,b\}$ 映到自身，且在该集合上 $f^2=\mathrm{id}$，因而只能恒等或交换两点。
-\item \textbf{集合原像：}$C\subseteq f^{-1}(f(C))$，$f(f^{-1}(D))=D\cap f(A)\subseteq D$。分别对所有子集取等号当且仅当 $f$ 单射、满射。
+\item \textbf{数列单调性：}记 $u_n=(1+1/n)^n$、$v_n=(1+1/n)^{n+1}$。
+用二项式定理写
+\[
+u_n=\sum_{k=0}^n\frac1{k!}\prod_{j=0}^{k-1}\left(1-\frac jn\right).
+\]
+固定 $k$ 的乘积随 $n$ 增大而增大；$u_{n+1}$ 还多一项正项，故 $u_n$ 严格递增。
+另一方面，
+$v_n/u_n=1+1/n\to1$。对
+$\log v_x=(x+1)\log(1+1/x)$ 求导，
+得到 $\log(1+1/x)-1/x<0$，故 $v_n$ 严格递减。
+由于 $u_n\le v_n$，两列有共同极限 $e$。
+\item \textbf{Cauchy--Schwarz 等号：}由 Lagrange 恒等式
+\[
+\left(\sum a_k^2\right)\left(\sum b_k^2\right)
+-\left(\sum a_kb_k\right)^2
+=\sum_{i<j}(a_ib_j-a_jb_i)^2\ge0.
+\]
+等号当且仅当每个 $a_ib_j-a_jb_i=0$。
+若 $b$ 非零，选 $b_j\ne0$，可得所有 $a_i=(a_j/b_j)b_i$；
+若 $b$ 为零向量，等号自动成立。两种情况统一表述为两向量线性相关。
+\item \textbf{双曲函数反函数：}令 $y=\sinh x=(e^x-e^{-x})/2$、$t=e^x>0$，
+则 $t^2-2yt-1=0$。唯一正根为 $t=y+\sqrt{1+y^2}$，故
+$x=\ln(y+\sqrt{1+y^2})$；又 $\sinh' x=\cosh x>0$，
+反函数定义在全体实数上。
+$\cosh x$ 是偶函数，不能在 $\mathbb R$ 上取单值反函数。
+限制 $x\ge0$ 后，从 $t^2-2yt+1=0$ 取 $t=y+\sqrt{y^2-1}\ge1$，
+得到 $x=\ln(y+\sqrt{y^2-1})$，其中 $y\ge1$。
+\item \textbf{两道不动点题：}若 $f^2$ 的不动点只有 $a$，
+则 $f^2(f(a))=f(f^2(a))=f(a)$，所以 $f(a)$ 仍是 $f^2$ 的不动点；
+唯一性迫使 $f(a)=a$。反过来，任意 $f(x)=x$ 都满足 $f^2(x)=x$，
+故 $f$ 也只有这一个不动点。
+若 $f^2$ 恰有 $a,b$ 两个不动点，同一交换关系表明
+$f(\{a,b\})\subseteq\{a,b\}$；且 $f^2$ 在该集合上为恒等映射，
+因此 $f$ 在这两点上为双射，只可能分别固定两点或交换两点。
+\item \textbf{集合原像：}若 $x\in C$，则 $f(x)\in f(C)$，
+所以 $x\in f^{-1}(f(C))$。反向对所有 $C$ 都成立，
+等价于不存在 $x\ne y$ 且 $f(x)=f(y)$，即 $f$ 单射。
+再看 $D\subseteq B$：
+\[
+f(f^{-1}(D))=\{f(x):x\in A,\ f(x)\in D\}=D\cap f(A).
+\]
+故它总包含于 $D$；对所有 $D$ 都取等号，当且仅当 $f(A)=B$，
+即 $f$ 满射。
 \end{itemize}
 \clearpage
 \section{10月27日--11月2日 · Week 8（10月27日交）}
-\subsection*{作业}
+\subsection*{题目}
 \begin{enumerate}
 
 \item ({\color{purple} 1256班})
@@ -475,7 +513,11 @@ a^{\frac{1}{n}} \cdot a^{\frac{1}{m}} = a^{\frac{1}{n} + \frac{1}{m}}.
 \item ({\color{red} 选做}) 设$\alpha$为无理数, 则存在无穷多个有理数$\frac{p}{q}, q>0$, 使得$|\alpha - \frac{p}{q}| < \frac{1}{q^2}$. 
 
 \end{enumerate}
-\subsection*{GPT 补充参考答案（选题）}
+\clearpage
+\subsection*{原稿答案}
+\noindent 原稿未附本周的参考答案。
+\clearpage
+\subsection*{GPT 补充答案（选题）}
 \begin{itemize}
 \item \textbf{教材章节题号：}参见教材。
 \item \textbf{进制截断：}取 $k_n=\lfloor m^n x\rfloor$，有 $k_n\le m^n x<k_n+1$。由 $\lfloor mt\rfloor\ge m\lfloor t\rfloor$ 与 $\lfloor mt\rfloor\le m\lfloor t\rfloor+m-1$ 得 $x_n\uparrow$、$y_n\downarrow$；间距 $y_n-x_n=m^{-n}$。十进制时二者分别是下、上截断。
@@ -486,7 +528,7 @@ a^{\frac{1}{n}} \cdot a^{\frac{1}{m}} = a^{\frac{1}{n} + \frac{1}{m}}.
 \end{itemize}
 \clearpage
 \section{11月3--9日 · Week 9（11月3日交）}
-\subsection*{作业}
+\subsection*{题目}
 \subsubsection*{3、4、7、8班}
 \begin{enumerate}
 
@@ -723,7 +765,11 @@ c_n &= \frac{a_{n-1} + b_{n-1}}{2},
 利用定义证明: $\lim_{n \to \infty}a_n = \lim_{n \to \infty}b_n=\lim_{n \to \infty}c_n = \frac{a+b+c}{3}$.
 
 \end{enumerate}
-\subsection*{GPT 补充参考答案（选题）}
+\clearpage
+\subsection*{原稿答案}
+\noindent 原稿未附本周的参考答案。
+\clearpage
+\subsection*{GPT 补充答案（选题）}
 \begin{itemize}
 \item \textbf{教材章节题号：}参见教材。
 \item \textbf{$3、4、7、8$ 班极限：}由于 $1\le k^{1/n}\le n^{1/n}$，第一极限为 $1$。第二题先减去 $\sqrt n\sum_{j=0}^p a_j=0$，每个余项 $\sqrt{n+j}-\sqrt n\to0$。第三题用 $\sqrt{1+t}-1=t/(\sqrt{1+t}+1)$，其和趋于 $\tfrac12\cdot\tfrac12=\tfrac14$。指数比值趋于 $1$；对数比值趋于 $3$。
@@ -733,7 +779,7 @@ c_n &= \frac{a_{n-1} + b_{n-1}}{2},
 \end{itemize}
 \clearpage
 \section{11月10--16日 · Week 10（11月10日交）}
-\subsection*{作业}
+\subsection*{题目}
 \subsubsection*{1、2、5、6班}
 \begin{enumerate}
 
@@ -926,7 +972,11 @@ x_n = 1 + \frac{1}{2} + \cdots +\frac{1}{n} - \ln n, n \in \mathbb N^*.
 \end{itemize}
 
 \end{enumerate}
-\subsection*{GPT 补充参考答案（选题）}
+\clearpage
+\subsection*{原稿答案}
+\noindent 原稿未附本周的参考答案。
+\clearpage
+\subsection*{GPT 补充答案（选题）}
 \begin{itemize}
 \item \textbf{教材章节题号：}参见教材。
 \item \textbf{第 3 次作业中重复的极限与 Cesàro 题：}参见前一次的对应补充答案。
@@ -938,7 +988,7 @@ x_n = 1 + \frac{1}{2} + \cdots +\frac{1}{n} - \ln n, n \in \mathbb N^*.
 \end{itemize}
 \clearpage
 \section{11月17--23日 · Week 11（11月17日交）}
-\subsection*{作业}
+\subsection*{题目}
 \subsubsection*{1、2、5、6班}
 \begin{enumerate}
 
@@ -1164,7 +1214,11 @@ c_n = \sum_{k=0}^n \frac{s_0 s_1 \cdots s_k}{2^k}.
 \end{enumerate}
 
 \end{enumerate}
-\subsection*{GPT 补充参考答案（选题）}
+\clearpage
+\subsection*{原稿答案}
+\noindent 原稿未附本周的参考答案。
+\clearpage
+\subsection*{GPT 补充答案（选题）}
 \begin{itemize}
 \item \textbf{教材章节题号：}参见教材。
 \item \textbf{前次重复题：}共同收敛子列、单调列、阶乘极限及柯西判别等见第 4 次作业的补充答案。
@@ -1174,7 +1228,7 @@ c_n = \sum_{k=0}^n \frac{s_0 s_1 \cdots s_k}{2^k}.
 \end{itemize}
 \clearpage
 \section{11月24--30日 · Week 12（11月25日交）}
-\subsection*{作业}
+\subsection*{题目}
 \begin{enumerate}
 
 \item {\color{red} 1256}: 3.5节, 4, 5, 9, 10. 4.1节, 6, 7, 8.
@@ -1214,7 +1268,11 @@ c_n = \sum_{k=0}^n \frac{s_0 s_1 \cdots s_k}{2^k}.
 \item 设$f : (0, 1) \to (0, 1)$满足: 若对$(0, 1)$中任一Cauchy列$\{a_n\}$, $\{f(a_n) \}$必是Cauchy列, 则$f$在$(0, 1)$上连续.
 
 \end{enumerate}
-\subsection*{GPT 补充参考答案（选题）}
+\clearpage
+\subsection*{原稿答案}
+\noindent 原稿未附本周的参考答案。
+\clearpage
+\subsection*{GPT 补充答案（选题）}
 \begin{itemize}
 \item \textbf{教材章节题号：}参见教材。
 \item \textbf{局部极限与有界性：}每点有有限极限意味着该点附近函数有界；有限个邻域覆盖紧区间 $[a,b]$，故 $f$ 全局有界。
@@ -1224,7 +1282,7 @@ c_n = \sum_{k=0}^n \frac{s_0 s_1 \cdots s_k}{2^k}.
 \end{itemize}
 \clearpage
 \section{12月1--7日 · Week 13（12月1日交）}
-\subsection*{作业}
+\subsection*{题目}
 \begin{enumerate}
 
 \item 计算下列极限:
@@ -1340,7 +1398,11 @@ f^n(x) : = (\underbrace{f \circ \cdots \circ f}_{n\text{次}}) (x) \equiv x,
 \end{enumerate}
 
 \end{enumerate}
-\subsection*{GPT 补充参考答案（选题）}
+\clearpage
+\subsection*{原稿答案}
+\noindent 原稿未附本周的参考答案。
+\clearpage
+\subsection*{GPT 补充答案（选题）}
 \begin{itemize}
 \item \textbf{多项式及连续函数：}首一偶次多项式两端都趋 $+\infty$，可以没有零点；若常数项为负，由 $f(0)<0$ 和两端正值，用介值定理得至少两个实零点。若 $f$ 在 $(a,b)$ 两端趋 $+\infty$，把两端外侧截去后在紧区间上取最小值。
 \item \textbf{平移中值：}令 $g(x)=f(x)-f(x+a)$，$x\in[0,a]$。由于 $g(0)=-g(a)$，介值定理给出零点。
@@ -1350,7 +1412,7 @@ f^n(x) : = (\underbrace{f \circ \cdots \circ f}_{n\text{次}}) (x) \equiv x,
 \end{itemize}
 \clearpage
 \section{12月8--14日 · Week 14（12月8日交）}
-\subsection*{作业}
+\subsection*{题目}
 \begin{enumerate}
 \item 设函数$f, g$在区间$I$上一致连续, 证明:
 
@@ -1413,7 +1475,11 @@ x^2, & x \in \mathbb Q,
 \]
 讨论连续性与可导性.
 \end{enumerate}
-\subsection*{GPT 补充参考答案（选题）}
+\clearpage
+\subsection*{原稿答案}
+\noindent 原稿未附本周的参考答案。
+\clearpage
+\subsection*{GPT 补充答案（选题）}
 \begin{itemize}
 \item \textbf{一致连续：}和、差保持一致连续；乘积须额外有界性。$\sin x^2$ 在全实轴不一致连续，取 $x_n=\sqrt{2\pi n+\pi/2}$ 与 $y_n=\sqrt{2\pi n+3\pi/2}$，则 $|x_n-y_n|\to0$ 而函数值相差 $2$。
 \item \textbf{可导性：}若 $f$ 在 $a$ 连续且 $f(a)\ne0$，并且 $f^2$ 在 $a$ 可导，则 $f'(a)=(f^2)'(a)/(2f(a))$。若 $|f|$ 在零点可导，则其导数只能为 $0$，从 $|f(x)|=o(|x-a|)$ 得 $f'(a)=0$；非零点局部符号不变。
@@ -1421,7 +1487,7 @@ x^2, & x \in \mathbb Q,
 \end{itemize}
 \clearpage
 \section{12月15--21日 · Week 15（12月15日交）}
-\subsection*{作业}
+\subsection*{题目}
 \begin{enumerate}
 
 \item 设偶函数$f(x)$在点$x=0$处可导, 求$f'(0)$.
@@ -1447,7 +1513,11 @@ x^2, & x \in \mathbb Q,
 \end{align*}
 
 \end{enumerate}
-\subsection*{GPT 补充参考答案（选题）}
+\clearpage
+\subsection*{原稿答案}
+\noindent 原稿未附本周的参考答案。
+\clearpage
+\subsection*{GPT 补充答案（选题）}
 \begin{itemize}
 \item \textbf{教材第 5 章各节及总练题号：}参见教材。
 \item \textbf{偶函数：}若 $f$ 在 $0$ 可导，由 $f(h)=f(-h)$，两侧差商互为相反数，故 $f'(0)=0$。
@@ -1456,7 +1526,7 @@ x^2, & x \in \mathbb Q,
 \end{itemize}
 \clearpage
 \section{12月22--28日 · Week 16（12月22日交）}
-\subsection*{作业}
+\subsection*{题目}
 \begin{enumerate}
 
 \item 6.1节, 4, 9, 14
@@ -1509,7 +1579,11 @@ f(x) = \frac{f''(\xi)}{2} (x-a)(x-b).
 \end{enumerate}
 
 \end{enumerate}
-\subsection*{GPT 补充参考答案（选题）}
+\clearpage
+\subsection*{原稿答案}
+\noindent 原稿未附本周的参考答案。
+\clearpage
+\subsection*{GPT 补充答案（选题）}
 \begin{itemize}
 \item \textbf{教材 6.1、6.2 节题号：}参见教材。
 \item \textbf{非线性函数：}若任意 $x_1<x_2$ 的割线斜率都相同，则函数线性；故非线性时存在两段割线斜率不同，再由中值定理得到两点导数不同。
@@ -1518,7 +1592,7 @@ f(x) = \frac{f''(\xi)}{2} (x-a)(x-b).
 \end{itemize}
 \clearpage
 \section{12月29日--1月4日 · Week 17（12月29日交）}
-\subsection*{作业}
+\subsection*{题目}
 \begin{enumerate}
 
 \item 6.2节, 7题.
@@ -1540,7 +1614,11 @@ f(0) >0, f'(0) <0, f''(x) < 0 (x \in [0, + \infty))
 \item 求函数$f(x) = x^2 2^x$在$x = 0$处的$n$阶导数$f^{(n)}(0)$.
 
 \end{enumerate}
-\subsection*{GPT 补充参考答案（选题）}
+\clearpage
+\subsection*{原稿答案}
+\noindent 原稿未附本周的参考答案。
+\clearpage
+\subsection*{GPT 补充答案（选题）}
 \begin{itemize}
 \item \textbf{教材 6.2、6.3 节及总练题号：}参见教材。
 \item \textbf{反正弦展开：}$\arcsin x=\sum_{k=0}^{\infty}\dfrac{\binom{2k}{k}}{4^k(2k+1)}x^{2k+1}$，$|x|<1$；可由 $(\arcsin x)'=(1-x^2)^{-1/2}$ 的二项式级数逐项积分得到。
@@ -1551,7 +1629,7 @@ f(0) >0, f'(0) <0, f''(x) < 0 (x \in [0, + \infty))
 \chapter{春季学期}
 \clearpage
 \section{第1次作业 / Homework 1}
-\subsection*{作业}
+\subsection*{题目}
 \begin{enumerate}
 \item 求$\int e^{\sqrt[3]{x}}dx $.
 \item 求$\int \frac{x \arctan x}{(1 + x^2)^2}dx$.
@@ -1602,16 +1680,49 @@ I = \lim_{n \to \infty} \sum_{k=1}^n \frac{\sin \frac{k\pi}{n}}{ n + \frac{k}{n}
 \]
 
 \end{enumerate}
-\subsection*{GPT 补充参考答案（选题）}
+\clearpage
+\subsection*{原稿答案}
+\noindent 原稿未附本次作业的参考答案。
+\clearpage
+\subsection*{GPT 补充答案（选题）}
 \begin{itemize}
 \item \textbf{教材 8.3 节题号：}参见教材。
-\item \textbf{代换法：}$\int e^{\sqrt[3]x}\,dx$ 令 $t=\sqrt[3]x$，得 $3e^t(t^2-2t+2)+C$。其他含根式或三角函数的不定积分，先作对应代换再分部积分。
-\item \textbf{递推积分：}$\int\cos^n x\,dx=\sin x\cos^{n-1}x/n+(n-1)\int\cos^{n-2}x\,dx/n$；$\int\sec^n x\,dx=\tan x\sec^{n-2}x/(n-1)+(n-2)\int\sec^{n-2}x\,dx/(n-1)$（$n\ge2$）。
-\item \textbf{分式积分：}把分子写成分母导数与常数项的线性组合；对 $1/(1+x^3)$ 先分解 $1+x^3=(x+1)(x^2-x+1)$，再作部分分式。
+\item \textbf{代换法：}计算 $\int e^{\sqrt[3]x}\,dx$ 时，
+令 $t=\sqrt[3]x$，于是 $x=t^3$、$dx=3t^2dt$。连续两次分部积分给
+\[
+\int t^2e^t\,dt=t^2e^t-2te^t+2e^t+C,
+\]
+所以结果是 $3e^t(t^2-2t+2)+C$，最后代回 $t=\sqrt[3]x$。
+其他题中先写清换元后的微分，再作分部积分，不可只替换被积函数而漏掉 $dx$。
+\item \textbf{递推积分：}记 $I_n=\int\cos^n x\,dx$。
+将 $\cos^n x=\cos^{n-1}x\,(\sin x)'$ 分部积分：
+\[
+I_n=\sin x\cos^{n-1}x
++(n-1)\int\sin^2x\cos^{n-2}x\,dx.
+\]
+代入 $\sin^2x=1-\cos^2x$ 并把 $(n-1)I_n$ 移到左边，得
+$I_n=\sin x\cos^{n-1}x/n+(n-1)I_{n-2}/n$。
+同理对 $J_n=\int\sec^n x\,dx$，写成
+$\sec^{n-2}x\,(\tan x)'$ 并分部积分；
+利用 $\tan^2x=\sec^2x-1$ 得
+$J_n=\tan x\sec^{n-2}x/(n-1)+(n-2)J_{n-2}/(n-1)$（$n\ge2$）。
+\item \textbf{分式积分：}对 $\int dx/(1+x^3)$，
+先因式分解 $1+x^3=(x+1)(x^2-x+1)$，再求得
+\[
+\frac1{1+x^3}=\frac1{3(x+1)}+\frac{-x+2}{3(x^2-x+1)}.
+\]
+将 $-x+2=-\tfrac12(2x-1)+\tfrac32$，第一部分用对数，
+第二部分对 $x^2-x+1=(x-\tfrac12)^2+\tfrac34$ 用反正切公式。
+于是
+\[
+\int\frac{dx}{1+x^3}
+=\frac13\ln|x+1|-\frac16\ln(x^2-x+1)
++\frac1{\sqrt3}\arctan\frac{2x-1}{\sqrt3}+C.
+\]
 \end{itemize}
 \clearpage
 \section{第2次作业 / Homework 2}
-\subsection*{作业}
+\subsection*{题目}
 \begin{enumerate}
 
 \item 求$I = \int \frac{1 - \sqrt{1 + x + x^2}}{x \sqrt{1 + x + x^2}}dx$.
@@ -1652,7 +1763,11 @@ I_n = \sum_{i=1}^n \ln \left[ 1 + \frac{1}{n}f\left( \frac{i}{n} \right) \right]
  
  
 \end{enumerate}
-\subsection*{GPT 补充参考答案（选题）}
+\clearpage
+\subsection*{原稿答案}
+\noindent 原稿未附本次作业的参考答案。
+\clearpage
+\subsection*{GPT 补充答案（选题）}
 \begin{itemize}
 \item \textbf{教材 9.3、9.6 节题号：}参见教材。
 \item \textbf{Riemann 可积函数的线性与乘积：}用上下和判别或振幅和判别，先证明有限线性组合可积；乘积可由 $fg=((f+g)^2-f^2-g^2)/2$ 化为平方的可积性。
@@ -1661,7 +1776,7 @@ I_n = \sum_{i=1}^n \ln \left[ 1 + \frac{1}{n}f\left( \frac{i}{n} \right) \right]
 \end{itemize}
 \clearpage
 \section{第3次作业 / Homework 3}
-\subsection*{作业}
+\subsection*{题目}
 \begin{enumerate}
 
 \item 9.4节 (1, 10, 11, 12)
@@ -1717,7 +1832,11 @@ f(\xi) = \int_0^{\xi} f(x) dx.
 \]
 
 \end{enumerate}
-\subsection*{GPT 补充参考答案（选题）}
+\clearpage
+\subsection*{原稿答案}
+\noindent 原稿未附本次作业的参考答案。
+\clearpage
+\subsection*{GPT 补充答案（选题）}
 \begin{itemize}
 \item \textbf{教材 9.4 节题号：}参见教材。
 \item \textbf{积分中值定理：}连续 $f$ 在 $[a,b]$ 上取极值 $m,M$，故 $m(b-a)\le\int_a^b f\le M(b-a)$，由介值定理存在 $\xi$ 使积分等于 $f(\xi)(b-a)$；有非负权 $g$ 时同理夹住 $\int fg$。
@@ -1726,7 +1845,7 @@ f(\xi) = \int_0^{\xi} f(x) dx.
 \end{itemize}
 \clearpage
 \section{第4次作业 / Homework 4}
-\subsection*{作业}
+\subsection*{题目}
 \begin{enumerate}
 
 \item (使用微积分基本定理证明) 设函数$f(x)$在$[a, b]$上连续且非负, 且$\int_a^b f(x) dx =0$, 求证: $f(x) \equiv 0$.
@@ -1766,7 +1885,11 @@ B(m, n) = \int_0^1 x^{m-1} (1-x)^{n-1} dx.
 \]
 
 \end{enumerate}
-\subsection*{GPT 补充参考答案（选题）}
+\clearpage
+\subsection*{原稿答案}
+\noindent 原稿未附本次作业的参考答案。
+\clearpage
+\subsection*{GPT 补充答案（选题）}
 \begin{itemize}
 \item \textbf{零积分：}若存在 $x_0$ 使 $f(x_0)>0$，连续性给出一段正长度区间，其积分严格正，与非负函数总积分为零矛盾。
 \item \textbf{积分交换：}$\int_0^\pi\int_0^x\frac{\sin t}{\pi-t}\,dt\,dx=\int_0^\pi\sin t\,dt=2$；用积分区域交换次序。
@@ -1775,7 +1898,7 @@ B(m, n) = \int_0^1 x^{m-1} (1-x)^{n-1} dx.
 \end{itemize}
 \clearpage
 \section{第5次作业 / Homework 5}
-\subsection*{作业}
+\subsection*{题目}
 \begin{enumerate}
 
 \item 计算
@@ -1820,7 +1943,11 @@ I = \int_0^{\pi} \frac{x \sin^{2n} x}{\sin^{2n} x + \cos^{2n} x}dx.
 \lim_{x \to +\infty} xf(x) =0.
 \]
 \end{enumerate}
-\subsection*{GPT 补充参考答案（选题）}
+\clearpage
+\subsection*{原稿答案}
+\noindent 原稿未附本次作业的参考答案。
+\clearpage
+\subsection*{GPT 补充答案（选题）}
 \begin{itemize}
 \item \textbf{取整函数：}每个 $[k,k+1]$ 上 $x-[x]=x-k$，积分为 $1/2$，故 $\int_0^n(x-[x])\,dx=n/2$。
 \item \textbf{对称积分：}$\int_{-1}^1\!\frac{dx}{(e^x+1)(1+x^2)}=\pi/4$，因 $1/(e^x+1)+1/(e^{-x}+1)=1$。$\int_0^{\pi/4}\!\frac{\sin x}{\sin x+\cos x}\,dx=\pi/8-\tfrac14\ln2$。
@@ -1829,7 +1956,7 @@ I = \int_0^{\pi} \frac{x \sin^{2n} x}{\sin^{2n} x + \cos^{2n} x}dx.
 \end{itemize}
 \clearpage
 \section{第6次作业 / Homework 6}
-\subsection*{作业}
+\subsection*{题目}
 \begin{enumerate}
 
 \item 计算$I = \int_{e^e}^{+\infty} \frac{dx}{x (\ln x)(\ln \ln x)^p}$.
@@ -1871,7 +1998,11 @@ I = \int_0^{+\infty} \frac{\ln x}{1 + x^2} dx.
 \item 设$f$在$[0, +\infty)$上内闭可积, 且$\lim\limits_{x \to +\infty} f(x) =A$. 证明: $\lim\limits_{t \to 0+} t \int_0^{+\infty} e^{-tx} f(x) dx= A$.
 
 \end{enumerate}
-\subsection*{GPT 补充参考答案（选题）}
+\clearpage
+\subsection*{原稿答案}
+\noindent 原稿未附本次作业的参考答案。
+\clearpage
+\subsection*{GPT 补充答案（选题）}
 \begin{itemize}
 \item \textbf{对数幂积分：}原题下限 $2$ 使 $\ln\ln x$ 在积分区间内经过 $0$，且对非整数 $p$ 不一定有实数定义；本册把下限改为 $e^e$。此时令 $u=\ln\ln x$，所得积分当且仅当 $p>1$ 收敛。
 \item \textbf{反余弦积分：}$u=\arccos x$ 给出 $\int_{-1}^1\frac{\arccos x}{\sqrt{1-x^2}}\,dx=\int_0^\pi u\,du=\pi^2/2$。
@@ -1880,7 +2011,7 @@ I = \int_0^{+\infty} \frac{\ln x}{1 + x^2} dx.
 \end{itemize}
 \clearpage
 \section{第7次作业 / Homework 7}
-\subsection*{作业}
+\subsection*{题目}
 \begin{enumerate}
 \item $\int_{0}^{+\infty} \frac{dx}{\sqrt{x^5 + 1}}$ 
 \item $ \int_{1}^{+\infty} x^p e^{-x}dx\ (p \geq 0)$
@@ -1907,7 +2038,11 @@ I = \int_0^{+\infty} \frac{\ln x}{1 + x^2} dx.
 
 \item 举例说明: $\int_a^{+\infty} f(x) dx$收敛时, $\int_a^{+\infty} f^2(x) dx$不一定收敛; $\int_a^{+\infty} |f(x)| dx$绝对收敛时, $\int_a^{+\infty} f^2(x) dx$也不一定收敛.
 \end{enumerate}
-\subsection*{GPT 补充参考答案（选题）}
+\clearpage
+\subsection*{原稿答案}
+\noindent 原稿未附本次作业的参考答案。
+\clearpage
+\subsection*{GPT 补充答案（选题）}
 \begin{itemize}
 \item \textbf{比较判别法：}$\int_0^\infty(1+x^5)^{-1/2}\,dx$ 收敛；$\int_1^\infty x^pe^{-x}\,dx$ 对 $p\ge0$ 收敛；$\int_1^\infty(\arctan x)x^{-p}\,dx$ 当且仅当 $p>1$ 收敛；$\int_1^\infty r^{-\ln x}\,dx=\int_1^\infty x^{-\ln r}\,dx$ 当且仅当 $r>e$ 收敛。
 \item \textbf{端点局部展开：}$\int_0^1x^{-p}\sin(1/x)\,dx$ 令 $t=1/x$，化为 $\int_1^\infty t^{p-2}\sin t\,dt$；$p<1$ 时绝对收敛，$1\le p<2$ 时条件收敛。$\int_0^1x^{-p}\sin x\,dx$ 当且仅当 $p<2$ 收敛。
@@ -1918,7 +2053,7 @@ I = \int_0^{+\infty} \frac{\ln x}{1 + x^2} dx.
 \end{itemize}
 \clearpage
 \section{第8次作业 / Homework 8}
-\subsection*{作业}
+\subsection*{题目}
 \begin{enumerate}
 
 \item 设$p>0$, 证明反常积分
@@ -1956,7 +2091,11 @@ I = \int_c^{+\infty} \frac{f(x)}{F(x) \ln F(x)} dx, \ J = \int_c^{+\infty} \frac
 \item 利用凝聚项级数判别法判断$\sum_{n=1}^{\infty} \frac{1}{n^p}$和$\sum_{n=2}^{\infty} \frac{1}{n \ln^p n}$的敛散性.
 
 \end{enumerate}
-\subsection*{GPT 补充参考答案（选题）}
+\clearpage
+\subsection*{原稿答案}
+\noindent 原稿未附本次作业的参考答案。
+\clearpage
+\subsection*{GPT 补充答案（选题）}
 \begin{itemize}
 \item \textbf{第 1 题：}按原稿给出的分解，$\int_1^\infty\sin x/x^p\,dx$ 对 $p>0$ 由 Dirichlet 判别收敛；余下的非负积分与 $\int_1^\infty\sin^2x/x^{2p}\,dx$ 同敛散，阈值为 $p=1/2$。绝对收敛阈值为 $p>1$。零点附近被积函数局部可积。
 \item \textbf{Gamma/Beta 型积分：}$\int_0^\infty x^{s-1}e^{-x}\,dx$ 当且仅当 $s>0$ 收敛；$\int_0^1x^{p-1}(1-x)^{q-1}\,dx$ 当且仅当 $p,q>0$ 收敛。
@@ -1966,7 +2105,7 @@ I = \int_c^{+\infty} \frac{f(x)}{F(x) \ln F(x)} dx, \ J = \int_c^{+\infty} \frac
 \end{itemize}
 \clearpage
 \section{第9次作业 / Homework 9}
-\subsection*{作业}
+\subsection*{题目}
 \begin{enumerate}
 
 \item 讨论级数的敛散性:
@@ -2022,7 +2161,11 @@ I = \int_c^{+\infty} \frac{f(x)}{F(x) \ln F(x)} dx, \ J = \int_c^{+\infty} \frac
 \item 证明: 级数$\sum_{n=1}^{\infty} \frac{(-1)^{[\sqrt n]}}{n}$收敛.
 
 \end{enumerate}
-\subsection*{GPT 补充参考答案（选题）}
+\clearpage
+\subsection*{原稿答案}
+\noindent 原稿未附本次作业的参考答案。
+\clearpage
+\subsection*{GPT 补充答案（选题）}
 \begin{itemize}
 \item \textbf{正项级数：}比较、积分及 Cauchy 凝聚判别应先核对正项和单调条件；若题目包含参数，需分别讨论边界参数值。
 \item \textbf{广义二项式系数：}对非整数 $a>0$，比值 $|\binom a{n+1}/\binom a n|=|a-n|/(n+1)=1-(a+1)/(n+1)$ 当 $n$ 足够大；由 Raabe 判别法得 $\sum_n|\binom a n|$ 收敛。正整数 $a$ 时仅有限项非零。
@@ -2031,7 +2174,7 @@ I = \int_c^{+\infty} \frac{f(x)}{F(x) \ln F(x)} dx, \ J = \int_c^{+\infty} \frac
 \end{itemize}
 \clearpage
 \section{第10次作业 / Homework 10}
-\subsection*{作业}
+\subsection*{题目}
 \begin{enumerate}
 
 \item 证明: $\sum_{n=1}^{\infty} \frac{n^2}{\sqrt{n!}} (x^n + x^{-n})$在$\frac{1}{2} \leq |x| \leq 2$上一致收敛.
@@ -2065,7 +2208,11 @@ I = \int_c^{+\infty} \frac{f(x)}{F(x) \ln F(x)} dx, \ J = \int_c^{+\infty} \frac
 (2) $f_n(x) = \frac{nx}{nx+1}, n \geq 1, x \in [0, +\infty) \mbox{\ 和\ } x \in [a, +\infty) (a > 0) $.
 
 \end{enumerate}
-\subsection*{GPT 补充参考答案（选题）}
+\clearpage
+\subsection*{原稿答案}
+\noindent 原稿未附本次作业的参考答案。
+\clearpage
+\subsection*{GPT 补充答案（选题）}
 \begin{itemize}
 \item \textbf{阶乘控制：}在 $1/2\le|x|\le2$ 上，$|x^n+x^{-n}|\le2^{n+1}$；$\sum 2^{n+1}n^2/\sqrt{n!}$ 由比值判别收敛，故原函数项级数一致收敛。
 \item \textbf{单调函数与端点：}若 $u_n$ 在 $[a,b]$ 单调，则 $|u_n(x)|\le\max(|u_n(a)|,|u_n(b)|)$；端点绝对收敛给出一致收敛的 Weierstrass 判别。

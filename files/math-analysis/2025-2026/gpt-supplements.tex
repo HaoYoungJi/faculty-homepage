@@ -2,11 +2,49 @@
 % ANSWERS: f1
 \begin{itemize}
 \item \textbf{教材习题 1.4：}参见教材。
-\item \textbf{数列单调性：}令 $u_n=(1+1/n)^n$。由均值不等式，$u_n$ 严格递增；由二项展开或 Bernoulli 不等式，$v_n=(1+1/n)^{n+1}$ 严格递减。两列同趋于 $e$。
-\item \textbf{Cauchy--Schwarz 等号：}正确条件为向量 $(a_k)$ 与 $(b_k)$ 线性相关，包括其中一个零向量的情况。原稿用非零常数表示的写法漏掉了部分零向量情形。
-\item \textbf{双曲函数反函数：}$\sinh:\mathbb R\to\mathbb R$ 严格递增，反函数为 $\operatorname{arsinh}y=\ln(y+\sqrt{1+y^2})$。$\cosh$ 在 $\mathbb R$ 上不是一一对应；限制到 $[0,\infty)$ 后，$\operatorname{arcosh}y=\ln(y+\sqrt{y^2-1})$，$y\ge1$。
-\item \textbf{两道不动点题：}若 $f^2$ 的唯一不动点为 $a$，则 $f(a)$ 也被 $f^2$ 固定，故 $f(a)=a$；任何 $f$ 的不动点也是 $f^2$ 的不动点。若 $f^2$ 恰有 $a,b$ 两个不动点，则 $f$ 将集合 $\{a,b\}$ 映到自身，且在该集合上 $f^2=\mathrm{id}$，因而只能恒等或交换两点。
-\item \textbf{集合原像：}$C\subseteq f^{-1}(f(C))$，$f(f^{-1}(D))=D\cap f(A)\subseteq D$。分别对所有子集取等号当且仅当 $f$ 单射、满射。
+\item \textbf{数列单调性：}记 $u_n=(1+1/n)^n$、$v_n=(1+1/n)^{n+1}$。
+用二项式定理写
+\[
+u_n=\sum_{k=0}^n\frac1{k!}\prod_{j=0}^{k-1}\left(1-\frac jn\right).
+\]
+固定 $k$ 的乘积随 $n$ 增大而增大；$u_{n+1}$ 还多一项正项，故 $u_n$ 严格递增。
+另一方面，
+$v_n/u_n=1+1/n\to1$。对
+$\log v_x=(x+1)\log(1+1/x)$ 求导，
+得到 $\log(1+1/x)-1/x<0$，故 $v_n$ 严格递减。
+由于 $u_n\le v_n$，两列有共同极限 $e$。
+\item \textbf{Cauchy--Schwarz 等号：}由 Lagrange 恒等式
+\[
+\left(\sum a_k^2\right)\left(\sum b_k^2\right)
+-\left(\sum a_kb_k\right)^2
+=\sum_{i<j}(a_ib_j-a_jb_i)^2\ge0.
+\]
+等号当且仅当每个 $a_ib_j-a_jb_i=0$。
+若 $b$ 非零，选 $b_j\ne0$，可得所有 $a_i=(a_j/b_j)b_i$；
+若 $b$ 为零向量，等号自动成立。两种情况统一表述为两向量线性相关。
+\item \textbf{双曲函数反函数：}令 $y=\sinh x=(e^x-e^{-x})/2$、$t=e^x>0$，
+则 $t^2-2yt-1=0$。唯一正根为 $t=y+\sqrt{1+y^2}$，故
+$x=\ln(y+\sqrt{1+y^2})$；又 $\sinh' x=\cosh x>0$，
+反函数定义在全体实数上。
+$\cosh x$ 是偶函数，不能在 $\mathbb R$ 上取单值反函数。
+限制 $x\ge0$ 后，从 $t^2-2yt+1=0$ 取 $t=y+\sqrt{y^2-1}\ge1$，
+得到 $x=\ln(y+\sqrt{y^2-1})$，其中 $y\ge1$。
+\item \textbf{两道不动点题：}若 $f^2$ 的不动点只有 $a$，
+则 $f^2(f(a))=f(f^2(a))=f(a)$，所以 $f(a)$ 仍是 $f^2$ 的不动点；
+唯一性迫使 $f(a)=a$。反过来，任意 $f(x)=x$ 都满足 $f^2(x)=x$，
+故 $f$ 也只有这一个不动点。
+若 $f^2$ 恰有 $a,b$ 两个不动点，同一交换关系表明
+$f(\{a,b\})\subseteq\{a,b\}$；且 $f^2$ 在该集合上为恒等映射，
+因此 $f$ 在这两点上为双射，只可能分别固定两点或交换两点。
+\item \textbf{集合原像：}若 $x\in C$，则 $f(x)\in f(C)$，
+所以 $x\in f^{-1}(f(C))$。反向对所有 $C$ 都成立，
+等价于不存在 $x\ne y$ 且 $f(x)=f(y)$，即 $f$ 单射。
+再看 $D\subseteq B$：
+\[
+f(f^{-1}(D))=\{f(x):x\in A,\ f(x)\in D\}=D\cap f(A).
+\]
+故它总包含于 $D$；对所有 $D$ 都取等号，当且仅当 $f(A)=B$，
+即 $f$ 满射。
 \end{itemize}
 
 % ANSWERS: f2
@@ -100,9 +138,38 @@
 % ANSWERS: s1
 \begin{itemize}
 \item \textbf{教材 8.3 节题号：}参见教材。
-\item \textbf{代换法：}$\int e^{\sqrt[3]x}\,dx$ 令 $t=\sqrt[3]x$，得 $3e^t(t^2-2t+2)+C$。其他含根式或三角函数的不定积分，先作对应代换再分部积分。
-\item \textbf{递推积分：}$\int\cos^n x\,dx=\sin x\cos^{n-1}x/n+(n-1)\int\cos^{n-2}x\,dx/n$；$\int\sec^n x\,dx=\tan x\sec^{n-2}x/(n-1)+(n-2)\int\sec^{n-2}x\,dx/(n-1)$（$n\ge2$）。
-\item \textbf{分式积分：}把分子写成分母导数与常数项的线性组合；对 $1/(1+x^3)$ 先分解 $1+x^3=(x+1)(x^2-x+1)$，再作部分分式。
+\item \textbf{代换法：}计算 $\int e^{\sqrt[3]x}\,dx$ 时，
+令 $t=\sqrt[3]x$，于是 $x=t^3$、$dx=3t^2dt$。连续两次分部积分给
+\[
+\int t^2e^t\,dt=t^2e^t-2te^t+2e^t+C,
+\]
+所以结果是 $3e^t(t^2-2t+2)+C$，最后代回 $t=\sqrt[3]x$。
+其他题中先写清换元后的微分，再作分部积分，不可只替换被积函数而漏掉 $dx$。
+\item \textbf{递推积分：}记 $I_n=\int\cos^n x\,dx$。
+将 $\cos^n x=\cos^{n-1}x\,(\sin x)'$ 分部积分：
+\[
+I_n=\sin x\cos^{n-1}x
++(n-1)\int\sin^2x\cos^{n-2}x\,dx.
+\]
+代入 $\sin^2x=1-\cos^2x$ 并把 $(n-1)I_n$ 移到左边，得
+$I_n=\sin x\cos^{n-1}x/n+(n-1)I_{n-2}/n$。
+同理对 $J_n=\int\sec^n x\,dx$，写成
+$\sec^{n-2}x\,(\tan x)'$ 并分部积分；
+利用 $\tan^2x=\sec^2x-1$ 得
+$J_n=\tan x\sec^{n-2}x/(n-1)+(n-2)J_{n-2}/(n-1)$（$n\ge2$）。
+\item \textbf{分式积分：}对 $\int dx/(1+x^3)$，
+先因式分解 $1+x^3=(x+1)(x^2-x+1)$，再求得
+\[
+\frac1{1+x^3}=\frac1{3(x+1)}+\frac{-x+2}{3(x^2-x+1)}.
+\]
+将 $-x+2=-\tfrac12(2x-1)+\tfrac32$，第一部分用对数，
+第二部分对 $x^2-x+1=(x-\tfrac12)^2+\tfrac34$ 用反正切公式。
+于是
+\[
+\int\frac{dx}{1+x^3}
+=\frac13\ln|x+1|-\frac16\ln(x^2-x+1)
++\frac1{\sqrt3}\arctan\frac{2x-1}{\sqrt3}+C.
+\]
 \end{itemize}
 
 % ANSWERS: s2
