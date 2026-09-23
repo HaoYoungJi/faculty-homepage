@@ -1,0 +1,47 @@
+\documentclass[UTF8,11pt,fontset=none]{ctexart}
+\usepackage[a4paper,margin=24mm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\setCJKmainfont{Songti SC}
+\setmainfont{Times New Roman}
+\setlength{\parindent}{0pt}
+\setlist[enumerate]{leftmargin=2.2em,itemsep=1em,topsep=.5em}
+\pagestyle{empty}
+
+\begin{document}
+\begin{center}
+  {\Large\bfseries 南京大学 2026 年保研夏令营数学分析试题}
+\end{center}
+\vspace{1.2em}
+
+\begin{enumerate}
+\item 计算下列各题：
+  \begin{enumerate}[label=(\arabic*),itemsep=.5em]
+  \item 计算极限 $\displaystyle\lim_{n\to\infty}\sqrt[n]{\pi^n+e^n}$。
+  \item 计算极限 $\displaystyle\lim_{x\to0}\frac{x^x-\sin(x^x)}{x-\sin x}$。
+  \item 设 $\displaystyle f(x)=\frac14\ln\frac{1+x^2}{1-x^2}$，求 $f^{(2026)}(0)$。
+  \end{enumerate}
+
+\item 设函数 $f$ 在闭区间 $[0,1]$ 上为凸函数，且在开区间 $(0,1)$ 内可导。证明：
+  \begin{enumerate}[label=(\arabic*),itemsep=.3em]
+  \item $f'$ 在 $(0,1)$ 上连续；
+  \item $f'$ 在 $[0,1]$ 上广义可积。
+  \end{enumerate}
+
+\item 定义
+\[
+  I_n=\int_0^\pi\frac{\cos(nx)}{\sqrt{2-\cos x}}\,dx,
+  \qquad n\in\mathbb N.
+\]
+  \begin{enumerate}[label=(\arabic*),itemsep=.3em]
+  \item 证明：对任意 $n$，均有 $I_n>0$；
+  \item 证明级数 $\displaystyle\sum_{n=1}^{\infty}I_n$ 收敛，并求其和。
+  \end{enumerate}
+
+\item 计算第二型曲面积分
+\[
+  \iint_S x^3\,dy\,dz+y^2\,dz\,dx+z\,dx\,dy,
+\]
+其中 $S$ 是单位球面 $x^2+y^2+z^2=1$，方向取外侧。
+\end{enumerate}
+\end{document}
