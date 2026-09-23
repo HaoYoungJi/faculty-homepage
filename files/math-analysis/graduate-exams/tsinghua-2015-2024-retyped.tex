@@ -1,0 +1,304 @@
+\documentclass[UTF8,11pt,fontset=none]{ctexart}
+\usepackage[a4paper,margin=20mm,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\setCJKmainfont{Songti SC}
+\setCJKsansfont{Hiragino Sans GB}
+\setmainfont{Times New Roman}
+\setlength{\parindent}{0pt}
+\setlist[enumerate]{leftmargin=2.2em,itemsep=.48em,topsep=.45em,parsep=0pt}
+\setlist[enumerate,2]{label=(\arabic*),leftmargin=2.4em,itemsep=.2em}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\paperheading}[1]{\begin{center}\Large\bfseries #1\end{center}\vspace{.45em}}
+\newcommand{\newpaper}[1]{\clearpage\paperheading{#1}}
+
+\begin{document}
+\paperheading{数学科学系 2024 年夏令营招生考试试题}
+\begin{enumerate}
+\item 设
+\[
+A=\begin{pmatrix}-3&2&2\\2&-3&2\\2&2&-3\end{pmatrix},
+\]
+试求矩阵 $Q$，使得 $Q^{\mathrm T}AQ$ 为对角矩阵，并求 $A$ 的谱分解。
+\item 设 $AB=BA$，求证 $AB^*=B^*A$，其中 $B^*$ 表示 $B$ 的伴随矩阵。
+\item 设 $\mathbb F$ 为数域，$A\in M_{m\times m}(\mathbb F)$，$B\in M_{n\times n}(\mathbb F)$，并且
+\[
+\varphi:M_{m\times n}(\mathbb F)\longrightarrow M_{m\times n}(\mathbb F),
+\qquad X\longmapsto AXB.
+\]
+求证：若 $\lambda,\mu$ 分别为 $A,B$ 的特征值，则 $\lambda\mu$ 为 $\varphi$ 的特征值，并且 $\varphi$ 的特征值均有此形式。
+\item 设 $A$ 为 $n$ 阶矩阵，$\operatorname{rank}(A)=r$。求证 $I,A,\ldots,A^{r+1}$ 线性相关。
+\item 设 $f:\mathbb R^n\to\mathbb R$ 为局部常值函数，求证 $f$ 为常值函数。
+\item 设 $B=\{(x,y)\in\mathbb R^2\mid x^2+y^2\le1\}$，试找出 $u:B\to\mathbb R$，$(x,y)\mapsto xy^2$ 的驻点，判断其类型，并求出 $u$ 的最值。
+\item 设
+\[
+I(\alpha)=\iint_{\mathbb R^2}\frac{\sin(x^2+y^2)}{(x^2+y^2)^\alpha}\,dx\,dy,
+\qquad \alpha\in\mathbb R.
+\]
+试求 $\alpha$ 的范围使得 $I(\alpha)$ 收敛，并求其收敛时的值。
+\item 设 $f,g\in C(\mathbb R)$，且周期为 $2\pi$，并且二者具有相同的 Fourier 展开式。求证 $f\equiv g$。
+\item 设 $f:\mathbb C\to\mathbb C$ 为全纯函数，并且 $\operatorname{Im} f(z)>0$，$\forall z\in\mathbb C$。求证 $f$ 为常值函数。
+\item 求 $\displaystyle\int_{\mathbb R}\frac{1}{\cosh x}\,dx$ 及
+$\displaystyle\int_{\mathbb R}\frac{x}{\sinh x}\,dx$。
+\end{enumerate}
+
+\newpaper{数学科学系 2023 年直博生招生考试试题}
+\begin{enumerate}
+\item 设 $A$ 是三阶实对称矩阵，且每行元素和为 $4$，$\alpha_1=(1,-1,0)^{\mathrm T}$、$\alpha_2=(1,-2,1)^{\mathrm T}$ 为 $(I_3-A)x=0$ 的解。求矩阵 $A$ 以及正交阵 $Q$，使得 $Q^{\mathrm T}AQ$ 为对角阵。
+\item 设 $V$ 是 $n$ 维线性空间，$\varphi,\psi:V\to V$ 是线性变换，且 $\varphi^2=\varphi$，$\ker\varphi$、$\operatorname{Im}\varphi$ 均是 $\psi$-不变子空间。求证 $\varphi\psi=\psi\varphi$。
+\item 设 $P$ 为实矩阵。求证分块对称矩阵
+$\begin{pmatrix}0&P^{\mathrm T}\\P&0\end{pmatrix}$
+的正、负惯性指数相等，且均等于 $\operatorname{rank}(P)$。
+\item 设 $A$ 为 $n$ 阶复可逆矩阵，$s\in\mathbb N^+$，$A^s$ 可对角化。求证 $A$ 可对角化，并说明 $A$ 可逆这个条件不能删去。
+\item 若 $\{\alpha_n\}_{n=0}^{\infty}\subseteq\mathbb R$，且 $\lim_{n\to\infty}\alpha_n=\alpha$，解答下列问题：
+\begin{enumerate}
+\item 证明 $\displaystyle\sum_{n=0}^{\infty}\alpha_n\frac{x^n}{n!}e^{-x}$ 在 $\mathbb R$ 上收敛；
+\item 求 $\displaystyle\lim_{x\to+\infty}\sum_{n=0}^{\infty}\alpha_n\frac{x^n}{n!}e^{-x}$；
+\item 问 $\displaystyle\sum_{n=0}^{\infty}\alpha_n\frac{x^n}{n!}e^{-x}$ 是否在 $(0,+\infty)$ 上一致收敛？
+\end{enumerate}
+\item 设 $f:\mathbb R^n\to\mathbb R$ 是连续函数，在 $\mathbb R^n\setminus\{0\}$ 上可微，且
+$\displaystyle\lim_{x\to0}\frac{\partial f}{\partial x_i}(x)=0$，$i=1,2,\ldots,n$。求证 $f$ 在 $\mathbb R^n$ 上可微。
+\item 设 $\Omega\subset\mathbb R^{m+n}$ 是开集，映射 $f:\Omega\to\mathbb R^m$ 连续可微，$x_0\in\Omega$，且 Jacobi 矩阵
+\[
+\left(\frac{\partial f^i}{\partial x^j}(x_0)\right)_{\substack{1\le i\le m\\1\le j\le m+n}}
+\]
+的秩为 $m$，其中 $\partial f^i/\partial x^j$ 表示 $f$ 的第 $i$ 个分量函数对第 $j$ 个自变量分量求导。求证：存在 $x_0$ 的开邻域 $U\subset\Omega$，并且在 $U$ 上有 $C^1$ 同胚 $\varphi:U\to\varphi(U)$，使得
+\[
+f\circ\varphi^{-1}(y_1,y_2,\ldots,y_{m+n})=(y_1,y_2,\ldots,y_m).
+\]
+\item 设 $D\subset\mathbb R^3$ 为坐标平面、$x+y=1$ 和 $x^2+z^2=1$ 所围成的在第一象限的区域。计算
+\[
+\int_{\partial D}\left(2xz\,dy\wedge dz+y\,dz\wedge dx+z^2\,dx\wedge dy\right),
+\]
+其中 $\partial D$ 取外侧。
+\item $\gamma\subset\mathbb C$ 是简单闭曲线，设 $D$ 为 $\gamma$ 围成的无界区域，有 $f\in H(D)\cap C(\overline D)$，并且 $f(+\infty)=\alpha$。计算
+\[
+\frac1{2\pi i}\int_\gamma\frac{f(\xi)}{\xi-z}\,d\xi,
+\]
+其中 $z$ 在 $\gamma$ 围成的有界区域内，且积分方向取正方向（$\gamma$ 逆时针方向）。
+\item 设 $f:B(0,1)\to B(0,1)$ 是单位圆盘上的全纯函数，且 $f(0)=a$。使用 Schwarz 引理证明：$f$ 在 $B(0,|a|)=\{z\mid |z|<|a|\}$ 上无零点。
+\end{enumerate}
+
+\newpaper{数学科学系 2021 年直博生招生考试试题}
+\begin{enumerate}
+\item 三阶实对称矩阵计算题。
+\item 设 $\varphi$ 是线性空间 $V$ 上的线性变换。求证
+\[
+\ker\varphi=\ker\varphi^2
+\quad\Longleftrightarrow\quad
+\operatorname{Im}\varphi=\operatorname{Im}\varphi^2.
+\]
+\item 设 $A,B$ 是数域 $\mathbb F$ 上的 $n$ 阶方阵，$A,B$ 都可对角化，$AB=BA$。求证 $A,B$ 可同时对角化，并举例说明 $AB\ne BA$ 时结论不一定成立。
+\item 设 $\Omega$ 是 $\mathbb R^n$ 的开集，映射 $f:\Omega\to\mathbb R^m$ 是连续可微的。求证：
+\begin{enumerate}
+\item $n>m$ 时，$f$ 不可能是单射；
+\item $n<m$ 时，$f$ 不可能是满射。
+\end{enumerate}
+\item 设 $f(x),\varphi(x)$ 是周期为 $2$ 的偶函数，并且 $f(x)=x(2-x)$，$\varphi(x)=x$，$x\in[0,1]$。
+\begin{enumerate}
+\item 求 $f(x),\varphi(x)$ 的 Fourier 级数；
+\item 求证 $\displaystyle f(x)=\sum_{n=0}^{\infty}\frac1{2^{2n}}\varphi(2^n x)$，$x\in\mathbb R$。
+\end{enumerate}
+\item 设 $\vec B(x,y,z)=\dfrac{(x,y,z)}{(x^2+y^2+z^2)^{3/2}}$，$(x,y,z)\in\mathbb R^3\setminus\{(0,0,0)\}$。
+\begin{enumerate}
+\item 求 $\operatorname{div}\vec B$；
+\item 求证：不存在连续可微映射 $\vec F:\mathbb R^3\setminus\{(0,0,0)\}\to\mathbb R^3$，使得 $\operatorname{rot}\vec F=\vec B$。
+\end{enumerate}
+\item 设 $\alpha>1$，$I(\alpha)=-\displaystyle\int_0^{\infty}\frac{\ln x}{1+x^\alpha}\,dx$。
+\begin{enumerate}
+\item 求 $I(\alpha)$；
+\item 求证 $\displaystyle I(\alpha)=\sum_{n\in\mathbb Z}\frac{(-1)^n}{(n\alpha-1)^2}$。
+\end{enumerate}
+\end{enumerate}
+
+\newpaper{数学科学系 2021 年本校推免考试试题}
+\begin{enumerate}
+\item 已知复方阵 $A\in M_n(\mathbb C)$ 的特征多项式为 $(\lambda-1)^n$。证明 $A$ 与 $A^2$ 相似。
+\item （10 分）已知实对称矩阵
+\[
+A=\begin{pmatrix}2&0&1\\0&2&1\\1&1&1\end{pmatrix},
+\]
+二次型 $f(x)=x^{\mathrm T}Ax$ 在单位球面 $\|x\|=1$ 上何时取到最大值、最小值？
+\item （10 分）已知域 $\mathbb F$ 上的有限维线性空间 $X,Y,U,V$，以及线性变换
+$\alpha:X\to Y$，$\beta:V\to U$，$\psi:X\to U$，并且
+$\ker\alpha\subset\ker\psi$、$\operatorname{Im}\psi\subset\operatorname{Im}\beta$。
+那么是否存在线性映射 $\varphi:Y\to V$ 使得 $\psi=\beta\circ\varphi\circ\alpha$？
+若是请证明，否则举出一个反例。
+\item （10 分）已知域 $\mathbb F$ 上的方阵 $A,B\in M_n(\mathbb F)$，满足 $A$ 是可逆矩阵、$B$ 是幂零矩阵。证明：对任意 $C\in M_n(\mathbb F)$，存在 $X\in M_n(\mathbb F)$ 使得 $AX-XB=C$。
+\item （10 分）设 $E$ 为 $\mathbb R$ 的非空子集，并且 $E$ 上的任何连续函数都有界。证明 $E$ 是有界闭集。
+\item （10 分）已知 $f(x)$ 是定义在 $[0,1]$ 上的处处非负的黎曼可积函数，并且
+$\displaystyle\int_0^1 f(x)\,dx=0$。证明 $f(x)$ 几乎处处为 $0$。
+\item （20 分）计算 $\mathbb R^3$ 中的区域
+\[
+\{(x,y,z)\in\mathbb R^3\mid x^2+y^2\le1,\ y^2+z^2\le1,\ z^2+x^2\le1\}
+\]
+的体积。
+\item （20 分）已知 $f(z)$ 在单位圆盘 $|z|<1$ 解析，并且
+$|f(z)|\le \dfrac1{1-|z|}$，$\forall |z|<1$。
+证明：对任意整数 $n\ge0$，$|f^{(n)}(0)|\le(n+1)!e$。
+\end{enumerate}
+
+\newpaper{数学科学系 2021 年预推免招生考试试题}
+\begin{enumerate}
+\item 未知。
+\item 设 $A,B$ 为数域 $\mathbb F$ 上的 $n$ 阶方阵。求证：
+\begin{enumerate}
+\item 对任意 $\lambda\in\mathbb F$，$\lambda I_n-AB$ 可逆当且仅当 $\lambda I_n-BA$ 可逆；
+\item 若 $\operatorname{rank}(AB)=\operatorname{rank}(B)$，则 $\operatorname{rank}(AB^2)=\operatorname{rank}(B^2)$。
+\end{enumerate}
+\item 设 $V$ 为 $\mathbb C$ 上的 $n$ 维线性空间，$\varphi$ 为 $V$ 上的线性变换，其全体不同特征值为 $\lambda_1,\lambda_2,\ldots,\lambda_r$。求证：
+$\varphi$ 可对角化的充分必要条件是存在 $1\le i\le r$，使得
+\[
+\operatorname{Im}(\varphi-\lambda_i I_V)
+=\bigoplus_{j\ne i}\ker(\varphi-\lambda_jI_V).
+\]
+\item 设 $f\in C[0,1]$。对任意 $[0,1]$ 上的可微函数 $g$ 均成立
+$\displaystyle\int_0^1 f(x)g(x)\,dx=0$。求证 $f\equiv0$。
+\item 证明
+\[
+\iiint_V\begin{vmatrix}\Delta u&\Delta v\\u&v\end{vmatrix}\,dx\,dy\,dz
+=\iint_S\begin{vmatrix}\partial u/\partial n&\partial v/\partial n\\u&v\end{vmatrix}\,dS.
+\]
+式中 $V$ 为曲面 $S$ 所围的区域，$n$ 是曲面 $S$ 的外法向量，函数 $u=u(x,y,z)$、$v=v(x,y,z)$ 为 $V+S$ 上可微分两次的函数。
+\item 未知。
+\item 设区域 $D\subset\mathbb C$，$\{f_n\}\subset H(\overline D)$，存在 $\overline D$ 上的复变函数 $f$，使得 $\{f_n\}$ 在 $D$ 上收敛于 $f$，在 $\partial D$ 上一致收敛于 $f$。求证：
+\begin{enumerate}
+\item $\{f_n\}$ 在 $D$ 中一致收敛于 $f\in H(D)$；
+\item 若 $\{f_n\}$ 是 $D$ 中的单叶函数列，$f$ 不是常值函数，则 $f$ 也是 $D$ 中的单叶函数。
+\end{enumerate}
+\end{enumerate}
+
+\newpaper{数学科学系 2019 年直博生招生考试试题 1}
+\textbf{注：本试卷满分 100 分。}
+\begin{enumerate}
+\item （10 分）证明不存在一个实可微函数 $f(x)$ 使得 $f(f(x))=-x$，$\forall x\in\mathbb R$。
+\item （15 分）证明 Legendre 多项式
+$\displaystyle P_n(x)=\frac1{2^n n!}\frac{d^n}{dx^n}(x^2-1)^n$
+的根都是实数并且包含于区间 $(-1,1)$ 内。
+\item （10 分）计算积分
+\[
+\iint_{x^2+y^2\le1}\left[\int_0^{x^2+y^2}\frac{e^z}{1-z}\,dz\right]dx\,dy.
+\]
+\item （10 分）设 $A,B$ 是两个 $n$ 阶方阵。证明 $AB$ 和 $BA$ 有相同的特征值。
+\item （15 分）假设 $I_n$ 是 $n$ 阶单位矩阵，$A$ 是一个 $n$ 阶方阵，令 $f(x)=\det(I_n+xA)$，计算 $f'(0)$。
+\item （15 分）设 $v_1,\ldots,v_{n+1}$ 是 $\mathbb R^n$ 中 $n+1$ 个向量，并且两两之间的内积满足 $(v_i,v_j)<0$，$\forall i\ne j$。证明 $v_1,\ldots,v_{n+1}$ 中一定存在 $n$ 个向量，它们组成 $\mathbb R^n$ 的一组基。
+\item （10 分）计算积分
+$\displaystyle\frac1{2\pi i}\int_{|z|=1}\frac{e^z\sin z}{1-\cos z}\,dz$。
+\item （15 分）设 $f(z)$ 是一个处处非零的全纯函数。证明：存在一个全纯函数 $g(z)$，使得 $f(z)=e^{g(z)}$。
+\end{enumerate}
+
+\newpaper{数学科学系 2019 年直博生招生考试试题 2}
+\begin{enumerate}
+\item 设
+$\displaystyle f(x)=\begin{cases}e^{-1/x^2},&x>0,\\0,&x\le0.\end{cases}$
+求证 $f\in C^{\infty}(\mathbb R)$。
+\item 证明 Hermite 多项式
+$\displaystyle H_n(x)=(-1)^n e^{x^2}\frac{d^n}{dx^n}(e^{-x^2})$
+的所有根均为实数。
+\item 计算积分
+\[
+I=\oint_{L^+}\frac{x\,dy-y\,dx}{(ax+by)^2+(cx+dy)^2},
+\]
+其中 $ad-bc=\sqrt7$，$L^+$ 为椭圆 $(ax+by)^2+(cx+dy)^2=1$，取逆时针方向。
+\item 已知 $f(x)$ 和 $g(x)$ 均为 $[a,b]$ 上的正值连续函数且 $g(x)$ 严格单调递减。求证：
+\[
+\frac{\int_a^b x f(x)g(x)\,dx}{\int_a^b f(x)g(x)\,dx}
+<
+\frac{\int_a^b x f(x)\,dx}{\int_a^b f(x)\,dx}.
+\]
+\item 已知 $n$ 阶矩阵 $A,B$ 满足 $A^2=A$，$B^2=B$，且 $I_n-A-B$ 可逆。求证 $r(A)=r(B)$。
+\item 设 $A,B,C,D$ 均为 $n$ 阶方阵。
+\begin{enumerate}
+\item 若 $A$ 可逆，则
+$\displaystyle\begin{vmatrix}A&B\\C&D\end{vmatrix}=|A|\,|D-CA^{-1}B|$；
+\item 若 $AC=CA$，则
+$\displaystyle\begin{vmatrix}A&B\\C&D\end{vmatrix}=|AD-CB|$。
+\end{enumerate}
+\item 定义如下线性变换为仿射变换：
+$\varphi:\mathbb R^n\to\mathbb R^n$，$x\mapsto Ax+b$，其中 $A\in M_{n\times n}(\mathbb R)$，$b\in\mathbb R^n$。
+\begin{enumerate}
+\item 证明 $\varphi$ 可逆当且仅当 $A$ 可逆；
+\item 若 $\varphi$ 可逆，求出 $\varphi^{-1}$，并证明 $\varphi^{-1}$ 亦为仿射变换；
+\item 证明仿射变换的复合仍是仿射变换。
+\end{enumerate}
+\item 计算积分
+$\displaystyle\frac1{2\pi i}\int_{|z|=1}\frac{e^z}{z^2-\frac14}\,dz$。
+\item 设 $f$ 为整函数。若存在正整数 $n$ 和正常数 $C$，使得对模长充分大的 $z$ 有 $|f(z)|\le C|z|^n$，证明 $f(z)$ 是次数不超过 $n$ 次的多项式。
+\end{enumerate}
+
+\newpaper{数学科学系 2016 年直博生招生考试试题 1}
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item 设 $D$ 为 $\mathbb R^n$ 中的区域，映射 $f:D\to\mathbb R^n$ 是连续可微的。试叙述关于 $f$ 的逆映射定理（包括条件和结论）。
+\item 试应用逆映射定理证明不存在 $\mathbb R^n$ 到 $\mathbb R$ 的连续可微单射。
+\end{enumerate}
+\item 设
+\[
+\vec F(x,y,z)=
+\left(
+\frac{x}{(x^2+2y^2+3z^2)^{3/2}},
+\frac{y}{(x^2+2y^2+3z^2)^{3/2}},
+\frac{z}{(x^2+2y^2+3z^2)^{3/2}}
+\right),
+\]
+其中 $(x,y,z)\in\mathbb R^3\setminus\{(0,0,0)\}$，$\vec n$ 为 $\mathbb R^3$ 中单位球面 $S^2$ 的单位外法向量场。试求曲面积分 $\displaystyle\int_{S^2}\vec F\cdot\vec n\,d\sigma$。
+\item 设 $f$ 为 $\mathbb R$ 上周期为 $2\pi$ 的函数，$f(x)=x$，$\forall x\in(-\pi,\pi]$。
+\begin{enumerate}
+\item 试求 $f$ 的 Fourier 级数及 Fourier 级数的和函数，并说明该级数是否在 $\mathbb R$ 上一致收敛；
+\item 试用上述 Fourier 级数及 Parseval 等式求出级数 $\displaystyle\sum_{n=1}^{\infty}\frac1{n^2}$ 的值。
+\end{enumerate}
+\item 设 $f:B(0,1)\to B(0,1)$ 为全纯函数，$f(\alpha)=0$，$\alpha\in B(0,1)$。
+\begin{enumerate}
+\item 求证 $\displaystyle |f(z)|\le\left|\frac{z-\alpha}{1-\overline\alpha z}\right|$，$\forall z\in B(0,1)$；
+\item 求上述不等式中等号成立的充要条件。
+\end{enumerate}
+\item 设 $A\in M_{n\times n}(\mathbb C)$，$f_A(x)$ 为 $A$ 的特征多项式，$g(x)\in\mathbb C[x]$，$\deg g(x)=n-1$，$g(x)\mid f_A(x)$。求 $g(A)$ 所有可能的秩，并说明理由。
+\item 设 $V$ 为 $\mathbb C$ 上 $n$ 维线性空间，$\varphi$ 为 $V$ 上的幂幺线性变换，即存在 $k\in\mathbb N$ 使得 $\varphi^k=I_V$。又设 $W$ 为 $\varphi$-不变子空间。求证存在 $\varphi$-不变子空间 $W'$，使得 $V=W\oplus W'$。
+\end{enumerate}
+
+\newpaper{数学科学系 2016 年直博生招生考试试题 2}
+\begin{enumerate}
+\item 设定义在 $D\subset\mathbb R$ 上的函数 $f$ 在 $x_0\in D$ 处解析，即存在 $\delta>0$，使得 $f$ 在 $(x_0-\delta,x_0+\delta)$ 内可展开为 $x-x_0$ 的幂级数。
+\begin{enumerate}
+\item 求证 $f$ 在 $(x_0-\delta,x_0+\delta)$ 内任意点处解析；
+\item 若 $f$ 在 $(x_0-\delta,x_0+\delta)$ 内不恒为零，求证 $f$ 在其中的零点是孤立的。
+\end{enumerate}
+\item 求由椭球面 $\dfrac{x^2}{2}+\dfrac{y^2}{6}+\dfrac{z^2}{27}=1$ 在第一象限的切平面与三个坐标平面所围成的四面体的最小体积。
+\item 设
+\[
+\vec F(x,y,z)=
+\left(
+\frac{x}{(x^2+2y^2+3z^2)^{3/2}},
+\frac{y}{(x^2+2y^2+3z^2)^{3/2}},
+\frac{z}{(x^2+2y^2+3z^2)^{3/2}}
+\right),
+\]
+其中 $(x,y,z)\in\mathbb R^3\setminus\{(0,0,0)\}$，$\vec n$ 为 $\mathbb R^3$ 中单位球面 $S^2$ 的单位外法向量场。试求曲面积分 $\displaystyle\int_{S^2}\vec F\cdot\vec n\,d\sigma$。
+\item 设 $D$ 为 $\mathbb R^n$ 中的区域，$K$ 为 $D$ 的紧致子集，映射 $f:D\to\mathbb R^n$ 是连续可微的，且在集合 $K$ 上是单射，并且 $\det f'(x)\ne0$，$\forall x\in D$。求证：存在开集 $U,V$，使得 $K\subset U\subset D$，$f(K)\subset V\subset\mathbb R^n$，$f:U\to V$ 为 $C^1$ 微分同胚。
+\item 设 $\mathbb F$ 为数域，$A,B\in M_{n\times n}(\mathbb F)$，$AB-BA=aB$，$a\in\mathbb F$。求证：若 $B$ 不是幂零矩阵，则 $a=0$。
+\item 设 $x_1=(1,-2,1)^{\mathrm T}$ 和 $x_2=(-1,a,1)^{\mathrm T}$（$a\in\mathbb R$）分别是 3 阶不可逆实对称矩阵 $A$ 的属于特征值 $1$ 和 $-1$ 的特征向量，试求 $A$。
+\item 设 $V$ 为有限维线性空间，$\varphi$ 为 $V$ 上可对角化的线性变换，$U$ 为 $\varphi$-不变子空间。求证 $\varphi|_U$ 也可对角化。
+\end{enumerate}
+
+\newpaper{数学科学系 2015 年直博生招生考试试题}
+\begin{enumerate}
+\item 求极限 $\displaystyle\lim_{n\to\infty}\sum_{k=0}^{n}\left(1-\frac{k}{n}\right)^n$。
+\item 设 $A\in M_{n\times n}(\mathbb C)$ 可逆，$A^m$ 为对角矩阵，其中 $m>1$ 为正整数。求证 $A$ 可对角化。
+\item $V$ 是全体 $\mathbb R$ 上的多项式构成的线性空间，对任意 $f\in V$，$\varphi(f)=f+f'$。求证 $\varphi$ 可逆。
+\item 设 $G$ 为 $\mathbb R^n$ 中的有界开集，$D$ 为 $G$ 的紧致子集，映射 $F:G\to\mathbb R^n$ 是连续可微的，且在集合 $D$ 上是单射，并且 $\det F'(x)\ne0$，$\forall x\in D$。求证：
+\begin{enumerate}
+\item $d(D,\partial G)>0$；
+\item 存在 $0<\varepsilon<d(D,\partial G)$，使得 $F|_{D_\varepsilon}$ 为单射，其中
+$D_\varepsilon=\{x\in\mathbb R^n\mid d(x,D)<\varepsilon\}$。
+\end{enumerate}
+\item 设函数 $f(z)$ 是单位圆盘上的解析函数，$|z|<1$ 时 $|f(z)|<1$，$\alpha$ 是满足 $|\alpha|<1$ 的复数，且 $f(\alpha)=0$。证明：
+\[
+|f(z)|\le\left|\frac{z-\alpha}{1-\overline\alpha z}\right|.
+\]
+\end{enumerate}
+\end{document}

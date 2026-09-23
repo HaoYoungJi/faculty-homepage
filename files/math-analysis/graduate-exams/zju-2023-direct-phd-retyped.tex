@@ -1,0 +1,70 @@
+\documentclass[UTF8,11pt,fontset=none]{ctexart}
+\usepackage[a4paper,margin=24mm]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{enumitem}
+\setCJKmainfont{Songti SC}
+\setmainfont{Times New Roman}
+\setlength{\parindent}{0pt}
+\setlist[enumerate]{leftmargin=2.3em,itemsep=.85em,topsep=.5em}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+  {\Large\bfseries 浙江大学数学科学学院 2023 年直博生招生考试试题}
+\end{center}
+\vspace{1em}
+
+\section*{数学分析}
+\begin{enumerate}
+\item 计算 $\displaystyle\sum_{n=0}^{\infty}\frac{1}{(2n)!}$。
+\item 设 $f(x)=\displaystyle\sum_{k=1}^{n}a_k\sin kx$ 满足 $|f(x)|\le |\sin x|$。求证：
+\[
+\left|\sum_{k=1}^{n}ka_k\right|\le 1.
+\]
+\item 设 $y=y(x)$ 由方程 $y+2y^2+y^3=e^{-x}+x-1$ 确定，且
+\[
+y=Ax^2+Bx^3+o(x^3).
+\]
+求 $A,B$ 的值。
+\item 设 $f(x)$ 在 $\mathbb R$ 上满足 Lipschitz 条件，证明 $f(x)$ 在 $\mathbb R$ 上几乎处处可导。
+\item 已知 $f\in C[0,1]$，$A=\displaystyle\int_0^1f(x)\,dx$，
+\[
+h_n(x)=
+\begin{cases}
+nx,&0\le x\le\dfrac1{3n},\\[.35em]
+\dfrac12-\dfrac12nx,&\dfrac1{3n}\le x\le\dfrac1n,\\[.35em]
+0,&\text{其他},
+\end{cases}
+\qquad
+S_n(x)=\sum_{k=0}^{n-1}h_n\!\left(x-\frac{k}{n}\right).
+\]
+求 $\displaystyle\lim_{n\to\infty}\int_0^1 f(x)S_n(x)\,dx$（用 $A$ 表示）。
+\end{enumerate}
+
+\clearpage
+\section*{高等代数}
+\begin{enumerate}
+\item 已知矩阵
+\[
+A=\begin{pmatrix}
+0&0&0&0&-7\\
+-1&0&0&0&5\\
+0&-1&0&0&0\\
+0&0&-1&0&0\\
+0&0&0&-1&0
+\end{pmatrix}.
+\]
+求 $A$ 的极小多项式，并证明在复数域上该矩阵可以对角化。
+\item 设矩阵 $A=P^{\mathrm T}P$，$B=-Q^{\mathrm T}Q$，其中 $P,Q$ 都是数域上的满秩方阵。若方阵 $C$ 满足 $AC=CB$，求矩阵 $C$。
+\item 假设
+\[
+\alpha=(a_1,\ldots,a_n)^{\mathrm T},\quad
+\beta=(b_1,\ldots,b_n)^{\mathrm T},\quad
+\gamma=(c_1,\ldots,c_n)^{\mathrm T},\quad
+\delta=(d_1,\ldots,d_n)^{\mathrm T}
+\]
+都是 $\mathbb R^n$ 中的列向量，计算行列式
+\[
+\left|2I_n+\alpha\beta^{\mathrm T}+\gamma\delta^{\mathrm T}\right|.
+\]
+\end{enumerate}
+\end{document}
